@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-gotk4.url = "github:NixOS/nixpkgs/0b3d618173114c64ab666f557504d6982665d328"; # 2021-06-06
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
+    nixpkgs-gotk4.url = "github:NixOS/nixpkgs?ref=nixos-23.11";
     gotk4-nix.url = "github:diamondburned/gotk4-nix/main";
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -26,7 +26,7 @@
       in
       {
         devShells.default = gotk4-nix.lib.mkShell {
-          base.pname = "gotk4";
+          base.pname = "gotk4-adwaita";
           pkgs = pkgs-gotk4;
 
           buildInputs = with pkgs-gotk4; [
