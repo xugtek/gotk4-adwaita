@@ -98,7 +98,6 @@ func marshalBin(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - bin: new created AdwBin.
-//
 func NewBin() *Bin {
 	var _cret *C.GtkWidget // in
 
@@ -116,7 +115,6 @@ func NewBin() *Bin {
 // The function returns the following values:
 //
 //   - widget (optional): child widget of self.
-//
 func (self *Bin) Child() gtk.Widgetter {
 	var _arg0 *C.AdwBin    // out
 	var _cret *C.GtkWidget // in
@@ -153,7 +151,6 @@ func (self *Bin) Child() gtk.Widgetter {
 // The function takes the following parameters:
 //
 //   - child (optional) widget.
-//
 func (self *Bin) SetChild(child gtk.Widgetter) {
 	var _arg0 *C.AdwBin    // out
 	var _arg1 *C.GtkWidget // out

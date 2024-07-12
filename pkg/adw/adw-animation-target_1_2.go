@@ -59,7 +59,6 @@ func marshalPropertyAnimationTarget(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - propertyAnimationTarget: newly created AdwPropertyAnimationTarget.
-//
 func NewPropertyAnimationTarget(object *coreglib.Object, propertyName string) *PropertyAnimationTarget {
 	var _arg1 *C.GObject            // out
 	var _arg2 *C.char               // out
@@ -89,7 +88,6 @@ func NewPropertyAnimationTarget(object *coreglib.Object, propertyName string) *P
 // The function returns the following values:
 //
 //   - object: animated object.
-//
 func (self *PropertyAnimationTarget) Object() *coreglib.Object {
 	var _arg0 *C.AdwPropertyAnimationTarget // out
 	var _cret *C.GObject                    // in

@@ -16,8 +16,8 @@ import (
 // #include <stdlib.h>
 // #include <adwaita.h>
 // #include <glib-object.h>
-// extern gboolean _gotk4_adw1_TabOverview_ConnectExtraDragDrop(gpointer, AdwTabPage*, GValue, guintptr);
-// extern GdkDragAction _gotk4_adw1_TabOverview_ConnectExtraDragValue(gpointer, AdwTabPage*, GValue, guintptr);
+// extern gboolean _gotk4_adw1_TabOverview_ConnectExtraDragDrop(gpointer, AdwTabPage*, GValue*, guintptr);
+// extern GdkDragAction _gotk4_adw1_TabOverview_ConnectExtraDragValue(gpointer, AdwTabPage*, GValue*, guintptr);
 // extern AdwTabPage* _gotk4_adw1_TabOverview_ConnectCreateTab(gpointer, guintptr);
 import "C"
 
@@ -159,7 +159,7 @@ func (self *TabOverview) ConnectCreateTab(f func() (tabPage *TabPage)) coreglib.
 // taboverview.SetupExtraDropTarget.
 //
 // See gtk.DropTarget::drop.
-func (self *TabOverview) ConnectExtraDragDrop(f func(page *TabPage, value coreglib.Value) (ok bool)) coreglib.SignalHandle {
+func (self *TabOverview) ConnectExtraDragDrop(f func(page *TabPage, value *coreglib.Value) (ok bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "extra-drag-drop", false, unsafe.Pointer(C._gotk4_adw1_TabOverview_ConnectExtraDragDrop), f)
 }
 
@@ -173,7 +173,7 @@ func (self *TabOverview) ConnectExtraDragDrop(f func(page *TabPage, value coregl
 // taboverview.SetupExtraDropTarget.
 //
 // See gtk.DropTarget:value.
-func (self *TabOverview) ConnectExtraDragValue(f func(page *TabPage, value coreglib.Value) (dragAction gdk.DragAction)) coreglib.SignalHandle {
+func (self *TabOverview) ConnectExtraDragValue(f func(page *TabPage, value *coreglib.Value) (dragAction gdk.DragAction)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "extra-drag-value", false, unsafe.Pointer(C._gotk4_adw1_TabOverview_ConnectExtraDragValue), f)
 }
 
@@ -182,7 +182,6 @@ func (self *TabOverview) ConnectExtraDragValue(f func(page *TabPage, value coreg
 // The function returns the following values:
 //
 //   - tabOverview: newly created AdwTabOverview.
-//
 func NewTabOverview() *TabOverview {
 	var _cret *C.GtkWidget // in
 
@@ -200,7 +199,6 @@ func NewTabOverview() *TabOverview {
 // The function returns the following values:
 //
 //   - widget (optional): child widget of self.
-//
 func (self *TabOverview) Child() gtk.Widgetter {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret *C.GtkWidget      // in
@@ -237,7 +235,6 @@ func (self *TabOverview) Child() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - ok: whether new tab button is enabled.
-//
 func (self *TabOverview) EnableNewTab() bool {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.gboolean        // in
@@ -261,7 +258,6 @@ func (self *TabOverview) EnableNewTab() bool {
 // The function returns the following values:
 //
 //   - ok: whether search is enabled.
-//
 func (self *TabOverview) EnableSearch() bool {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.gboolean        // in
@@ -286,7 +282,6 @@ func (self *TabOverview) EnableSearch() bool {
 // The function returns the following values:
 //
 //   - dragAction: drag action of the current drop.
-//
 func (self *TabOverview) ExtraDragPreferredAction() gdk.DragAction {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.GdkDragAction   // in
@@ -308,7 +303,6 @@ func (self *TabOverview) ExtraDragPreferredAction() gdk.DragAction {
 // The function returns the following values:
 //
 //   - ok: whether drop data should be preloaded on hover.
-//
 func (self *TabOverview) ExtraDragPreload() bool {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.gboolean        // in
@@ -332,7 +326,6 @@ func (self *TabOverview) ExtraDragPreload() bool {
 // The function returns the following values:
 //
 //   - ok: whether thumbnails use inverted layout.
-//
 func (self *TabOverview) Inverted() bool {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.gboolean        // in
@@ -356,7 +349,6 @@ func (self *TabOverview) Inverted() bool {
 // The function returns the following values:
 //
 //   - ok: whether the overview is open.
-//
 func (self *TabOverview) Open() bool {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.gboolean        // in
@@ -382,7 +374,6 @@ func (self *TabOverview) Open() bool {
 // The function returns the following values:
 //
 //   - ok: whether search is active.
-//
 func (self *TabOverview) SearchActive() bool {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.gboolean        // in
@@ -406,7 +397,6 @@ func (self *TabOverview) SearchActive() bool {
 // The function returns the following values:
 //
 //   - menuModel (optional): secondary menu model.
-//
 func (self *TabOverview) SecondaryMenu() gio.MenuModeller {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret *C.GMenuModel     // in
@@ -444,7 +434,6 @@ func (self *TabOverview) SecondaryMenu() gio.MenuModeller {
 // The function returns the following values:
 //
 //   - ok: whether end title buttons are shown.
-//
 func (self *TabOverview) ShowEndTitleButtons() bool {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.gboolean        // in
@@ -469,7 +458,6 @@ func (self *TabOverview) ShowEndTitleButtons() bool {
 // The function returns the following values:
 //
 //   - ok: whether start title buttons are shown.
-//
 func (self *TabOverview) ShowStartTitleButtons() bool {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret C.gboolean        // in
@@ -493,7 +481,6 @@ func (self *TabOverview) ShowStartTitleButtons() bool {
 // The function returns the following values:
 //
 //   - tabView (optional): tab view.
-//
 func (self *TabOverview) View() *TabView {
 	var _arg0 *C.AdwTabOverview // out
 	var _cret *C.AdwTabView     // in
@@ -517,7 +504,6 @@ func (self *TabOverview) View() *TabView {
 // The function takes the following parameters:
 //
 //   - child (optional) widget.
-//
 func (self *TabOverview) SetChild(child gtk.Widgetter) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 *C.GtkWidget      // out
@@ -539,7 +525,6 @@ func (self *TabOverview) SetChild(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - enableNewTab: whether to enable new tab button.
-//
 func (self *TabOverview) SetEnableNewTab(enableNewTab bool) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 C.gboolean        // out
@@ -566,7 +551,6 @@ func (self *TabOverview) SetEnableNewTab(enableNewTab bool) {
 // The function takes the following parameters:
 //
 //   - enableSearch: whether to enable search.
-//
 func (self *TabOverview) SetEnableSearch(enableSearch bool) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 C.gboolean        // out
@@ -588,7 +572,6 @@ func (self *TabOverview) SetEnableSearch(enableSearch bool) {
 // The function takes the following parameters:
 //
 //   - preload: whether to preload drop data.
-//
 func (self *TabOverview) SetExtraDragPreload(preload bool) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 C.gboolean        // out
@@ -611,7 +594,6 @@ func (self *TabOverview) SetExtraDragPreload(preload bool) {
 // The function takes the following parameters:
 //
 //   - inverted: whether thumbnails use inverted layout.
-//
 func (self *TabOverview) SetInverted(inverted bool) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 C.gboolean        // out
@@ -631,7 +613,6 @@ func (self *TabOverview) SetInverted(inverted bool) {
 // The function takes the following parameters:
 //
 //   - open: whether the overview is open.
-//
 func (self *TabOverview) SetOpen(open bool) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 C.gboolean        // out
@@ -653,7 +634,6 @@ func (self *TabOverview) SetOpen(open bool) {
 // The function takes the following parameters:
 //
 //   - secondaryMenu (optional): menu model.
-//
 func (self *TabOverview) SetSecondaryMenu(secondaryMenu gio.MenuModeller) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 *C.GMenuModel     // out
@@ -676,7 +656,6 @@ func (self *TabOverview) SetSecondaryMenu(secondaryMenu gio.MenuModeller) {
 // The function takes the following parameters:
 //
 //   - showEndTitleButtons: whether to show end title buttons.
-//
 func (self *TabOverview) SetShowEndTitleButtons(showEndTitleButtons bool) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 C.gboolean        // out
@@ -699,7 +678,6 @@ func (self *TabOverview) SetShowEndTitleButtons(showEndTitleButtons bool) {
 // The function takes the following parameters:
 //
 //   - showStartTitleButtons: whether to show start title buttons.
-//
 func (self *TabOverview) SetShowStartTitleButtons(showStartTitleButtons bool) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 C.gboolean        // out
@@ -721,7 +699,6 @@ func (self *TabOverview) SetShowStartTitleButtons(showStartTitleButtons bool) {
 // The function takes the following parameters:
 //
 //   - view (optional): tab view.
-//
 func (self *TabOverview) SetView(view *TabView) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 *C.AdwTabView     // out
@@ -752,7 +729,6 @@ func (self *TabOverview) SetView(view *TabView) {
 //
 //   - actions: supported actions.
 //   - types (optional): all supported GTypes that can be dropped.
-//
 func (self *TabOverview) SetupExtraDropTarget(actions gdk.DragAction, types []coreglib.Type) {
 	var _arg0 *C.AdwTabOverview // out
 	var _arg1 C.GdkDragAction   // out

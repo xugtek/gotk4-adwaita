@@ -138,7 +138,6 @@ func marshalExpanderRow(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - expanderRow: newly created AdwExpanderRow.
-//
 func NewExpanderRow() *ExpanderRow {
 	var _cret *C.GtkWidget // in
 
@@ -158,7 +157,6 @@ func NewExpanderRow() *ExpanderRow {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *ExpanderRow) AddAction(widget gtk.Widgetter) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 *C.GtkWidget      // out
@@ -176,7 +174,6 @@ func (self *ExpanderRow) AddAction(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *ExpanderRow) AddPrefix(widget gtk.Widgetter) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 *C.GtkWidget      // out
@@ -196,7 +193,6 @@ func (self *ExpanderRow) AddPrefix(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - child: widget.
-//
 func (self *ExpanderRow) AddRow(child gtk.Widgetter) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 *C.GtkWidget      // out
@@ -214,7 +210,6 @@ func (self *ExpanderRow) AddRow(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *ExpanderRow) AddSuffix(widget gtk.Widgetter) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 *C.GtkWidget      // out
@@ -232,7 +227,6 @@ func (self *ExpanderRow) AddSuffix(widget gtk.Widgetter) {
 // The function returns the following values:
 //
 //   - ok: whether the expansion of self is enabled.
-//
 func (self *ExpanderRow) EnableExpansion() bool {
 	var _arg0 *C.AdwExpanderRow // out
 	var _cret C.gboolean        // in
@@ -256,7 +250,6 @@ func (self *ExpanderRow) EnableExpansion() bool {
 // The function returns the following values:
 //
 //   - ok: whether self is expanded.
-//
 func (self *ExpanderRow) Expanded() bool {
 	var _arg0 *C.AdwExpanderRow // out
 	var _cret C.gboolean        // in
@@ -282,7 +275,6 @@ func (self *ExpanderRow) Expanded() bool {
 // The function returns the following values:
 //
 //   - utf8 (optional): icon name for self.
-//
 func (self *ExpanderRow) IconName() string {
 	var _arg0 *C.AdwExpanderRow // out
 	var _cret *C.char           // in
@@ -307,7 +299,6 @@ func (self *ExpanderRow) IconName() string {
 // The function returns the following values:
 //
 //   - ok: whether the switch enabling the expansion is visible.
-//
 func (self *ExpanderRow) ShowEnableSwitch() bool {
 	var _arg0 *C.AdwExpanderRow // out
 	var _cret C.gboolean        // in
@@ -331,7 +322,6 @@ func (self *ExpanderRow) ShowEnableSwitch() bool {
 // The function returns the following values:
 //
 //   - utf8: subtitle for self.
-//
 func (self *ExpanderRow) Subtitle() string {
 	var _arg0 *C.AdwExpanderRow // out
 	var _cret *C.char           // in
@@ -353,25 +343,22 @@ func (self *ExpanderRow) Subtitle() string {
 //
 // The function returns the following values:
 //
-//   - ok: number of lines at the end of which the subtitle label will be
+//   - gint: number of lines at the end of which the subtitle label will be
 //     ellipsized.
-//
-func (self *ExpanderRow) SubtitleLines() bool {
+func (self *ExpanderRow) SubtitleLines() int {
 	var _arg0 *C.AdwExpanderRow // out
-	var _cret C.gboolean        // in
+	var _cret C.int             // in
 
 	_arg0 = (*C.AdwExpanderRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
 
 	_cret = C.adw_expander_row_get_subtitle_lines(_arg0)
 	runtime.KeepAlive(self)
 
-	var _ok bool // out
+	var _gint int // out
 
-	if _cret != 0 {
-		_ok = true
-	}
+	_gint = int(_cret)
 
-	return _ok
+	return _gint
 }
 
 // TitleLines gets the number of lines at the end of which the title label will
@@ -379,29 +366,29 @@ func (self *ExpanderRow) SubtitleLines() bool {
 //
 // The function returns the following values:
 //
-//   - ok: number of lines at the end of which the title label will be
+//   - gint: number of lines at the end of which the title label will be
 //     ellipsized.
-//
-func (self *ExpanderRow) TitleLines() bool {
+func (self *ExpanderRow) TitleLines() int {
 	var _arg0 *C.AdwExpanderRow // out
-	var _cret C.gboolean        // in
+	var _cret C.int             // in
 
 	_arg0 = (*C.AdwExpanderRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
 
 	_cret = C.adw_expander_row_get_title_lines(_arg0)
 	runtime.KeepAlive(self)
 
-	var _ok bool // out
+	var _gint int // out
 
-	if _cret != 0 {
-		_ok = true
-	}
+	_gint = int(_cret)
 
-	return _ok
+	return _gint
 }
 
+// Remove removes a child from self.
+//
 // The function takes the following parameters:
 //
+//   - child to be removed.
 func (self *ExpanderRow) Remove(child gtk.Widgetter) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 *C.GtkWidget      // out
@@ -419,7 +406,6 @@ func (self *ExpanderRow) Remove(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - enableExpansion: whether to enable the expansion.
-//
 func (self *ExpanderRow) SetEnableExpansion(enableExpansion bool) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 C.gboolean        // out
@@ -439,7 +425,6 @@ func (self *ExpanderRow) SetEnableExpansion(enableExpansion bool) {
 // The function takes the following parameters:
 //
 //   - expanded: whether to expand the row.
-//
 func (self *ExpanderRow) SetExpanded(expanded bool) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 C.gboolean        // out
@@ -461,7 +446,6 @@ func (self *ExpanderRow) SetExpanded(expanded bool) {
 // The function takes the following parameters:
 //
 //   - iconName (optional): icon name.
-//
 func (self *ExpanderRow) SetIconName(iconName string) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 *C.char           // out
@@ -483,7 +467,6 @@ func (self *ExpanderRow) SetIconName(iconName string) {
 // The function takes the following parameters:
 //
 //   - showEnableSwitch: whether to show the switch enabling the expansion.
-//
 func (self *ExpanderRow) SetShowEnableSwitch(showEnableSwitch bool) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 C.gboolean        // out
@@ -506,7 +489,6 @@ func (self *ExpanderRow) SetShowEnableSwitch(showEnableSwitch bool) {
 // The function takes the following parameters:
 //
 //   - subtitle: subtitle.
-//
 func (self *ExpanderRow) SetSubtitle(subtitle string) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 *C.char           // out
@@ -529,7 +511,6 @@ func (self *ExpanderRow) SetSubtitle(subtitle string) {
 //
 //   - subtitleLines: number of lines at the end of which the subtitle label
 //     will be ellipsized.
-//
 func (self *ExpanderRow) SetSubtitleLines(subtitleLines int) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 C.int             // out
@@ -551,7 +532,6 @@ func (self *ExpanderRow) SetSubtitleLines(subtitleLines int) {
 //
 //   - titleLines: number of lines at the end of which the title label will be
 //     ellipsized.
-//
 func (self *ExpanderRow) SetTitleLines(titleLines int) {
 	var _arg0 *C.AdwExpanderRow // out
 	var _arg1 C.int             // out

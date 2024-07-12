@@ -73,6 +73,14 @@ func defaultHeaderBarOverrides(v *HeaderBar) HeaderBarOverrides {
 // compared to it. Refer to GtkHeaderBar for details. It is typically used as a
 // top bar within toolbarview.
 //
+// # Dialog Integration
+//
+// When placed inside an dialog, AdwHeaderBar will display the dialog
+// title intead of window title. It will also adjust the decoration
+// layout to ensure it always has a close button and nothing else. Set
+// headerbar:show-start-title-buttons and headerbar:show-end-title-buttons to
+// FALSE to remove it if it's unwanted.
+//
 // # Navigation View Integration
 //
 // When placed inside an navigationpage, AdwHeaderBar will display the page
@@ -81,9 +89,10 @@ func defaultHeaderBarOverrides(v *HeaderBar) HeaderBarOverrides {
 // When used together with navigationview or navigationsplitview, it will also
 // display a back button that can be used to go back to the previous page.
 // The button also has a context menu, allowing to pop multiple pages at once,
-// potentially across multiple navigation views. In rare scenarios,
-// set headerbar:show-back-button to FALSE to disable the back button if it's
-// unwanted (e.g. in an extra header bar on the same page).
+// potentially across multiple navigation views.
+//
+// Set headerbar:show-back-button to FALSE to disable this behavior in rare
+// scenarios where it's unwanted.
 //
 // # Split View Integration
 //
@@ -104,21 +113,21 @@ func defaultHeaderBarOverrides(v *HeaderBar) HeaderBarOverrides {
 //
 // CSS nodes
 //
-//    headerbar
-//    ╰── windowhandle
-//        ╰── box
-//            ├── widget
-//            │   ╰── box.start
-//            │       ├── windowcontrols.start
-//            │       ├── widget
-//            │       │   ╰── [button.back]
-//            │       ╰── [other children]
-//            ├── widget
-//            │   ╰── [Title Widget]
-//            ╰── widget
-//                ╰── box.end
-//                    ├── [other children]
-//                    ╰── windowcontrols.end
+//	headerbar
+//	╰── windowhandle
+//	    ╰── box
+//	        ├── widget
+//	        │   ╰── box.start
+//	        │       ├── windowcontrols.start
+//	        │       ├── widget
+//	        │       │   ╰── [button.back]
+//	        │       ╰── [other children]
+//	        ├── widget
+//	        │   ╰── [Title Widget]
+//	        ╰── widget
+//	            ╰── box.end
+//	                ├── [other children]
+//	                ╰── windowcontrols.end
 //
 // AdwHeaderBar's CSS node is called headerbar. It contains a windowhandle
 // subnode, which contains a box subnode, which contains three widget subnodes
@@ -190,7 +199,6 @@ func marshalHeaderBar(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - headerBar: newly created AdwHeaderBar.
-//
 func NewHeaderBar() *HeaderBar {
 	var _cret *C.GtkWidget // in
 
@@ -208,7 +216,6 @@ func NewHeaderBar() *HeaderBar {
 // The function returns the following values:
 //
 //   - centeringPolicy: centering policy.
-//
 func (self *HeaderBar) CenteringPolicy() CenteringPolicy {
 	var _arg0 *C.AdwHeaderBar      // out
 	var _cret C.AdwCenteringPolicy // in
@@ -230,7 +237,6 @@ func (self *HeaderBar) CenteringPolicy() CenteringPolicy {
 // The function returns the following values:
 //
 //   - utf8 (optional): decoration layout.
-//
 func (self *HeaderBar) DecorationLayout() string {
 	var _arg0 *C.AdwHeaderBar // out
 	var _cret *C.char         // in
@@ -254,7 +260,6 @@ func (self *HeaderBar) DecorationLayout() string {
 // The function returns the following values:
 //
 //   - ok: whether to show the back button.
-//
 func (self *HeaderBar) ShowBackButton() bool {
 	var _arg0 *C.AdwHeaderBar // out
 	var _cret C.gboolean      // in
@@ -278,7 +283,6 @@ func (self *HeaderBar) ShowBackButton() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if title buttons at the end are shown.
-//
 func (self *HeaderBar) ShowEndTitleButtons() bool {
 	var _arg0 *C.AdwHeaderBar // out
 	var _cret C.gboolean      // in
@@ -303,7 +307,6 @@ func (self *HeaderBar) ShowEndTitleButtons() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if title buttons at the start are shown.
-//
 func (self *HeaderBar) ShowStartTitleButtons() bool {
 	var _arg0 *C.AdwHeaderBar // out
 	var _cret C.gboolean      // in
@@ -327,7 +330,6 @@ func (self *HeaderBar) ShowStartTitleButtons() bool {
 // The function returns the following values:
 //
 //   - ok: whether the title widget should be shown.
-//
 func (self *HeaderBar) ShowTitle() bool {
 	var _arg0 *C.AdwHeaderBar // out
 	var _cret C.gboolean      // in
@@ -351,7 +353,6 @@ func (self *HeaderBar) ShowTitle() bool {
 // The function returns the following values:
 //
 //   - widget (optional): title widget.
-//
 func (self *HeaderBar) TitleWidget() gtk.Widgetter {
 	var _arg0 *C.AdwHeaderBar // out
 	var _cret *C.GtkWidget    // in
@@ -388,7 +389,6 @@ func (self *HeaderBar) TitleWidget() gtk.Widgetter {
 // The function takes the following parameters:
 //
 //   - child: widget to be added to self.
-//
 func (self *HeaderBar) PackEnd(child gtk.Widgetter) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 *C.GtkWidget    // out
@@ -406,7 +406,6 @@ func (self *HeaderBar) PackEnd(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - child: widget to be added to self.
-//
 func (self *HeaderBar) PackStart(child gtk.Widgetter) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 *C.GtkWidget    // out
@@ -427,7 +426,6 @@ func (self *HeaderBar) PackStart(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - child to remove.
-//
 func (self *HeaderBar) Remove(child gtk.Widgetter) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 *C.GtkWidget    // out
@@ -445,7 +443,6 @@ func (self *HeaderBar) Remove(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - centeringPolicy: centering policy.
-//
 func (self *HeaderBar) SetCenteringPolicy(centeringPolicy CenteringPolicy) {
 	var _arg0 *C.AdwHeaderBar      // out
 	var _arg1 C.AdwCenteringPolicy // out
@@ -474,7 +471,6 @@ func (self *HeaderBar) SetCenteringPolicy(centeringPolicy CenteringPolicy) {
 // The function takes the following parameters:
 //
 //   - layout (optional): decoration layout.
-//
 func (self *HeaderBar) SetDecorationLayout(layout string) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 *C.char         // out
@@ -498,7 +494,6 @@ func (self *HeaderBar) SetDecorationLayout(layout string) {
 // The function takes the following parameters:
 //
 //   - showBackButton: whether to show the back button.
-//
 func (self *HeaderBar) SetShowBackButton(showBackButton bool) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 C.gboolean      // out
@@ -524,7 +519,6 @@ func (self *HeaderBar) SetShowBackButton(showBackButton bool) {
 // The function takes the following parameters:
 //
 //   - setting: TRUE to show standard title buttons.
-//
 func (self *HeaderBar) SetShowEndTitleButtons(setting bool) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 C.gboolean      // out
@@ -551,7 +545,6 @@ func (self *HeaderBar) SetShowEndTitleButtons(setting bool) {
 // The function takes the following parameters:
 //
 //   - setting: TRUE to show standard title buttons.
-//
 func (self *HeaderBar) SetShowStartTitleButtons(setting bool) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 C.gboolean      // out
@@ -571,7 +564,6 @@ func (self *HeaderBar) SetShowStartTitleButtons(setting bool) {
 // The function takes the following parameters:
 //
 //   - showTitle: whether the title widget is visible.
-//
 func (self *HeaderBar) SetShowTitle(showTitle bool) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 C.gboolean      // out
@@ -593,18 +585,17 @@ func (self *HeaderBar) SetShowTitle(showTitle bool) {
 //
 // To use a different title, use windowtitle:
 //
-//    <object class="AdwHeaderBar">
-//      <property name="title-widget">
-//        <object class="AdwWindowTitle">
-//          <property name="title" translatable="yes">Title</property>
-//        </object>
-//      </property>
-//    </object>.
+//	<object class="AdwHeaderBar">
+//	  <property name="title-widget">
+//	    <object class="AdwWindowTitle">
+//	      <property name="title" translatable="yes">Title</property>
+//	    </object>
+//	  </property>
+//	</object>.
 //
 // The function takes the following parameters:
 //
 //   - titleWidget (optional): widget to use for a title.
-//
 func (self *HeaderBar) SetTitleWidget(titleWidget gtk.Widgetter) {
 	var _arg0 *C.AdwHeaderBar // out
 	var _arg1 *C.GtkWidget    // out

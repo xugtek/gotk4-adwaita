@@ -82,39 +82,39 @@ func defaultViewSwitcherOverrides(v *ViewSwitcher) ViewSwitcherOverrides {
 // view switcher bar on narrow sizes, while removing the view switcher from the
 // header bar, as follows:
 //
-//    <object class="AdwWindow">
-//      <property name="width-request">360</property>
-//      <property name="height-request">200</property>
-//      <child>
-//        <object class="AdwBreakpoint">
-//          <condition>max-width: 550sp</condition>
-//          <setter object="switcher_bar" property="reveal">True</setter>
-//          <setter object="header_bar" property="title-widget"/>
-//        </object>
-//      </child>
-//      <property name="content">
-//        <object class="AdwToolbarView">
-//          <child type="top">
-//            <object class="AdwHeaderBar" id="header_bar">
-//              <property name="title-widget">
-//                <object class="AdwViewSwitcher">
-//                  <property name="stack">stack</property>
-//                  <property name="policy">wide</property>
-//                </object>
-//              </property>
-//            </object>
-//          </child>
-//          <property name="content">
-//            <object class="AdwViewStack" id="stack"/>
-//          </property>
-//          <child type="bottom">
-//            <object class="AdwViewSwitcherBar" id="switcher_bar">
-//              <property name="stack">stack</property>
-//            </object>
-//          </child>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwWindow">
+//	  <property name="width-request">360</property>
+//	  <property name="height-request">200</property>
+//	  <child>
+//	    <object class="AdwBreakpoint">
+//	      <condition>max-width: 550sp</condition>
+//	      <setter object="switcher_bar" property="reveal">True</setter>
+//	      <setter object="header_bar" property="title-widget"/>
+//	    </object>
+//	  </child>
+//	  <property name="content">
+//	    <object class="AdwToolbarView">
+//	      <child type="top">
+//	        <object class="AdwHeaderBar" id="header_bar">
+//	          <property name="title-widget">
+//	            <object class="AdwViewSwitcher">
+//	              <property name="stack">stack</property>
+//	              <property name="policy">wide</property>
+//	            </object>
+//	          </property>
+//	        </object>
+//	      </child>
+//	      <property name="content">
+//	        <object class="AdwViewStack" id="stack"/>
+//	      </property>
+//	      <child type="bottom">
+//	        <object class="AdwViewSwitcherBar" id="switcher_bar">
+//	          <property name="stack">stack</property>
+//	        </object>
+//	      </child>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // It's recommended to set viewswitcher:policy to ADW_VIEW_SWITCHER_POLICY_WIDE
 // in this case.
@@ -184,7 +184,6 @@ func marshalViewSwitcher(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - viewSwitcher: newly created AdwViewSwitcher.
-//
 func NewViewSwitcher() *ViewSwitcher {
 	var _cret *C.GtkWidget // in
 
@@ -202,7 +201,6 @@ func NewViewSwitcher() *ViewSwitcher {
 // The function returns the following values:
 //
 //   - viewSwitcherPolicy: policy of self.
-//
 func (self *ViewSwitcher) Policy() ViewSwitcherPolicy {
 	var _arg0 *C.AdwViewSwitcher      // out
 	var _cret C.AdwViewSwitcherPolicy // in
@@ -224,7 +222,6 @@ func (self *ViewSwitcher) Policy() ViewSwitcherPolicy {
 // The function returns the following values:
 //
 //   - viewStack (optional): stack.
-//
 func (self *ViewSwitcher) Stack() *ViewStack {
 	var _arg0 *C.AdwViewSwitcher // out
 	var _cret *C.AdwViewStack    // in
@@ -248,7 +245,6 @@ func (self *ViewSwitcher) Stack() *ViewStack {
 // The function takes the following parameters:
 //
 //   - policy: new policy.
-//
 func (self *ViewSwitcher) SetPolicy(policy ViewSwitcherPolicy) {
 	var _arg0 *C.AdwViewSwitcher      // out
 	var _arg1 C.AdwViewSwitcherPolicy // out
@@ -266,7 +262,6 @@ func (self *ViewSwitcher) SetPolicy(policy ViewSwitcherPolicy) {
 // The function takes the following parameters:
 //
 //   - stack (optional): stack.
-//
 func (self *ViewSwitcher) SetStack(stack *ViewStack) {
 	var _arg0 *C.AdwViewSwitcher // out
 	var _arg1 *C.AdwViewStack    // out

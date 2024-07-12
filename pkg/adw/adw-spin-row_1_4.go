@@ -44,18 +44,18 @@ func defaultSpinRowOverrides(v *SpinRow) SpinRowOverrides {
 //
 // Example of an AdwSpinRow UI definition:
 //
-//    <object class="AdwSpinRow">
-//      <property name="title" translatable="yes">Spin Row</property>
-//      <property name="adjustment">
-//        <object class="GtkAdjustment">
-//          <property name="lower">0</property>
-//          <property name="upper">100</property>
-//          <property name="value">50</property>
-//          <property name="page-increment">10</property>
-//          <property name="step-increment">1</property>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwSpinRow">
+//	  <property name="title" translatable="yes">Spin Row</property>
+//	  <property name="adjustment">
+//	    <object class="GtkAdjustment">
+//	      <property name="lower">0</property>
+//	      <property name="upper">100</property>
+//	      <property name="value">50</property>
+//	      <property name="page-increment">10</property>
+//	      <property name="step-increment">1</property>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // See gtk.SpinButton for details.
 //
@@ -183,7 +183,6 @@ func (self *SpinRow) ConnectWrapped(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - spinRow: newly created AdwSpinRow.
-//
 func NewSpinRow(adjustment *gtk.Adjustment, climbRate float64, digits uint) *SpinRow {
 	var _arg1 *C.GtkAdjustment // out
 	var _arg2 C.double         // out
@@ -215,8 +214,8 @@ func NewSpinRow(adjustment *gtk.Adjustment, climbRate float64, digits uint) *Spi
 // set to the minimum value and a page increment of 10 * step is the default.
 // The precision of the spin row is equivalent to the precisions of step.
 //
-// Note that the way in which the precision is derived works best if step is
-// a power of ten. If the resulting precision is not suitable for your needs,
+// ::: note The way in which the precision is derived works best if step is a
+// power of ten. If the resulting precision is not suitable for your needs,
 // use spinrow.SetDigits to correct it.
 //
 // The function takes the following parameters:
@@ -228,7 +227,6 @@ func NewSpinRow(adjustment *gtk.Adjustment, climbRate float64, digits uint) *Spi
 // The function returns the following values:
 //
 //   - spinRow: new AdwSpinRow.
-//
 func NewSpinRowWithRange(min, max, step float64) *SpinRow {
 	var _arg1 C.double     // out
 	var _arg2 C.double     // out
@@ -261,7 +259,6 @@ func NewSpinRowWithRange(min, max, step float64) *SpinRow {
 //   - adjustment (optional) that this spin row should use.
 //   - climbRate: new climb rate.
 //   - digits: number of decimal places to display.
-//
 func (self *SpinRow) Configure(adjustment *gtk.Adjustment, climbRate float64, digits uint) {
 	var _arg0 *C.AdwSpinRow    // out
 	var _arg1 *C.GtkAdjustment // out
@@ -287,7 +284,6 @@ func (self *SpinRow) Configure(adjustment *gtk.Adjustment, climbRate float64, di
 // The function returns the following values:
 //
 //   - adjustment that holds the spin row's value.
-//
 func (self *SpinRow) Adjustment() *gtk.Adjustment {
 	var _arg0 *C.AdwSpinRow    // out
 	var _cret *C.GtkAdjustment // in
@@ -316,7 +312,6 @@ func (self *SpinRow) Adjustment() *gtk.Adjustment {
 // The function returns the following values:
 //
 //   - gdouble: acceleration rate when you hold down a button or key.
-//
 func (self *SpinRow) ClimbRate() float64 {
 	var _arg0 *C.AdwSpinRow // out
 	var _cret C.double      // in
@@ -338,7 +333,6 @@ func (self *SpinRow) ClimbRate() float64 {
 // The function returns the following values:
 //
 //   - guint: number of decimal places to display.
-//
 func (self *SpinRow) Digits() uint {
 	var _arg0 *C.AdwSpinRow // out
 	var _cret C.guint       // in
@@ -360,7 +354,6 @@ func (self *SpinRow) Digits() uint {
 // The function returns the following values:
 //
 //   - ok: whether non-numeric characters should be ignored.
-//
 func (self *SpinRow) Numeric() bool {
 	var _arg0 *C.AdwSpinRow // out
 	var _cret C.gboolean    // in
@@ -385,7 +378,6 @@ func (self *SpinRow) Numeric() bool {
 // The function returns the following values:
 //
 //   - ok: whether invalid values are snapped to the nearest step increment.
-//
 func (self *SpinRow) SnapToTicks() bool {
 	var _arg0 *C.AdwSpinRow // out
 	var _cret C.gboolean    // in
@@ -409,7 +401,6 @@ func (self *SpinRow) SnapToTicks() bool {
 // The function returns the following values:
 //
 //   - spinButtonUpdatePolicy: policy for updating the spin row.
-//
 func (self *SpinRow) UpdatePolicy() gtk.SpinButtonUpdatePolicy {
 	var _arg0 *C.AdwSpinRow               // out
 	var _cret C.GtkSpinButtonUpdatePolicy // in
@@ -431,7 +422,6 @@ func (self *SpinRow) UpdatePolicy() gtk.SpinButtonUpdatePolicy {
 // The function returns the following values:
 //
 //   - gdouble: current value.
-//
 func (self *SpinRow) Value() float64 {
 	var _arg0 *C.AdwSpinRow // out
 	var _cret C.double      // in
@@ -453,7 +443,6 @@ func (self *SpinRow) Value() float64 {
 // The function returns the following values:
 //
 //   - ok: whether the spin row should wrap upon reaching its limits.
-//
 func (self *SpinRow) Wrap() bool {
 	var _arg0 *C.AdwSpinRow // out
 	var _cret C.gboolean    // in
@@ -477,7 +466,6 @@ func (self *SpinRow) Wrap() bool {
 // The function takes the following parameters:
 //
 //   - adjustment (optional): adjustment.
-//
 func (self *SpinRow) SetAdjustment(adjustment *gtk.Adjustment) {
 	var _arg0 *C.AdwSpinRow    // out
 	var _arg1 *C.GtkAdjustment // out
@@ -497,7 +485,6 @@ func (self *SpinRow) SetAdjustment(adjustment *gtk.Adjustment) {
 // The function takes the following parameters:
 //
 //   - climbRate: acceleration rate when you hold down a button or key.
-//
 func (self *SpinRow) SetClimbRate(climbRate float64) {
 	var _arg0 *C.AdwSpinRow // out
 	var _arg1 C.double      // out
@@ -515,7 +502,6 @@ func (self *SpinRow) SetClimbRate(climbRate float64) {
 // The function takes the following parameters:
 //
 //   - digits: number of decimal places to display.
-//
 func (self *SpinRow) SetDigits(digits uint) {
 	var _arg0 *C.AdwSpinRow // out
 	var _arg1 C.guint       // out
@@ -533,7 +519,6 @@ func (self *SpinRow) SetDigits(digits uint) {
 // The function takes the following parameters:
 //
 //   - numeric: whether non-numeric characters should be ignored.
-//
 func (self *SpinRow) SetNumeric(numeric bool) {
 	var _arg0 *C.AdwSpinRow // out
 	var _arg1 C.gboolean    // out
@@ -557,7 +542,6 @@ func (self *SpinRow) SetNumeric(numeric bool) {
 //
 //   - min: minimum allowable value.
 //   - max: maximum allowable value.
-//
 func (self *SpinRow) SetRange(min, max float64) {
 	var _arg0 *C.AdwSpinRow // out
 	var _arg1 C.double      // out
@@ -580,7 +564,6 @@ func (self *SpinRow) SetRange(min, max float64) {
 //
 //   - snapToTicks: whether invalid values are snapped to the nearest step
 //     increment.
-//
 func (self *SpinRow) SetSnapToTicks(snapToTicks bool) {
 	var _arg0 *C.AdwSpinRow // out
 	var _arg1 C.gboolean    // out
@@ -602,7 +585,6 @@ func (self *SpinRow) SetSnapToTicks(snapToTicks bool) {
 // The function takes the following parameters:
 //
 //   - policy for updating the spin row.
-//
 func (self *SpinRow) SetUpdatePolicy(policy gtk.SpinButtonUpdatePolicy) {
 	var _arg0 *C.AdwSpinRow               // out
 	var _arg1 C.GtkSpinButtonUpdatePolicy // out
@@ -620,7 +602,6 @@ func (self *SpinRow) SetUpdatePolicy(policy gtk.SpinButtonUpdatePolicy) {
 // The function takes the following parameters:
 //
 //   - value: new value.
-//
 func (self *SpinRow) SetValue(value float64) {
 	var _arg0 *C.AdwSpinRow // out
 	var _arg1 C.double      // out
@@ -638,7 +619,6 @@ func (self *SpinRow) SetValue(value float64) {
 // The function takes the following parameters:
 //
 //   - wrap: whether the spin row should wrap upon reaching its limits.
-//
 func (self *SpinRow) SetWrap(wrap bool) {
 	var _arg0 *C.AdwSpinRow // out
 	var _arg1 C.gboolean    // out

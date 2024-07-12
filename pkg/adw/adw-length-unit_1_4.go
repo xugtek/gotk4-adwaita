@@ -73,7 +73,6 @@ func (l LengthUnit) String() string {
 // The function returns the following values:
 //
 //   - gdouble: length in unit.
-//
 func LengthUnitFromPx(unit LengthUnit, value float64, settings *gtk.Settings) float64 {
 	var _arg1 C.AdwLengthUnit // out
 	var _arg2 C.double        // out
@@ -109,7 +108,6 @@ func LengthUnitFromPx(unit LengthUnit, value float64, settings *gtk.Settings) fl
 // The function returns the following values:
 //
 //   - gdouble: length in pixels.
-//
 func LengthUnitToPx(unit LengthUnit, value float64, settings *gtk.Settings) float64 {
 	var _arg1 C.AdwLengthUnit // out
 	var _arg2 C.double        // out

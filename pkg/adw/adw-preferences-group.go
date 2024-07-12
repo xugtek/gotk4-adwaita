@@ -45,7 +45,7 @@ func defaultPreferencesGroupOverrides(v *PreferencesGroup) PreferencesGroupOverr
 // which in turn are represented by preferencesrow.
 //
 // To summarize the role of the preferences it gathers, a group can have both a
-// title and a description. The title will be used by preferenceswindow to let
+// title and a description. The title will be used by preferencesdialog to let
 // the user look for a preference.
 //
 // # AdwPreferencesGroup as GtkBuildable
@@ -119,7 +119,6 @@ func marshalPreferencesGroup(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - preferencesGroup: newly created AdwPreferencesGroup.
-//
 func NewPreferencesGroup() *PreferencesGroup {
 	var _cret *C.GtkWidget // in
 
@@ -137,7 +136,6 @@ func NewPreferencesGroup() *PreferencesGroup {
 // The function takes the following parameters:
 //
 //   - child: widget to add.
-//
 func (self *PreferencesGroup) Add(child gtk.Widgetter) {
 	var _arg0 *C.AdwPreferencesGroup // out
 	var _arg1 *C.GtkWidget           // out
@@ -155,7 +153,6 @@ func (self *PreferencesGroup) Add(child gtk.Widgetter) {
 // The function returns the following values:
 //
 //   - utf8 (optional): description of self.
-//
 func (self *PreferencesGroup) Description() string {
 	var _arg0 *C.AdwPreferencesGroup // out
 	var _cret *C.char                // in
@@ -179,7 +176,6 @@ func (self *PreferencesGroup) Description() string {
 // The function returns the following values:
 //
 //   - widget (optional): suffix for self's header.
-//
 func (self *PreferencesGroup) HeaderSuffix() gtk.Widgetter {
 	var _arg0 *C.AdwPreferencesGroup // out
 	var _cret *C.GtkWidget           // in
@@ -216,7 +212,6 @@ func (self *PreferencesGroup) HeaderSuffix() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - utf8: title of self.
-//
 func (self *PreferencesGroup) Title() string {
 	var _arg0 *C.AdwPreferencesGroup // out
 	var _cret *C.char                // in
@@ -238,7 +233,6 @@ func (self *PreferencesGroup) Title() string {
 // The function takes the following parameters:
 //
 //   - child to remove.
-//
 func (self *PreferencesGroup) Remove(child gtk.Widgetter) {
 	var _arg0 *C.AdwPreferencesGroup // out
 	var _arg1 *C.GtkWidget           // out
@@ -256,7 +250,6 @@ func (self *PreferencesGroup) Remove(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - description (optional): description.
-//
 func (self *PreferencesGroup) SetDescription(description string) {
 	var _arg0 *C.AdwPreferencesGroup // out
 	var _arg1 *C.char                // out
@@ -281,7 +274,6 @@ func (self *PreferencesGroup) SetDescription(description string) {
 // The function takes the following parameters:
 //
 //   - suffix (optional) to set.
-//
 func (self *PreferencesGroup) SetHeaderSuffix(suffix gtk.Widgetter) {
 	var _arg0 *C.AdwPreferencesGroup // out
 	var _arg1 *C.GtkWidget           // out
@@ -301,7 +293,6 @@ func (self *PreferencesGroup) SetHeaderSuffix(suffix gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *PreferencesGroup) SetTitle(title string) {
 	var _arg0 *C.AdwPreferencesGroup // out
 	var _arg1 *C.char                // out

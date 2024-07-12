@@ -144,7 +144,6 @@ func (self *Banner) ConnectButtonClicked(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - banner: newly created AdwBanner.
-//
 func NewBanner(title string) *Banner {
 	var _arg1 *C.char      // out
 	var _cret *C.GtkWidget // in
@@ -167,7 +166,6 @@ func NewBanner(title string) *Banner {
 // The function returns the following values:
 //
 //   - utf8 (optional): button label for self.
-//
 func (self *Banner) ButtonLabel() string {
 	var _arg0 *C.AdwBanner // out
 	var _cret *C.char      // in
@@ -191,7 +189,6 @@ func (self *Banner) ButtonLabel() string {
 // The function returns the following values:
 //
 //   - ok: whether a banner is revealed.
-//
 func (self *Banner) Revealed() bool {
 	var _arg0 *C.AdwBanner // out
 	var _cret C.gboolean   // in
@@ -215,7 +212,6 @@ func (self *Banner) Revealed() bool {
 // The function returns the following values:
 //
 //   - utf8: title for self.
-//
 func (self *Banner) Title() string {
 	var _arg0 *C.AdwBanner // out
 	var _cret *C.char      // in
@@ -237,7 +233,6 @@ func (self *Banner) Title() string {
 // The function returns the following values:
 //
 //   - ok: whether to use markup.
-//
 func (self *Banner) UseMarkup() bool {
 	var _arg0 *C.AdwBanner // out
 	var _cret C.gboolean   // in
@@ -266,7 +261,6 @@ func (self *Banner) UseMarkup() bool {
 // The function takes the following parameters:
 //
 //   - label (optional): label.
-//
 func (self *Banner) SetButtonLabel(label string) {
 	var _arg0 *C.AdwBanner // out
 	var _arg1 *C.char      // out
@@ -287,7 +281,6 @@ func (self *Banner) SetButtonLabel(label string) {
 // The function takes the following parameters:
 //
 //   - revealed: whether a banner should be revealed.
-//
 func (self *Banner) SetRevealed(revealed bool) {
 	var _arg0 *C.AdwBanner // out
 	var _arg1 C.gboolean   // out
@@ -309,7 +302,6 @@ func (self *Banner) SetRevealed(revealed bool) {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *Banner) SetTitle(title string) {
 	var _arg0 *C.AdwBanner // out
 	var _arg1 *C.char      // out
@@ -330,7 +322,6 @@ func (self *Banner) SetTitle(title string) {
 // The function takes the following parameters:
 //
 //   - useMarkup: whether to use markup.
-//
 func (self *Banner) SetUseMarkup(useMarkup bool) {
 	var _arg0 *C.AdwBanner // out
 	var _arg1 C.gboolean   // out

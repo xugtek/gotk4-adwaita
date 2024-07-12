@@ -91,7 +91,6 @@ func marshalTabPage(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - widget: child of self.
-//
 func (self *TabPage) Child() gtk.Widgetter {
 	var _arg0 *C.AdwTabPage // out
 	var _cret *C.GtkWidget  // in
@@ -129,7 +128,6 @@ func (self *TabPage) Child() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - icon (optional) of self.
-//
 func (self *TabPage) Icon() *gio.Icon {
 	var _arg0 *C.AdwTabPage // out
 	var _cret *C.GIcon      // in
@@ -158,7 +156,6 @@ func (self *TabPage) Icon() *gio.Icon {
 // The function returns the following values:
 //
 //   - ok: whether the indicator is activatable.
-//
 func (self *TabPage) IndicatorActivatable() bool {
 	var _arg0 *C.AdwTabPage // out
 	var _cret C.gboolean    // in
@@ -182,7 +179,6 @@ func (self *TabPage) IndicatorActivatable() bool {
 // The function returns the following values:
 //
 //   - icon (optional): indicator icon of self.
-//
 func (self *TabPage) IndicatorIcon() *gio.Icon {
 	var _arg0 *C.AdwTabPage // out
 	var _cret *C.GIcon      // in
@@ -211,7 +207,6 @@ func (self *TabPage) IndicatorIcon() *gio.Icon {
 // The function returns the following values:
 //
 //   - utf8: indicator tooltip of self.
-//
 func (self *TabPage) IndicatorTooltip() string {
 	var _arg0 *C.AdwTabPage // out
 	var _cret *C.char       // in
@@ -233,7 +228,6 @@ func (self *TabPage) IndicatorTooltip() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): search keyword of self.
-//
 func (self *TabPage) Keyword() string {
 	var _arg0 *C.AdwTabPage // out
 	var _cret *C.char       // in
@@ -257,7 +251,6 @@ func (self *TabPage) Keyword() string {
 // The function returns the following values:
 //
 //   - ok: whether live thumbnail is enabled.
-//
 func (self *TabPage) LiveThumbnail() bool {
 	var _arg0 *C.AdwTabPage // out
 	var _cret C.gboolean    // in
@@ -281,7 +274,6 @@ func (self *TabPage) LiveThumbnail() bool {
 // The function returns the following values:
 //
 //   - ok: whether self is loading.
-//
 func (self *TabPage) Loading() bool {
 	var _arg0 *C.AdwTabPage // out
 	var _cret C.gboolean    // in
@@ -305,7 +297,6 @@ func (self *TabPage) Loading() bool {
 // The function returns the following values:
 //
 //   - ok: whether self needs attention.
-//
 func (self *TabPage) NeedsAttention() bool {
 	var _arg0 *C.AdwTabPage // out
 	var _cret C.gboolean    // in
@@ -331,7 +322,6 @@ func (self *TabPage) NeedsAttention() bool {
 // The function returns the following values:
 //
 //   - tabPage (optional): parent page.
-//
 func (self *TabPage) Parent() *TabPage {
 	var _arg0 *C.AdwTabPage // out
 	var _cret *C.AdwTabPage // in
@@ -357,7 +347,6 @@ func (self *TabPage) Parent() *TabPage {
 // The function returns the following values:
 //
 //   - ok: whether self is pinned.
-//
 func (self *TabPage) Pinned() bool {
 	var _arg0 *C.AdwTabPage // out
 	var _cret C.gboolean    // in
@@ -381,7 +370,6 @@ func (self *TabPage) Pinned() bool {
 // The function returns the following values:
 //
 //   - ok: whether self is selected.
-//
 func (self *TabPage) Selected() bool {
 	var _arg0 *C.AdwTabPage // out
 	var _cret C.gboolean    // in
@@ -405,7 +393,6 @@ func (self *TabPage) Selected() bool {
 // The function returns the following values:
 //
 //   - gfloat: horizontal alignment.
-//
 func (self *TabPage) ThumbnailXAlign() float32 {
 	var _arg0 *C.AdwTabPage // out
 	var _cret C.float       // in
@@ -427,7 +414,6 @@ func (self *TabPage) ThumbnailXAlign() float32 {
 // The function returns the following values:
 //
 //   - gfloat: vertical alignment.
-//
 func (self *TabPage) ThumbnailYAlign() float32 {
 	var _arg0 *C.AdwTabPage // out
 	var _cret C.float       // in
@@ -449,7 +435,6 @@ func (self *TabPage) ThumbnailYAlign() float32 {
 // The function returns the following values:
 //
 //   - utf8: title of self.
-//
 func (self *TabPage) Title() string {
 	var _arg0 *C.AdwTabPage // out
 	var _cret *C.char       // in
@@ -471,7 +456,6 @@ func (self *TabPage) Title() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): tooltip of self.
-//
 func (self *TabPage) Tooltip() string {
 	var _arg0 *C.AdwTabPage // out
 	var _cret *C.char       // in
@@ -518,7 +502,6 @@ func (self *TabPage) InvalidateThumbnail() {
 // The function takes the following parameters:
 //
 //   - icon (optional) of self.
-//
 func (self *TabPage) SetIcon(icon gio.Iconner) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 *C.GIcon      // out
@@ -543,7 +526,6 @@ func (self *TabPage) SetIcon(icon gio.Iconner) {
 // The function takes the following parameters:
 //
 //   - activatable: whether the indicator is activatable.
-//
 func (self *TabPage) SetIndicatorActivatable(activatable bool) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 C.gboolean    // out
@@ -579,7 +561,6 @@ func (self *TabPage) SetIndicatorActivatable(activatable bool) {
 // The function takes the following parameters:
 //
 //   - indicatorIcon (optional): indicator icon of self.
-//
 func (self *TabPage) SetIndicatorIcon(indicatorIcon gio.Iconner) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 *C.GIcon      // out
@@ -603,7 +584,6 @@ func (self *TabPage) SetIndicatorIcon(indicatorIcon gio.Iconner) {
 // The function takes the following parameters:
 //
 //   - tooltip: indicator tooltip of self.
-//
 func (self *TabPage) SetIndicatorTooltip(tooltip string) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 *C.char       // out
@@ -627,7 +607,6 @@ func (self *TabPage) SetIndicatorTooltip(tooltip string) {
 // The function takes the following parameters:
 //
 //   - keyword: search keyword.
-//
 func (self *TabPage) SetKeyword(keyword string) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 *C.char       // out
@@ -653,7 +632,6 @@ func (self *TabPage) SetKeyword(keyword string) {
 // The function takes the following parameters:
 //
 //   - liveThumbnail: whether to enable live thumbnail.
-//
 func (self *TabPage) SetLiveThumbnail(liveThumbnail bool) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 C.gboolean    // out
@@ -679,7 +657,6 @@ func (self *TabPage) SetLiveThumbnail(liveThumbnail bool) {
 // The function takes the following parameters:
 //
 //   - loading: whether self is loading.
-//
 func (self *TabPage) SetLoading(loading bool) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 C.gboolean    // out
@@ -708,7 +685,6 @@ func (self *TabPage) SetLoading(loading bool) {
 // The function takes the following parameters:
 //
 //   - needsAttention: whether self needs attention.
-//
 func (self *TabPage) SetNeedsAttention(needsAttention bool) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 C.gboolean    // out
@@ -737,7 +713,6 @@ func (self *TabPage) SetNeedsAttention(needsAttention bool) {
 // The function takes the following parameters:
 //
 //   - xalign: new value.
-//
 func (self *TabPage) SetThumbnailXAlign(xalign float32) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 C.float       // out
@@ -764,7 +739,6 @@ func (self *TabPage) SetThumbnailXAlign(xalign float32) {
 // The function takes the following parameters:
 //
 //   - yalign: new value.
-//
 func (self *TabPage) SetThumbnailYAlign(yalign float32) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 C.float       // out
@@ -789,7 +763,6 @@ func (self *TabPage) SetThumbnailYAlign(yalign float32) {
 // The function takes the following parameters:
 //
 //   - title of self.
-//
 func (self *TabPage) SetTitle(title string) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 *C.char       // out
@@ -813,7 +786,6 @@ func (self *TabPage) SetTitle(title string) {
 // The function takes the following parameters:
 //
 //   - tooltip of self.
-//
 func (self *TabPage) SetTooltip(tooltip string) {
 	var _arg0 *C.AdwTabPage // out
 	var _arg1 *C.char       // out
@@ -863,8 +835,8 @@ func defaultTabViewOverrides(v *TabView) TabViewOverrides {
 // tabview.AddShortcuts and tabview.RemoveShortcuts can be used to manage
 // shortcuts in a convenient way, for example:
 //
-//    adw_tab_view_remove_shortcuts (view, ADW_TAB_VIEW_SHORTCUT_CONTROL_HOME |
-//                                         ADW_TAB_VIEW_SHORTCUT_CONTROL_END);
+//	adw_tab_view_remove_shortcuts (view, ADW_TAB_VIEW_SHORTCUT_CONTROL_HOME |
+//	                                     ADW_TAB_VIEW_SHORTCUT_CONTROL_END);
 //
 // # CSS nodes
 //
@@ -931,21 +903,24 @@ func marshalTabView(p uintptr) (interface{}, error) {
 // The default handler will immediately confirm closing for non-pinned pages,
 // or reject it for pinned pages, equivalent to the following example:
 //
-//    static gboolean
-//    close_page_cb (AdwTabView *view,
-//                   AdwTabPage *page,
-//                   gpointer    user_data)
-//    {
-//      adw_tab_view_close_page_finish (view, page, !adw_tab_page_get_pinned (page));
+//	static gboolean
+//	close_page_cb (AdwTabView *view,
+//	               AdwTabPage *page,
+//	               gpointer    user_data)
+//	{
+//	  adw_tab_view_close_page_finish (view, page, !adw_tab_page_get_pinned (page));
 //
-//      return GDK_EVENT_STOP;
-//    }
+//	  return GDK_EVENT_STOP;
+//	}
 //
 // The tabview.ClosePageFinish call doesn't have to happen inside the handler,
 // so can be used to do asynchronous checks before confirming the closing.
 //
 // A typical reason to connect to this signal is to show a confirmation dialog
 // for closing a tab.
+//
+// The signal handler should return GDK_EVENT_STOP to stop propagation or
+// GDK_EVENT_CONTINUE to invoke the default handler.
 func (self *TabView) ConnectClosePage(f func(page *TabPage) (ok bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "close-page", false, unsafe.Pointer(C._gotk4_adw1_TabView_ConnectClosePage), f)
 }
@@ -1012,7 +987,6 @@ func (self *TabView) ConnectSetupMenu(f func(page *TabPage)) coreglib.SignalHand
 // The function returns the following values:
 //
 //   - tabView: newly created AdwTabView.
-//
 func NewTabView() *TabView {
 	var _cret *C.AdwTabView // in
 
@@ -1041,7 +1015,6 @@ func NewTabView() *TabView {
 // The function returns the following values:
 //
 //   - tabPage: page object representing child.
-//
 func (self *TabView) AddPage(child gtk.Widgetter, parent *TabPage) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GtkWidget  // out
@@ -1073,7 +1046,6 @@ func (self *TabView) AddPage(child gtk.Widgetter, parent *TabPage) *TabPage {
 // The function takes the following parameters:
 //
 //   - shortcuts to add.
-//
 func (self *TabView) AddShortcuts(shortcuts TabViewShortcuts) {
 	var _arg0 *C.AdwTabView         // out
 	var _arg1 C.AdwTabViewShortcuts // out
@@ -1095,7 +1067,6 @@ func (self *TabView) AddShortcuts(shortcuts TabViewShortcuts) {
 // The function returns the following values:
 //
 //   - tabPage: page object representing child.
-//
 func (self *TabView) Append(child gtk.Widgetter) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GtkWidget  // out
@@ -1124,7 +1095,6 @@ func (self *TabView) Append(child gtk.Widgetter) *TabPage {
 // The function returns the following values:
 //
 //   - tabPage: page object representing child.
-//
 func (self *TabView) AppendPinned(child gtk.Widgetter) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GtkWidget  // out
@@ -1149,7 +1119,6 @@ func (self *TabView) AppendPinned(child gtk.Widgetter) *TabPage {
 // The function takes the following parameters:
 //
 //   - page of self.
-//
 func (self *TabView) CloseOtherPages(page *TabPage) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1188,7 +1157,6 @@ func (self *TabView) CloseOtherPages(page *TabPage) {
 // The function takes the following parameters:
 //
 //   - page of self.
-//
 func (self *TabView) ClosePage(page *TabPage) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1213,7 +1181,6 @@ func (self *TabView) ClosePage(page *TabPage) {
 //
 //   - page of self.
 //   - confirm: whether to confirm or deny closing page.
-//
 func (self *TabView) ClosePageFinish(page *TabPage, confirm bool) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1236,7 +1203,6 @@ func (self *TabView) ClosePageFinish(page *TabPage, confirm bool) {
 // The function takes the following parameters:
 //
 //   - page of self.
-//
 func (self *TabView) ClosePagesAfter(page *TabPage) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1254,7 +1220,6 @@ func (self *TabView) ClosePagesAfter(page *TabPage) {
 // The function takes the following parameters:
 //
 //   - page of self.
-//
 func (self *TabView) ClosePagesBefore(page *TabPage) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1272,7 +1237,6 @@ func (self *TabView) ClosePagesBefore(page *TabPage) {
 // The function returns the following values:
 //
 //   - icon: default icon of self.
-//
 func (self *TabView) DefaultIcon() *gio.Icon {
 	var _arg0 *C.AdwTabView // out
 	var _cret *C.GIcon      // in
@@ -1305,7 +1269,6 @@ func (self *TabView) DefaultIcon() *gio.Icon {
 // The function returns the following values:
 //
 //   - ok: whether a page is being transferred.
-//
 func (self *TabView) IsTransferringPage() bool {
 	var _arg0 *C.AdwTabView // out
 	var _cret C.gboolean    // in
@@ -1329,7 +1292,6 @@ func (self *TabView) IsTransferringPage() bool {
 // The function returns the following values:
 //
 //   - menuModel (optional): tab context menu model for self.
-//
 func (self *TabView) MenuModel() gio.MenuModeller {
 	var _arg0 *C.AdwTabView // out
 	var _cret *C.GMenuModel // in
@@ -1366,7 +1328,6 @@ func (self *TabView) MenuModel() gio.MenuModeller {
 // The function returns the following values:
 //
 //   - gint: number of pages in self.
-//
 func (self *TabView) NPages() int {
 	var _arg0 *C.AdwTabView // out
 	var _cret C.int         // in
@@ -1390,7 +1351,6 @@ func (self *TabView) NPages() int {
 // The function returns the following values:
 //
 //   - gint: number of pinned pages in self.
-//
 func (self *TabView) NPinnedPages() int {
 	var _arg0 *C.AdwTabView // out
 	var _cret C.int         // in
@@ -1416,7 +1376,6 @@ func (self *TabView) NPinnedPages() int {
 // The function returns the following values:
 //
 //   - tabPage: page object at position.
-//
 func (self *TabView) NthPage(position int) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 C.int         // out
@@ -1445,7 +1404,6 @@ func (self *TabView) NthPage(position int) *TabPage {
 // The function returns the following values:
 //
 //   - tabPage: page object for child.
-//
 func (self *TabView) Page(child gtk.Widgetter) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GtkWidget  // out
@@ -1474,7 +1432,6 @@ func (self *TabView) Page(child gtk.Widgetter) *TabPage {
 // The function returns the following values:
 //
 //   - gint: position of page in self.
-//
 func (self *TabView) PagePosition(page *TabPage) int {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1502,7 +1459,6 @@ func (self *TabView) PagePosition(page *TabPage) int {
 // The function returns the following values:
 //
 //   - selectionModel: GtkSelectionModel for the pages of self.
-//
 func (self *TabView) Pages() *gtk.SelectionModel {
 	var _arg0 *C.AdwTabView        // out
 	var _cret *C.GtkSelectionModel // in
@@ -1531,7 +1487,6 @@ func (self *TabView) Pages() *gtk.SelectionModel {
 // The function returns the following values:
 //
 //   - tabPage (optional): selected page.
-//
 func (self *TabView) SelectedPage() *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _cret *C.AdwTabPage // in
@@ -1555,7 +1510,6 @@ func (self *TabView) SelectedPage() *TabPage {
 // The function returns the following values:
 //
 //   - tabViewShortcuts: shortcut mask.
-//
 func (self *TabView) Shortcuts() TabViewShortcuts {
 	var _arg0 *C.AdwTabView         // out
 	var _cret C.AdwTabViewShortcuts // in
@@ -1585,7 +1539,6 @@ func (self *TabView) Shortcuts() TabViewShortcuts {
 // The function returns the following values:
 //
 //   - tabPage: page object representing child.
-//
 func (self *TabView) Insert(child gtk.Widgetter, position int) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GtkWidget  // out
@@ -1621,7 +1574,6 @@ func (self *TabView) Insert(child gtk.Widgetter, position int) *TabPage {
 // The function returns the following values:
 //
 //   - tabPage: page object representing child.
-//
 func (self *TabView) InsertPinned(child gtk.Widgetter, position int) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GtkWidget  // out
@@ -1666,7 +1618,6 @@ func (self *TabView) InvalidateThumbnails() {
 // The function returns the following values:
 //
 //   - tabPage: page object representing child.
-//
 func (self *TabView) Prepend(child gtk.Widgetter) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GtkWidget  // out
@@ -1695,7 +1646,6 @@ func (self *TabView) Prepend(child gtk.Widgetter) *TabPage {
 // The function returns the following values:
 //
 //   - tabPage: page object representing child.
-//
 func (self *TabView) PrependPinned(child gtk.Widgetter) *TabPage {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GtkWidget  // out
@@ -1722,7 +1672,6 @@ func (self *TabView) PrependPinned(child gtk.Widgetter) *TabPage {
 // The function takes the following parameters:
 //
 //   - shortcuts to reomve.
-//
 func (self *TabView) RemoveShortcuts(shortcuts TabViewShortcuts) {
 	var _arg0 *C.AdwTabView         // out
 	var _arg1 C.AdwTabViewShortcuts // out
@@ -1744,7 +1693,6 @@ func (self *TabView) RemoveShortcuts(shortcuts TabViewShortcuts) {
 // The function returns the following values:
 //
 //   - ok: whether page was moved.
-//
 func (self *TabView) ReorderBackward(page *TabPage) bool {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1775,7 +1723,6 @@ func (self *TabView) ReorderBackward(page *TabPage) bool {
 // The function returns the following values:
 //
 //   - ok: whether page was moved.
-//
 func (self *TabView) ReorderFirst(page *TabPage) bool {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1806,7 +1753,6 @@ func (self *TabView) ReorderFirst(page *TabPage) bool {
 // The function returns the following values:
 //
 //   - ok: whether page was moved.
-//
 func (self *TabView) ReorderForward(page *TabPage) bool {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1837,7 +1783,6 @@ func (self *TabView) ReorderForward(page *TabPage) bool {
 // The function returns the following values:
 //
 //   - ok: whether page was moved.
-//
 func (self *TabView) ReorderLast(page *TabPage) bool {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1872,7 +1817,6 @@ func (self *TabView) ReorderLast(page *TabPage) bool {
 // The function returns the following values:
 //
 //   - ok: whether page was moved.
-//
 func (self *TabView) ReorderPage(page *TabPage, position int) bool {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -1904,7 +1848,6 @@ func (self *TabView) ReorderPage(page *TabPage, position int) bool {
 // The function returns the following values:
 //
 //   - ok: whether the selected page was changed.
-//
 func (self *TabView) SelectNextPage() bool {
 	var _arg0 *C.AdwTabView // out
 	var _cret C.gboolean    // in
@@ -1930,7 +1873,6 @@ func (self *TabView) SelectNextPage() bool {
 // The function returns the following values:
 //
 //   - ok: whether the selected page was changed.
-//
 func (self *TabView) SelectPreviousPage() bool {
 	var _arg0 *C.AdwTabView // out
 	var _cret C.gboolean    // in
@@ -1965,7 +1907,6 @@ func (self *TabView) SelectPreviousPage() bool {
 // The function takes the following parameters:
 //
 //   - defaultIcon: default icon.
-//
 func (self *TabView) SetDefaultIcon(defaultIcon gio.Iconner) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GIcon      // out
@@ -1987,7 +1928,6 @@ func (self *TabView) SetDefaultIcon(defaultIcon gio.Iconner) {
 // The function takes the following parameters:
 //
 //   - menuModel (optional): menu model.
-//
 func (self *TabView) SetMenuModel(menuModel gio.MenuModeller) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.GMenuModel // out
@@ -2034,7 +1974,6 @@ func (self *TabView) SetMenuModel(menuModel gio.MenuModeller) {
 //
 //   - page of self.
 //   - pinned: whether page should be pinned.
-//
 func (self *TabView) SetPagePinned(page *TabPage, pinned bool) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -2057,7 +1996,6 @@ func (self *TabView) SetPagePinned(page *TabPage, pinned bool) {
 // The function takes the following parameters:
 //
 //   - selectedPage: page in self.
-//
 func (self *TabView) SetSelectedPage(selectedPage *TabPage) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out
@@ -2081,7 +2019,6 @@ func (self *TabView) SetSelectedPage(selectedPage *TabPage) {
 // The function takes the following parameters:
 //
 //   - shortcuts: new shortcuts.
-//
 func (self *TabView) SetShortcuts(shortcuts TabViewShortcuts) {
 	var _arg0 *C.AdwTabView         // out
 	var _arg1 C.AdwTabViewShortcuts // out
@@ -2106,7 +2043,6 @@ func (self *TabView) SetShortcuts(shortcuts TabViewShortcuts) {
 //   - page of self.
 //   - otherView: tab view to transfer the page to.
 //   - position to insert the page at, starting at 0.
-//
 func (self *TabView) TransferPage(page *TabPage, otherView *TabView, position int) {
 	var _arg0 *C.AdwTabView // out
 	var _arg1 *C.AdwTabPage // out

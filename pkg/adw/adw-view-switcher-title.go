@@ -57,33 +57,33 @@ func defaultViewSwitcherTitleOverrides(v *ViewSwitcherTitle) ViewSwitcherTitleOv
 // viewswitchertitle:title-visible to automatically reveal the view switcher bar
 // when the title label is displayed in place of the view switcher, as follows:
 //
-//    <object class="AdwWindow">
-//      <property name="content">
-//        <object class="AdwToolbarView">
-//          <child type="top">
-//            <object class="AdwHeaderBar">
-//              <property name="centering-policy">strict</property>
-//              <property name="title-widget">
-//                <object class="AdwViewSwitcherTitle" id="title">
-//                  <property name="stack">stack</property>
-//                </object>
-//              </property>
-//            </object>
-//          </child>
-//          <property name="content">
-//            <object class="AdwViewStack" id="stack"/>
-//          </property>
-//          <child type="bottom">
-//            <object class="AdwViewSwitcherBar">
-//              <property name="stack">stack</property>
-//              <binding name="reveal">
-//                <lookup name="title-visible">title</lookup>
-//              </binding>
-//            </object>
-//          </child>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwWindow">
+//	  <property name="content">
+//	    <object class="AdwToolbarView">
+//	      <child type="top">
+//	        <object class="AdwHeaderBar">
+//	          <property name="centering-policy">strict</property>
+//	          <property name="title-widget">
+//	            <object class="AdwViewSwitcherTitle" id="title">
+//	              <property name="stack">stack</property>
+//	            </object>
+//	          </property>
+//	        </object>
+//	      </child>
+//	      <property name="content">
+//	        <object class="AdwViewStack" id="stack"/>
+//	      </property>
+//	      <child type="bottom">
+//	        <object class="AdwViewSwitcherBar">
+//	          <property name="stack">stack</property>
+//	          <binding name="reveal">
+//	            <lookup name="title-visible">title</lookup>
+//	          </binding>
+//	        </object>
+//	      </child>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // # CSS nodes
 //
@@ -148,7 +148,6 @@ func marshalViewSwitcherTitle(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - viewSwitcherTitle: newly created AdwViewSwitcherTitle.
-//
 func NewViewSwitcherTitle() *ViewSwitcherTitle {
 	var _cret *C.GtkWidget // in
 
@@ -169,7 +168,6 @@ func NewViewSwitcherTitle() *ViewSwitcherTitle {
 // The function returns the following values:
 //
 //   - viewStack (optional): stack.
-//
 func (self *ViewSwitcherTitle) Stack() *ViewStack {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _cret *C.AdwViewStack         // in
@@ -196,7 +194,6 @@ func (self *ViewSwitcherTitle) Stack() *ViewStack {
 // The function returns the following values:
 //
 //   - utf8: subtitle.
-//
 func (self *ViewSwitcherTitle) Subtitle() string {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _cret *C.char                 // in
@@ -221,7 +218,6 @@ func (self *ViewSwitcherTitle) Subtitle() string {
 // The function returns the following values:
 //
 //   - utf8: title.
-//
 func (self *ViewSwitcherTitle) Title() string {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _cret *C.char                 // in
@@ -249,7 +245,6 @@ func (self *ViewSwitcherTitle) Title() string {
 // The function returns the following values:
 //
 //   - ok: whether the title of self is currently visible.
-//
 func (self *ViewSwitcherTitle) TitleVisible() bool {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _cret C.gboolean              // in
@@ -276,7 +271,6 @@ func (self *ViewSwitcherTitle) TitleVisible() bool {
 // The function returns the following values:
 //
 //   - ok: whether the view switcher is enabled.
-//
 func (self *ViewSwitcherTitle) ViewSwitcherEnabled() bool {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _cret C.gboolean              // in
@@ -303,7 +297,6 @@ func (self *ViewSwitcherTitle) ViewSwitcherEnabled() bool {
 // The function takes the following parameters:
 //
 //   - stack (optional): stack.
-//
 func (self *ViewSwitcherTitle) SetStack(stack *ViewStack) {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _arg1 *C.AdwViewStack         // out
@@ -328,7 +321,6 @@ func (self *ViewSwitcherTitle) SetStack(stack *ViewStack) {
 // The function takes the following parameters:
 //
 //   - subtitle: subtitle.
-//
 func (self *ViewSwitcherTitle) SetSubtitle(subtitle string) {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _arg1 *C.char                 // out
@@ -353,7 +345,6 @@ func (self *ViewSwitcherTitle) SetSubtitle(subtitle string) {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *ViewSwitcherTitle) SetTitle(title string) {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _arg1 *C.char                 // out
@@ -382,7 +373,6 @@ func (self *ViewSwitcherTitle) SetTitle(title string) {
 // The function takes the following parameters:
 //
 //   - enabled: whether the view switcher is enabled.
-//
 func (self *ViewSwitcherTitle) SetViewSwitcherEnabled(enabled bool) {
 	var _arg0 *C.AdwViewSwitcherTitle // out
 	var _arg1 C.gboolean              // out

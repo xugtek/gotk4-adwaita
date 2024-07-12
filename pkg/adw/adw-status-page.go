@@ -105,7 +105,6 @@ func marshalStatusPage(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - statusPage: newly created AdwStatusPage.
-//
 func NewStatusPage() *StatusPage {
 	var _cret *C.GtkWidget // in
 
@@ -123,7 +122,6 @@ func NewStatusPage() *StatusPage {
 // The function returns the following values:
 //
 //   - widget (optional): child widget of self.
-//
 func (self *StatusPage) Child() gtk.Widgetter {
 	var _arg0 *C.AdwStatusPage // out
 	var _cret *C.GtkWidget     // in
@@ -160,7 +158,6 @@ func (self *StatusPage) Child() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - utf8 (optional): description.
-//
 func (self *StatusPage) Description() string {
 	var _arg0 *C.AdwStatusPage // out
 	var _cret *C.char          // in
@@ -184,7 +181,6 @@ func (self *StatusPage) Description() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): icon name.
-//
 func (self *StatusPage) IconName() string {
 	var _arg0 *C.AdwStatusPage // out
 	var _cret *C.char          // in
@@ -208,7 +204,6 @@ func (self *StatusPage) IconName() string {
 // The function returns the following values:
 //
 //   - paintable (optional): paintable.
-//
 func (self *StatusPage) Paintable() *gdk.Paintable {
 	var _arg0 *C.AdwStatusPage // out
 	var _cret *C.GdkPaintable  // in
@@ -237,7 +232,6 @@ func (self *StatusPage) Paintable() *gdk.Paintable {
 // The function returns the following values:
 //
 //   - utf8: title.
-//
 func (self *StatusPage) Title() string {
 	var _arg0 *C.AdwStatusPage // out
 	var _cret *C.char          // in
@@ -259,7 +253,6 @@ func (self *StatusPage) Title() string {
 // The function takes the following parameters:
 //
 //   - child (optional) widget.
-//
 func (self *StatusPage) SetChild(child gtk.Widgetter) {
 	var _arg0 *C.AdwStatusPage // out
 	var _arg1 *C.GtkWidget     // out
@@ -281,7 +274,6 @@ func (self *StatusPage) SetChild(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - description (optional): description.
-//
 func (self *StatusPage) SetDescription(description string) {
 	var _arg0 *C.AdwStatusPage // out
 	var _arg1 *C.char          // out
@@ -304,7 +296,6 @@ func (self *StatusPage) SetDescription(description string) {
 // The function takes the following parameters:
 //
 //   - iconName (optional): icon name.
-//
 func (self *StatusPage) SetIconName(iconName string) {
 	var _arg0 *C.AdwStatusPage // out
 	var _arg1 *C.char          // out
@@ -327,7 +318,6 @@ func (self *StatusPage) SetIconName(iconName string) {
 // The function takes the following parameters:
 //
 //   - paintable (optional): paintable.
-//
 func (self *StatusPage) SetPaintable(paintable gdk.Paintabler) {
 	var _arg0 *C.AdwStatusPage // out
 	var _arg1 *C.GdkPaintable  // out
@@ -349,7 +339,6 @@ func (self *StatusPage) SetPaintable(paintable gdk.Paintabler) {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *StatusPage) SetTitle(title string) {
 	var _arg0 *C.AdwStatusPage // out
 	var _arg1 *C.char          // out

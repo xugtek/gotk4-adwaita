@@ -113,16 +113,16 @@ func defaultToolbarViewOverrides(v *ToolbarView) ToolbarViewOverrides {
 //
 // Example of an AdwToolbarView UI definition:
 //
-//    <object class="AdwToolbarView">
-//      <child type="top">
-//        <object class="AdwHeaderBar"/>
-//      </child>
-//      <property name="content">
-//        <object class="AdwPreferencesPage">
-//          <!-- ... -->
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwToolbarView">
+//	  <child type="top">
+//	    <object class="AdwHeaderBar"/>
+//	  </child>
+//	  <property name="content">
+//	    <object class="AdwPreferencesPage">
+//	      <!-- ... -->
+//	    </object>
+//	  </property>
+//	</object>
 //
 // The following kinds of top and bottom bars are supported:
 //
@@ -145,8 +145,8 @@ func defaultToolbarViewOverrides(v *ToolbarView) ToolbarViewOverrides {
 //
 // By default, top and bottom bars are flat and scrolling content has
 // a subtle undershoot shadow, same as when using the .undershoot-top
-// (style-classes.html#undershot-indicators) and .undershoot-bottom
-// (style-classes.html#undershot-indicators) style classes. This works well in
+// (style-classes.html#undershoot-indicators) and .undershoot-bottom
+// (style-classes.html#undershoot-indicators) style classes. This works well in
 // most cases, e.g. with statuspage or preferencespage, where the background at
 // the top and bottom parts of the page is uniform. Additionally, windows with
 // sidebars should always use this style.
@@ -253,7 +253,6 @@ func marshalToolbarView(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - toolbarView: newly created AdwToolbarView.
-//
 func NewToolbarView() *ToolbarView {
 	var _cret *C.GtkWidget // in
 
@@ -271,7 +270,6 @@ func NewToolbarView() *ToolbarView {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *ToolbarView) AddBottomBar(widget gtk.Widgetter) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 *C.GtkWidget      // out
@@ -289,7 +287,6 @@ func (self *ToolbarView) AddBottomBar(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *ToolbarView) AddTopBar(widget gtk.Widgetter) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 *C.GtkWidget      // out
@@ -312,7 +309,6 @@ func (self *ToolbarView) AddTopBar(widget gtk.Widgetter) {
 // The function returns the following values:
 //
 //   - gint: current bottom bar height.
-//
 func (self *ToolbarView) BottomBarHeight() int {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret C.int             // in
@@ -334,7 +330,6 @@ func (self *ToolbarView) BottomBarHeight() int {
 // The function returns the following values:
 //
 //   - toolbarStyle: bottom bar style.
-//
 func (self *ToolbarView) BottomBarStyle() ToolbarStyle {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret C.AdwToolbarStyle // in
@@ -356,7 +351,6 @@ func (self *ToolbarView) BottomBarStyle() ToolbarStyle {
 // The function returns the following values:
 //
 //   - widget (optional): content widget.
-//
 func (self *ToolbarView) Content() gtk.Widgetter {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret *C.GtkWidget      // in
@@ -394,7 +388,6 @@ func (self *ToolbarView) Content() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - ok: whether content extends behind bottom bars.
-//
 func (self *ToolbarView) ExtendContentToBottomEdge() bool {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret C.gboolean        // in
@@ -419,7 +412,6 @@ func (self *ToolbarView) ExtendContentToBottomEdge() bool {
 // The function returns the following values:
 //
 //   - ok: whether content extends behind top bars.
-//
 func (self *ToolbarView) ExtendContentToTopEdge() bool {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret C.gboolean        // in
@@ -443,7 +435,6 @@ func (self *ToolbarView) ExtendContentToTopEdge() bool {
 // The function returns the following values:
 //
 //   - ok: whether bottom bars are revealed.
-//
 func (self *ToolbarView) RevealBottomBars() bool {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret C.gboolean        // in
@@ -467,7 +458,6 @@ func (self *ToolbarView) RevealBottomBars() bool {
 // The function returns the following values:
 //
 //   - ok: whether top bars are revealed.
-//
 func (self *ToolbarView) RevealTopBars() bool {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret C.gboolean        // in
@@ -496,7 +486,6 @@ func (self *ToolbarView) RevealTopBars() bool {
 // The function returns the following values:
 //
 //   - gint: current top bar height.
-//
 func (self *ToolbarView) TopBarHeight() int {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret C.int             // in
@@ -518,7 +507,6 @@ func (self *ToolbarView) TopBarHeight() int {
 // The function returns the following values:
 //
 //   - toolbarStyle: top bar style.
-//
 func (self *ToolbarView) TopBarStyle() ToolbarStyle {
 	var _arg0 *C.AdwToolbarView // out
 	var _cret C.AdwToolbarStyle // in
@@ -540,7 +528,6 @@ func (self *ToolbarView) TopBarStyle() ToolbarStyle {
 // The function takes the following parameters:
 //
 //   - widget: child to be removed.
-//
 func (self *ToolbarView) Remove(widget gtk.Widgetter) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 *C.GtkWidget      // out
@@ -557,7 +544,7 @@ func (self *ToolbarView) Remove(widget gtk.Widgetter) {
 //
 // If set to ADW_TOOLBAR_FLAT, bottom bars are flat and scrolling content has a
 // subtle undershoot shadow when touching them, same as the .undershoot-bottom
-// (style-classes.html#undershot-indicators) style class. This works well for
+// (style-classes.html#undershoot-indicators) style class. This works well for
 // simple content, e.g. statuspage or preferencespage, where the background at
 // the bottom of the page is uniform. Additionally, windows with sidebars should
 // always use this style.
@@ -581,7 +568,6 @@ func (self *ToolbarView) Remove(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - style: bottom bar style.
-//
 func (self *ToolbarView) SetBottomBarStyle(style ToolbarStyle) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 C.AdwToolbarStyle // out
@@ -599,7 +585,6 @@ func (self *ToolbarView) SetBottomBarStyle(style ToolbarStyle) {
 // The function takes the following parameters:
 //
 //   - content (optional) widget.
-//
 func (self *ToolbarView) SetContent(content gtk.Widgetter) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 *C.GtkWidget      // out
@@ -625,7 +610,6 @@ func (self *ToolbarView) SetContent(content gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - extend: whether content extends behind bottom bars.
-//
 func (self *ToolbarView) SetExtendContentToBottomEdge(extend bool) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 C.gboolean        // out
@@ -651,7 +635,6 @@ func (self *ToolbarView) SetExtendContentToBottomEdge(extend bool) {
 // The function takes the following parameters:
 //
 //   - extend: whether content extends behind top bars.
-//
 func (self *ToolbarView) SetExtendContentToTopEdge(extend bool) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 C.gboolean        // out
@@ -679,7 +662,6 @@ func (self *ToolbarView) SetExtendContentToTopEdge(extend bool) {
 // The function takes the following parameters:
 //
 //   - reveal: whether to reveal bottom bars.
-//
 func (self *ToolbarView) SetRevealBottomBars(reveal bool) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 C.gboolean        // out
@@ -706,7 +688,6 @@ func (self *ToolbarView) SetRevealBottomBars(reveal bool) {
 // The function takes the following parameters:
 //
 //   - reveal: whether to reveal top bars.
-//
 func (self *ToolbarView) SetRevealTopBars(reveal bool) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 C.gboolean        // out
@@ -725,7 +706,7 @@ func (self *ToolbarView) SetRevealTopBars(reveal bool) {
 //
 // If set to ADW_TOOLBAR_FLAT, top bars are flat and scrolling content has a
 // subtle undershoot shadow when touching them, same as the .undershoot-top
-// (style-classes.html#undershot-indicators) style class. This works well for
+// (style-classes.html#undershoot-indicators) style class. This works well for
 // simple content, e.g. statuspage or preferencespage, where the background at
 // the top of the page is uniform. Additionally, windows with sidebars should
 // always use this style.
@@ -749,7 +730,6 @@ func (self *ToolbarView) SetRevealTopBars(reveal bool) {
 // The function takes the following parameters:
 //
 //   - style: top bar style.
-//
 func (self *ToolbarView) SetTopBarStyle(style ToolbarStyle) {
 	var _arg0 *C.AdwToolbarView // out
 	var _arg1 C.AdwToolbarStyle // out

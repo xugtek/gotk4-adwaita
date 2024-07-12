@@ -15,8 +15,8 @@ import (
 // #include <stdlib.h>
 // #include <adwaita.h>
 // #include <glib-object.h>
-// extern gboolean _gotk4_adw1_TabBar_ConnectExtraDragDrop(gpointer, AdwTabPage*, GValue, guintptr);
-// extern GdkDragAction _gotk4_adw1_TabBar_ConnectExtraDragValue(gpointer, AdwTabPage*, GValue, guintptr);
+// extern gboolean _gotk4_adw1_TabBar_ConnectExtraDragDrop(gpointer, AdwTabPage*, GValue*, guintptr);
+// extern GdkDragAction _gotk4_adw1_TabBar_ConnectExtraDragValue(gpointer, AdwTabPage*, GValue*, guintptr);
 import "C"
 
 // GType values.
@@ -112,7 +112,7 @@ func marshalTabBar(p uintptr) (interface{}, error) {
 // tabbar.SetupExtraDropTarget.
 //
 // See gtk.DropTarget::drop.
-func (self *TabBar) ConnectExtraDragDrop(f func(page *TabPage, value coreglib.Value) (ok bool)) coreglib.SignalHandle {
+func (self *TabBar) ConnectExtraDragDrop(f func(page *TabPage, value *coreglib.Value) (ok bool)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "extra-drag-drop", false, unsafe.Pointer(C._gotk4_adw1_TabBar_ConnectExtraDragDrop), f)
 }
 
@@ -126,7 +126,7 @@ func (self *TabBar) ConnectExtraDragDrop(f func(page *TabPage, value coreglib.Va
 // tabbar.SetupExtraDropTarget.
 //
 // See gtk.DropTarget:value.
-func (self *TabBar) ConnectExtraDragValue(f func(page *TabPage, value coreglib.Value) (dragAction gdk.DragAction)) coreglib.SignalHandle {
+func (self *TabBar) ConnectExtraDragValue(f func(page *TabPage, value *coreglib.Value) (dragAction gdk.DragAction)) coreglib.SignalHandle {
 	return coreglib.ConnectGeneratedClosure(self, "extra-drag-value", false, unsafe.Pointer(C._gotk4_adw1_TabBar_ConnectExtraDragValue), f)
 }
 
@@ -135,7 +135,6 @@ func (self *TabBar) ConnectExtraDragValue(f func(page *TabPage, value coreglib.V
 // The function returns the following values:
 //
 //   - tabBar: newly created AdwTabBar.
-//
 func NewTabBar() *TabBar {
 	var _cret *C.AdwTabBar // in
 
@@ -153,7 +152,6 @@ func NewTabBar() *TabBar {
 // The function returns the following values:
 //
 //   - ok: whether the tabs automatically hide.
-//
 func (self *TabBar) Autohide() bool {
 	var _arg0 *C.AdwTabBar // out
 	var _cret C.gboolean   // in
@@ -177,7 +175,6 @@ func (self *TabBar) Autohide() bool {
 // The function returns the following values:
 //
 //   - widget (optional) shown after the tabs.
-//
 func (self *TabBar) EndActionWidget() gtk.Widgetter {
 	var _arg0 *C.AdwTabBar // out
 	var _cret *C.GtkWidget // in
@@ -214,7 +211,6 @@ func (self *TabBar) EndActionWidget() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - ok: whether tabs expand to full width.
-//
 func (self *TabBar) ExpandTabs() bool {
 	var _arg0 *C.AdwTabBar // out
 	var _cret C.gboolean   // in
@@ -239,7 +235,6 @@ func (self *TabBar) ExpandTabs() bool {
 // The function returns the following values:
 //
 //   - dragAction: drag action of the current drop.
-//
 func (self *TabBar) ExtraDragPreferredAction() gdk.DragAction {
 	var _arg0 *C.AdwTabBar    // out
 	var _cret C.GdkDragAction // in
@@ -261,7 +256,6 @@ func (self *TabBar) ExtraDragPreferredAction() gdk.DragAction {
 // The function returns the following values:
 //
 //   - ok: whether drop data should be preloaded on hover.
-//
 func (self *TabBar) ExtraDragPreload() bool {
 	var _arg0 *C.AdwTabBar // out
 	var _cret C.gboolean   // in
@@ -285,7 +279,6 @@ func (self *TabBar) ExtraDragPreload() bool {
 // The function returns the following values:
 //
 //   - ok: whether tabs use inverted layout.
-//
 func (self *TabBar) Inverted() bool {
 	var _arg0 *C.AdwTabBar // out
 	var _cret C.gboolean   // in
@@ -311,7 +304,6 @@ func (self *TabBar) Inverted() bool {
 // The function returns the following values:
 //
 //   - ok: whether self is overflowing.
-//
 func (self *TabBar) IsOverflowing() bool {
 	var _arg0 *C.AdwTabBar // out
 	var _cret C.gboolean   // in
@@ -335,7 +327,6 @@ func (self *TabBar) IsOverflowing() bool {
 // The function returns the following values:
 //
 //   - widget (optional) shown before the tabs.
-//
 func (self *TabBar) StartActionWidget() gtk.Widgetter {
 	var _arg0 *C.AdwTabBar // out
 	var _cret *C.GtkWidget // in
@@ -374,7 +365,6 @@ func (self *TabBar) StartActionWidget() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - ok: whether the tabs are currently revealed.
-//
 func (self *TabBar) TabsRevealed() bool {
 	var _arg0 *C.AdwTabBar // out
 	var _cret C.gboolean   // in
@@ -398,7 +388,6 @@ func (self *TabBar) TabsRevealed() bool {
 // The function returns the following values:
 //
 //   - tabView (optional): view self controls.
-//
 func (self *TabBar) View() *TabView {
 	var _arg0 *C.AdwTabBar  // out
 	var _cret *C.AdwTabView // in
@@ -427,7 +416,6 @@ func (self *TabBar) View() *TabView {
 // The function takes the following parameters:
 //
 //   - autohide: whether the tabs automatically hide.
-//
 func (self *TabBar) SetAutohide(autohide bool) {
 	var _arg0 *C.AdwTabBar // out
 	var _arg1 C.gboolean   // out
@@ -447,7 +435,6 @@ func (self *TabBar) SetAutohide(autohide bool) {
 // The function takes the following parameters:
 //
 //   - widget (optional) to show after the tabs.
-//
 func (self *TabBar) SetEndActionWidget(widget gtk.Widgetter) {
 	var _arg0 *C.AdwTabBar // out
 	var _arg1 *C.GtkWidget // out
@@ -470,7 +457,6 @@ func (self *TabBar) SetEndActionWidget(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - expandTabs: whether to expand tabs.
-//
 func (self *TabBar) SetExpandTabs(expandTabs bool) {
 	var _arg0 *C.AdwTabBar // out
 	var _arg1 C.gboolean   // out
@@ -492,7 +478,6 @@ func (self *TabBar) SetExpandTabs(expandTabs bool) {
 // The function takes the following parameters:
 //
 //   - preload: whether to preload drop data.
-//
 func (self *TabBar) SetExtraDragPreload(preload bool) {
 	var _arg0 *C.AdwTabBar // out
 	var _arg1 C.gboolean   // out
@@ -515,7 +500,6 @@ func (self *TabBar) SetExtraDragPreload(preload bool) {
 // The function takes the following parameters:
 //
 //   - inverted: whether tabs use inverted layout.
-//
 func (self *TabBar) SetInverted(inverted bool) {
 	var _arg0 *C.AdwTabBar // out
 	var _arg1 C.gboolean   // out
@@ -535,7 +519,6 @@ func (self *TabBar) SetInverted(inverted bool) {
 // The function takes the following parameters:
 //
 //   - widget (optional) to show before the tabs.
-//
 func (self *TabBar) SetStartActionWidget(widget gtk.Widgetter) {
 	var _arg0 *C.AdwTabBar // out
 	var _arg1 *C.GtkWidget // out
@@ -555,7 +538,6 @@ func (self *TabBar) SetStartActionWidget(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - view (optional): tab view.
-//
 func (self *TabBar) SetView(view *TabView) {
 	var _arg0 *C.AdwTabBar  // out
 	var _arg1 *C.AdwTabView // out
@@ -586,7 +568,6 @@ func (self *TabBar) SetView(view *TabView) {
 //
 //   - actions: supported actions.
 //   - types (optional): all supported GTypes that can be dropped.
-//
 func (self *TabBar) SetupExtraDropTarget(actions gdk.DragAction, types []coreglib.Type) {
 	var _arg0 *C.AdwTabBar    // out
 	var _arg1 C.GdkDragAction // out

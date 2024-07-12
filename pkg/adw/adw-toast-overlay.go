@@ -49,14 +49,14 @@ func defaultToastOverlayOverrides(v *ToastOverlay) ToastOverlayOverrides {
 //
 // CSS nodes
 //
-//    toastoverlay
-//    ├── [child]
-//    ├── toast
-//    ┊   ├── widget
-//    ┊   │   ├── [label.heading]
-//        │   ╰── [custom title]
-//        ├── [button]
-//        ╰── button.circular.flat
+//	toastoverlay
+//	├── [child]
+//	├── toast
+//	┊   ├── widget
+//	┊   │   ├── [label.heading]
+//	    │   ╰── [custom title]
+//	    ├── [button]
+//	    ╰── button.circular.flat
 //
 // AdwToastOverlay's CSS node is called toastoverlay. It contains the child,
 // as well as zero or more toast subnodes.
@@ -124,7 +124,6 @@ func marshalToastOverlay(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - toastOverlay: new created AdwToastOverlay.
-//
 func NewToastOverlay() *ToastOverlay {
 	var _cret *C.GtkWidget // in
 
@@ -151,7 +150,6 @@ func NewToastOverlay() *ToastOverlay {
 // The function takes the following parameters:
 //
 //   - toast: toast.
-//
 func (self *ToastOverlay) AddToast(toast *Toast) {
 	var _arg0 *C.AdwToastOverlay // out
 	var _arg1 *C.AdwToast        // out
@@ -170,7 +168,6 @@ func (self *ToastOverlay) AddToast(toast *Toast) {
 // The function returns the following values:
 //
 //   - widget (optional): child widget of self.
-//
 func (self *ToastOverlay) Child() gtk.Widgetter {
 	var _arg0 *C.AdwToastOverlay // out
 	var _cret *C.GtkWidget       // in
@@ -207,7 +204,6 @@ func (self *ToastOverlay) Child() gtk.Widgetter {
 // The function takes the following parameters:
 //
 //   - child (optional) widget.
-//
 func (self *ToastOverlay) SetChild(child gtk.Widgetter) {
 	var _arg0 *C.AdwToastOverlay // out
 	var _arg1 *C.GtkWidget       // out

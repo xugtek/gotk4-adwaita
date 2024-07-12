@@ -58,38 +58,38 @@ func defaultNavigationSplitViewOverrides(v *NavigationSplitView) NavigationSplit
 // AdwNavigationSplitView is typically used together with an breakpoint setting
 // the collapsed property to TRUE on small widths, as follows:
 //
-//    <object class="AdwWindow">
-//      <property name="width-request">280</property>
-//      <property name="height-request">200</property>
-//      <property name="default-width">800</property>
-//      <property name="default-height">800</property>
-//      <child>
-//        <object class="AdwBreakpoint">
-//          <condition>max-width: 400sp</condition>
-//          <setter object="split_view" property="collapsed">True</setter>
-//        </object>
-//      </child>
-//      <property name="content">
-//        <object class="AdwNavigationSplitView" id="split_view">
-//          <property name="sidebar">
-//            <object class="AdwNavigationPage">
-//              <property name="title" translatable="yes">Sidebar</property>
-//              <property name="child">
-//                <!-- ... -->
-//              </property>
-//            </object>
-//          </property>
-//          <property name="content">
-//            <object class="AdwNavigationPage">
-//              <property name="title" translatable="yes">Content</property>
-//              <property name="child">
-//                <!-- ... -->
-//              </property>
-//            </object>
-//          </property>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwWindow">
+//	  <property name="width-request">280</property>
+//	  <property name="height-request">200</property>
+//	  <property name="default-width">800</property>
+//	  <property name="default-height">800</property>
+//	  <child>
+//	    <object class="AdwBreakpoint">
+//	      <condition>max-width: 400sp</condition>
+//	      <setter object="split_view" property="collapsed">True</setter>
+//	    </object>
+//	  </child>
+//	  <property name="content">
+//	    <object class="AdwNavigationSplitView" id="split_view">
+//	      <property name="sidebar">
+//	        <object class="AdwNavigationPage">
+//	          <property name="title" translatable="yes">Sidebar</property>
+//	          <property name="child">
+//	            <!-- ... -->
+//	          </property>
+//	        </object>
+//	      </property>
+//	      <property name="content">
+//	        <object class="AdwNavigationPage">
+//	          <property name="title" translatable="yes">Content</property>
+//	          <property name="child">
+//	            <!-- ... -->
+//	          </property>
+//	        </object>
+//	      </property>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // # Sizing
 //
@@ -144,20 +144,20 @@ func defaultNavigationSplitViewOverrides(v *NavigationSplitView) NavigationSplit
 // When collapsed, it contains a child node with the name navigation-view
 // containing both children.
 //
-//    navigation-split-view
-//    ╰── navigation-view
-//        ├── [sidebar child]
-//        ╰── [content child]
+//	navigation-split-view
+//	╰── navigation-view
+//	    ├── [sidebar child]
+//	    ╰── [content child]
 //
 // When not collapsed, it contains two nodes with the name widget, one with
 // the .sidebar-pane style class, the other one with .content-view style class,
 // containing the sidebar and content children respectively.
 //
-//    navigation-split-view
-//    ├── widget.sidebar-pane
-//    │   ╰── [sidebar child]
-//    ╰── widget.content-pane
-//        ╰── [content child]
+//	navigation-split-view
+//	├── widget.sidebar-pane
+//	│   ╰── [sidebar child]
+//	╰── widget.content-pane
+//	    ╰── [content child]
 //
 // # Accessibility
 //
@@ -216,7 +216,6 @@ func marshalNavigationSplitView(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - navigationSplitView: newly created AdwNavigationSplitView.
-//
 func NewNavigationSplitView() *NavigationSplitView {
 	var _cret *C.GtkWidget // in
 
@@ -234,7 +233,6 @@ func NewNavigationSplitView() *NavigationSplitView {
 // The function returns the following values:
 //
 //   - ok: whether self is collapsed.
-//
 func (self *NavigationSplitView) Collapsed() bool {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _cret C.gboolean                // in
@@ -258,7 +256,6 @@ func (self *NavigationSplitView) Collapsed() bool {
 // The function returns the following values:
 //
 //   - navigationPage (optional): content widget.
-//
 func (self *NavigationSplitView) Content() *NavigationPage {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _cret *C.AdwNavigationPage      // in
@@ -282,7 +279,6 @@ func (self *NavigationSplitView) Content() *NavigationPage {
 // The function returns the following values:
 //
 //   - gdouble: maximum width.
-//
 func (self *NavigationSplitView) MaxSidebarWidth() float64 {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _cret C.double                  // in
@@ -304,7 +300,6 @@ func (self *NavigationSplitView) MaxSidebarWidth() float64 {
 // The function returns the following values:
 //
 //   - gdouble: minimum width.
-//
 func (self *NavigationSplitView) MinSidebarWidth() float64 {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _cret C.double                  // in
@@ -326,7 +321,6 @@ func (self *NavigationSplitView) MinSidebarWidth() float64 {
 // The function returns the following values:
 //
 //   - ok: whether to show content when collapsed.
-//
 func (self *NavigationSplitView) ShowContent() bool {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _cret C.gboolean                // in
@@ -350,7 +344,6 @@ func (self *NavigationSplitView) ShowContent() bool {
 // The function returns the following values:
 //
 //   - navigationPage (optional): sidebar widget.
-//
 func (self *NavigationSplitView) Sidebar() *NavigationPage {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _cret *C.AdwNavigationPage      // in
@@ -374,7 +367,6 @@ func (self *NavigationSplitView) Sidebar() *NavigationPage {
 // The function returns the following values:
 //
 //   - gdouble: preferred width fraction.
-//
 func (self *NavigationSplitView) SidebarWidthFraction() float64 {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _cret C.double                  // in
@@ -396,7 +388,6 @@ func (self *NavigationSplitView) SidebarWidthFraction() float64 {
 // The function returns the following values:
 //
 //   - lengthUnit: length unit.
-//
 func (self *NavigationSplitView) SidebarWidthUnit() LengthUnit {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _cret C.AdwLengthUnit           // in
@@ -424,7 +415,6 @@ func (self *NavigationSplitView) SidebarWidthUnit() LengthUnit {
 // The function takes the following parameters:
 //
 //   - collapsed: whether self is collapsed.
-//
 func (self *NavigationSplitView) SetCollapsed(collapsed bool) {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _arg1 C.gboolean                // out
@@ -444,7 +434,6 @@ func (self *NavigationSplitView) SetCollapsed(collapsed bool) {
 // The function takes the following parameters:
 //
 //   - content (optional) widget.
-//
 func (self *NavigationSplitView) SetContent(content *NavigationPage) {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _arg1 *C.AdwNavigationPage      // out
@@ -469,7 +458,6 @@ func (self *NavigationSplitView) SetContent(content *NavigationPage) {
 // The function takes the following parameters:
 //
 //   - width: maximum width.
-//
 func (self *NavigationSplitView) SetMaxSidebarWidth(width float64) {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _arg1 C.double                  // out
@@ -492,7 +480,6 @@ func (self *NavigationSplitView) SetMaxSidebarWidth(width float64) {
 // The function takes the following parameters:
 //
 //   - width: minimum width.
-//
 func (self *NavigationSplitView) SetMinSidebarWidth(width float64) {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _arg1 C.double                  // out
@@ -516,7 +503,6 @@ func (self *NavigationSplitView) SetMinSidebarWidth(width float64) {
 // The function takes the following parameters:
 //
 //   - showContent: whether to show content when collapsed.
-//
 func (self *NavigationSplitView) SetShowContent(showContent bool) {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _arg1 C.gboolean                // out
@@ -536,7 +522,6 @@ func (self *NavigationSplitView) SetShowContent(showContent bool) {
 // The function takes the following parameters:
 //
 //   - sidebar (optional) widget.
-//
 func (self *NavigationSplitView) SetSidebar(sidebar *NavigationPage) {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _arg1 *C.AdwNavigationPage      // out
@@ -564,7 +549,6 @@ func (self *NavigationSplitView) SetSidebar(sidebar *NavigationPage) {
 // The function takes the following parameters:
 //
 //   - fraction: preferred width fraction.
-//
 func (self *NavigationSplitView) SetSidebarWidthFraction(fraction float64) {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _arg1 C.double                  // out
@@ -586,7 +570,6 @@ func (self *NavigationSplitView) SetSidebarWidthFraction(fraction float64) {
 // The function takes the following parameters:
 //
 //   - unit: length unit.
-//
 func (self *NavigationSplitView) SetSidebarWidthUnit(unit LengthUnit) {
 	var _arg0 *C.AdwNavigationSplitView // out
 	var _arg1 C.AdwLengthUnit           // out

@@ -149,7 +149,6 @@ func marshalPasswordEntryRow(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - passwordEntryRow: newly created AdwPasswordEntryRow.
-//
 func NewPasswordEntryRow() *PasswordEntryRow {
 	var _cret *C.GtkWidget // in
 

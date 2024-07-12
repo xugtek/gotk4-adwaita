@@ -113,7 +113,6 @@ func marshalCarouselIndicatorLines(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - carouselIndicatorLines: newly created AdwCarouselIndicatorLines.
-//
 func NewCarouselIndicatorLines() *CarouselIndicatorLines {
 	var _cret *C.GtkWidget // in
 
@@ -131,7 +130,6 @@ func NewCarouselIndicatorLines() *CarouselIndicatorLines {
 // The function returns the following values:
 //
 //   - carousel (optional): displayed carousel.
-//
 func (self *CarouselIndicatorLines) Carousel() *Carousel {
 	var _arg0 *C.AdwCarouselIndicatorLines // out
 	var _cret *C.AdwCarousel               // in
@@ -155,7 +153,6 @@ func (self *CarouselIndicatorLines) Carousel() *Carousel {
 // The function takes the following parameters:
 //
 //   - carousel (optional): carousel.
-//
 func (self *CarouselIndicatorLines) SetCarousel(carousel *Carousel) {
 	var _arg0 *C.AdwCarouselIndicatorLines // out
 	var _arg1 *C.AdwCarousel               // out

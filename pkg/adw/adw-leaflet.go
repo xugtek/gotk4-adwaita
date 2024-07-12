@@ -194,7 +194,6 @@ func marshalLeaflet(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - leaflet: new created AdwLeaflet.
-//
 func NewLeaflet() *Leaflet {
 	var _cret *C.GtkWidget // in
 
@@ -219,7 +218,6 @@ func NewLeaflet() *Leaflet {
 // The function returns the following values:
 //
 //   - leafletPage: leafletpage for child.
-//
 func (self *Leaflet) Append(child gtk.Widgetter) *LeafletPage {
 	var _arg0 *C.AdwLeaflet     // out
 	var _arg1 *C.GtkWidget      // out
@@ -258,7 +256,6 @@ func (self *Leaflet) Append(child gtk.Widgetter) *LeafletPage {
 // The function returns the following values:
 //
 //   - widget (optional) previous or next child.
-//
 func (self *Leaflet) AdjacentChild(direction NavigationDirection) gtk.Widgetter {
 	var _arg0 *C.AdwLeaflet            // out
 	var _arg1 C.AdwNavigationDirection // out
@@ -302,7 +299,6 @@ func (self *Leaflet) AdjacentChild(direction NavigationDirection) gtk.Widgetter 
 // The function returns the following values:
 //
 //   - ok: whether gestures and shortcuts are enabled.
-//
 func (self *Leaflet) CanNavigateBack() bool {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret C.gboolean    // in
@@ -330,7 +326,6 @@ func (self *Leaflet) CanNavigateBack() bool {
 // The function returns the following values:
 //
 //   - ok: whether gestures and shortcuts are enabled.
-//
 func (self *Leaflet) CanNavigateForward() bool {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret C.gboolean    // in
@@ -357,7 +352,6 @@ func (self *Leaflet) CanNavigateForward() bool {
 // The function returns the following values:
 //
 //   - ok: whether self can unfold.
-//
 func (self *Leaflet) CanUnfold() bool {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret C.gboolean    // in
@@ -392,7 +386,6 @@ func (self *Leaflet) CanUnfold() bool {
 // The function returns the following values:
 //
 //   - widget (optional): requested child of self.
-//
 func (self *Leaflet) ChildByName(name string) gtk.Widgetter {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 *C.char       // out
@@ -436,7 +429,6 @@ func (self *Leaflet) ChildByName(name string) gtk.Widgetter {
 // The function returns the following values:
 //
 //   - springParams: child transition parameters.
-//
 func (self *Leaflet) ChildTransitionParams() *SpringParams {
 	var _arg0 *C.AdwLeaflet      // out
 	var _cret *C.AdwSpringParams // in
@@ -468,7 +460,6 @@ func (self *Leaflet) ChildTransitionParams() *SpringParams {
 // The function returns the following values:
 //
 //   - ok: whether a transition is currently running.
-//
 func (self *Leaflet) ChildTransitionRunning() bool {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret C.gboolean    // in
@@ -494,6 +485,7 @@ func (self *Leaflet) ChildTransitionRunning() bool {
 //
 // The function returns the following values:
 //
+//   - foldThresholdPolicy: fold threshold policy.
 func (self *Leaflet) FoldThresholdPolicy() FoldThresholdPolicy {
 	var _arg0 *C.AdwLeaflet            // out
 	var _cret C.AdwFoldThresholdPolicy // in
@@ -522,7 +514,6 @@ func (self *Leaflet) FoldThresholdPolicy() FoldThresholdPolicy {
 // The function returns the following values:
 //
 //   - ok: whether self is folded.
-//
 func (self *Leaflet) Folded() bool {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret C.gboolean    // in
@@ -549,7 +540,6 @@ func (self *Leaflet) Folded() bool {
 // The function returns the following values:
 //
 //   - ok: whether self is homogeneous.
-//
 func (self *Leaflet) Homogeneous() bool {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret C.gboolean    // in
@@ -576,7 +566,6 @@ func (self *Leaflet) Homogeneous() bool {
 // The function returns the following values:
 //
 //   - guint: mode transition duration, in milliseconds.
-//
 func (self *Leaflet) ModeTransitionDuration() uint {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret C.guint       // in
@@ -605,7 +594,6 @@ func (self *Leaflet) ModeTransitionDuration() uint {
 // The function returns the following values:
 //
 //   - leafletPage: page object for child.
-//
 func (self *Leaflet) Page(child gtk.Widgetter) *LeafletPage {
 	var _arg0 *C.AdwLeaflet     // out
 	var _arg1 *C.GtkWidget      // out
@@ -636,7 +624,6 @@ func (self *Leaflet) Page(child gtk.Widgetter) *LeafletPage {
 // The function returns the following values:
 //
 //   - selectionModel: GtkSelectionModel for the leaflet's children.
-//
 func (self *Leaflet) Pages() *gtk.SelectionModel {
 	var _arg0 *C.AdwLeaflet        // out
 	var _cret *C.GtkSelectionModel // in
@@ -669,7 +656,6 @@ func (self *Leaflet) Pages() *gtk.SelectionModel {
 // The function returns the following values:
 //
 //   - leafletTransitionType: current transition type of self.
-//
 func (self *Leaflet) TransitionType() LeafletTransitionType {
 	var _arg0 *C.AdwLeaflet              // out
 	var _cret C.AdwLeafletTransitionType // in
@@ -694,7 +680,6 @@ func (self *Leaflet) TransitionType() LeafletTransitionType {
 // The function returns the following values:
 //
 //   - widget (optional): visible child.
-//
 func (self *Leaflet) VisibleChild() gtk.Widgetter {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret *C.GtkWidget  // in
@@ -734,7 +719,6 @@ func (self *Leaflet) VisibleChild() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - utf8 (optional): name of the visible child.
-//
 func (self *Leaflet) VisibleChildName() string {
 	var _arg0 *C.AdwLeaflet // out
 	var _cret *C.char       // in
@@ -769,7 +753,6 @@ func (self *Leaflet) VisibleChildName() string {
 // The function returns the following values:
 //
 //   - leafletPage: leafletpage for child.
-//
 func (self *Leaflet) InsertChildAfter(child, sibling gtk.Widgetter) *LeafletPage {
 	var _arg0 *C.AdwLeaflet     // out
 	var _arg1 *C.GtkWidget      // out
@@ -812,7 +795,6 @@ func (self *Leaflet) InsertChildAfter(child, sibling gtk.Widgetter) *LeafletPage
 // The function returns the following values:
 //
 //   - ok: whether the visible child was changed.
-//
 func (self *Leaflet) Navigate(direction NavigationDirection) bool {
 	var _arg0 *C.AdwLeaflet            // out
 	var _arg1 C.AdwNavigationDirection // out
@@ -846,7 +828,6 @@ func (self *Leaflet) Navigate(direction NavigationDirection) bool {
 // The function returns the following values:
 //
 //   - leafletPage: leafletpage for child.
-//
 func (self *Leaflet) Prepend(child gtk.Widgetter) *LeafletPage {
 	var _arg0 *C.AdwLeaflet     // out
 	var _arg1 *C.GtkWidget      // out
@@ -874,7 +855,6 @@ func (self *Leaflet) Prepend(child gtk.Widgetter) *LeafletPage {
 // The function takes the following parameters:
 //
 //   - child to remove.
-//
 func (self *Leaflet) Remove(child gtk.Widgetter) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 *C.GtkWidget  // out
@@ -899,7 +879,6 @@ func (self *Leaflet) Remove(child gtk.Widgetter) {
 //
 //   - child: widget to move, must be a child of self.
 //   - sibling (optional) to move child after.
-//
 func (self *Leaflet) ReorderChildAfter(child, sibling gtk.Widgetter) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 *C.GtkWidget  // out
@@ -944,7 +923,6 @@ func (self *Leaflet) ReorderChildAfter(child, sibling gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - canNavigateBack: new value.
-//
 func (self *Leaflet) SetCanNavigateBack(canNavigateBack bool) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 C.gboolean    // out
@@ -986,7 +964,6 @@ func (self *Leaflet) SetCanNavigateBack(canNavigateBack bool) {
 // The function takes the following parameters:
 //
 //   - canNavigateForward: new value.
-//
 func (self *Leaflet) SetCanNavigateForward(canNavigateForward bool) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 C.gboolean    // out
@@ -1009,7 +986,6 @@ func (self *Leaflet) SetCanNavigateForward(canNavigateForward bool) {
 // The function takes the following parameters:
 //
 //   - canUnfold: whether self can unfold.
-//
 func (self *Leaflet) SetCanUnfold(canUnfold bool) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 C.gboolean    // out
@@ -1029,7 +1005,7 @@ func (self *Leaflet) SetCanUnfold(canUnfold bool) {
 //
 // The default value is equivalent to:
 //
-//    adw_spring_params_new (1, 0.5, 500)
+//	adw_spring_params_new (1, 0.5, 500)
 //
 // Deprecated: See the migration guide
 // (migrating-to-breakpoints.html#replace-adwleaflet).
@@ -1037,7 +1013,6 @@ func (self *Leaflet) SetCanUnfold(canUnfold bool) {
 // The function takes the following parameters:
 //
 //   - params: new parameters.
-//
 func (self *Leaflet) SetChildTransitionParams(params *SpringParams) {
 	var _arg0 *C.AdwLeaflet      // out
 	var _arg1 *C.AdwSpringParams // out
@@ -1065,7 +1040,6 @@ func (self *Leaflet) SetChildTransitionParams(params *SpringParams) {
 // The function takes the following parameters:
 //
 //   - policy to use.
-//
 func (self *Leaflet) SetFoldThresholdPolicy(policy FoldThresholdPolicy) {
 	var _arg0 *C.AdwLeaflet            // out
 	var _arg1 C.AdwFoldThresholdPolicy // out
@@ -1089,7 +1063,6 @@ func (self *Leaflet) SetFoldThresholdPolicy(policy FoldThresholdPolicy) {
 // The function takes the following parameters:
 //
 //   - homogeneous: whether to make self homogeneous.
-//
 func (self *Leaflet) SetHomogeneous(homogeneous bool) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 C.gboolean    // out
@@ -1113,7 +1086,6 @@ func (self *Leaflet) SetHomogeneous(homogeneous bool) {
 // The function takes the following parameters:
 //
 //   - duration: new duration, in milliseconds.
-//
 func (self *Leaflet) SetModeTransitionDuration(duration uint) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 C.guint       // out
@@ -1139,7 +1111,6 @@ func (self *Leaflet) SetModeTransitionDuration(duration uint) {
 // The function takes the following parameters:
 //
 //   - transition: new transition type.
-//
 func (self *Leaflet) SetTransitionType(transition LeafletTransitionType) {
 	var _arg0 *C.AdwLeaflet              // out
 	var _arg1 C.AdwLeafletTransitionType // out
@@ -1164,7 +1135,6 @@ func (self *Leaflet) SetTransitionType(transition LeafletTransitionType) {
 // The function takes the following parameters:
 //
 //   - visibleChild: new child.
-//
 func (self *Leaflet) SetVisibleChild(visibleChild gtk.Widgetter) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 *C.GtkWidget  // out
@@ -1187,7 +1157,6 @@ func (self *Leaflet) SetVisibleChild(visibleChild gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - name of a child.
-//
 func (self *Leaflet) SetVisibleChildName(name string) {
 	var _arg0 *C.AdwLeaflet // out
 	var _arg1 *C.char       // out
@@ -1256,7 +1225,6 @@ func marshalLeafletPage(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - widget: child to which self belongs.
-//
 func (self *LeafletPage) Child() gtk.Widgetter {
 	var _arg0 *C.AdwLeafletPage // out
 	var _cret *C.GtkWidget      // in
@@ -1297,7 +1265,6 @@ func (self *LeafletPage) Child() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - utf8 (optional): name of self.
-//
 func (self *LeafletPage) Name() string {
 	var _arg0 *C.AdwLeafletPage // out
 	var _cret *C.char           // in
@@ -1324,7 +1291,6 @@ func (self *LeafletPage) Name() string {
 // The function returns the following values:
 //
 //   - ok: whether self can be navigated to when folded.
-//
 func (self *LeafletPage) Navigatable() bool {
 	var _arg0 *C.AdwLeafletPage // out
 	var _cret C.gboolean        // in
@@ -1351,7 +1317,6 @@ func (self *LeafletPage) Navigatable() bool {
 // The function takes the following parameters:
 //
 //   - name (optional): new value to set.
-//
 func (self *LeafletPage) SetName(name string) {
 	var _arg0 *C.AdwLeafletPage // out
 	var _arg1 *C.char           // out
@@ -1380,7 +1345,6 @@ func (self *LeafletPage) SetName(name string) {
 // The function takes the following parameters:
 //
 //   - navigatable: whether self can be navigated to when folded.
-//
 func (self *LeafletPage) SetNavigatable(navigatable bool) {
 	var _arg0 *C.AdwLeafletPage // out
 	var _arg1 C.gboolean        // out

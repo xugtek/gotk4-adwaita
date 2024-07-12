@@ -127,7 +127,6 @@ func (self *SwipeTracker) ConnectUpdateSwipe(f func(progress float64)) coreglib.
 // The function returns the following values:
 //
 //   - swipeTracker: newly created AdwSwipeTracker.
-//
 func NewSwipeTracker(swipeable Swipeabler) *SwipeTracker {
 	var _arg1 *C.AdwSwipeable    // out
 	var _cret *C.AdwSwipeTracker // in
@@ -150,7 +149,6 @@ func NewSwipeTracker(swipeable Swipeabler) *SwipeTracker {
 // The function returns the following values:
 //
 //   - ok: whether long swipes are allowed.
-//
 func (self *SwipeTracker) AllowLongSwipes() bool {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _cret C.gboolean         // in
@@ -174,7 +172,6 @@ func (self *SwipeTracker) AllowLongSwipes() bool {
 // The function returns the following values:
 //
 //   - ok: whether mouse dragging is allowed.
-//
 func (self *SwipeTracker) AllowMouseDrag() bool {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _cret C.gboolean         // in
@@ -193,12 +190,35 @@ func (self *SwipeTracker) AllowMouseDrag() bool {
 	return _ok
 }
 
+// AllowWindowHandle gets whether to allow touchscreen swiping from
+// GtkWindowHandle.
+//
+// The function returns the following values:
+//
+//   - ok: whether swiping from window handles is allowed.
+func (self *SwipeTracker) AllowWindowHandle() bool {
+	var _arg0 *C.AdwSwipeTracker // out
+	var _cret C.gboolean         // in
+
+	_arg0 = (*C.AdwSwipeTracker)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+
+	_cret = C.adw_swipe_tracker_get_allow_window_handle(_arg0)
+	runtime.KeepAlive(self)
+
+	var _ok bool // out
+
+	if _cret != 0 {
+		_ok = true
+	}
+
+	return _ok
+}
+
 // Enabled gets whether self is enabled.
 //
 // The function returns the following values:
 //
 //   - ok: whether self is enabled.
-//
 func (self *SwipeTracker) Enabled() bool {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _cret C.gboolean         // in
@@ -223,7 +243,6 @@ func (self *SwipeTracker) Enabled() bool {
 // The function returns the following values:
 //
 //   - ok: whether to allow swiping past the first available snap point.
-//
 func (self *SwipeTracker) LowerOvershoot() bool {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _cret C.gboolean         // in
@@ -247,7 +266,6 @@ func (self *SwipeTracker) LowerOvershoot() bool {
 // The function returns the following values:
 //
 //   - ok: whether the direction is reversed.
-//
 func (self *SwipeTracker) Reversed() bool {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _cret C.gboolean         // in
@@ -271,7 +289,6 @@ func (self *SwipeTracker) Reversed() bool {
 // The function returns the following values:
 //
 //   - swipeable widget.
-//
 func (self *SwipeTracker) Swipeable() *Swipeable {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _cret *C.AdwSwipeable    // in
@@ -294,7 +311,6 @@ func (self *SwipeTracker) Swipeable() *Swipeable {
 // The function returns the following values:
 //
 //   - ok: whether to allow swiping past the last available snap point.
-//
 func (self *SwipeTracker) UpperOvershoot() bool {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _cret C.gboolean         // in
@@ -321,7 +337,6 @@ func (self *SwipeTracker) UpperOvershoot() bool {
 // The function takes the following parameters:
 //
 //   - allowLongSwipes: whether to allow long swipes.
-//
 func (self *SwipeTracker) SetAllowLongSwipes(allowLongSwipes bool) {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _arg1 C.gboolean         // out
@@ -341,7 +356,6 @@ func (self *SwipeTracker) SetAllowLongSwipes(allowLongSwipes bool) {
 // The function takes the following parameters:
 //
 //   - allowMouseDrag: whether to allow mouse dragging.
-//
 func (self *SwipeTracker) SetAllowMouseDrag(allowMouseDrag bool) {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _arg1 C.gboolean         // out
@@ -356,6 +370,28 @@ func (self *SwipeTracker) SetAllowMouseDrag(allowMouseDrag bool) {
 	runtime.KeepAlive(allowMouseDrag)
 }
 
+// SetAllowWindowHandle sets whether to allow touchscreen swiping from
+// GtkWindowHandle.
+//
+// Setting it to TRUE will make dragging the window impossible.
+//
+// The function takes the following parameters:
+//
+//   - allowWindowHandle: whether to allow swiping from window handles.
+func (self *SwipeTracker) SetAllowWindowHandle(allowWindowHandle bool) {
+	var _arg0 *C.AdwSwipeTracker // out
+	var _arg1 C.gboolean         // out
+
+	_arg0 = (*C.AdwSwipeTracker)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+	if allowWindowHandle {
+		_arg1 = C.TRUE
+	}
+
+	C.adw_swipe_tracker_set_allow_window_handle(_arg0, _arg1)
+	runtime.KeepAlive(self)
+	runtime.KeepAlive(allowWindowHandle)
+}
+
 // SetEnabled sets whether self is enabled.
 //
 // When it's not enabled, no events will be processed. Usually widgets will want
@@ -364,7 +400,6 @@ func (self *SwipeTracker) SetAllowMouseDrag(allowMouseDrag bool) {
 // The function takes the following parameters:
 //
 //   - enabled: whether self is enabled.
-//
 func (self *SwipeTracker) SetEnabled(enabled bool) {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _arg1 C.gboolean         // out
@@ -385,7 +420,6 @@ func (self *SwipeTracker) SetEnabled(enabled bool) {
 // The function takes the following parameters:
 //
 //   - overshoot: whether to allow swiping past the first available snap point.
-//
 func (self *SwipeTracker) SetLowerOvershoot(overshoot bool) {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _arg1 C.gboolean         // out
@@ -408,7 +442,6 @@ func (self *SwipeTracker) SetLowerOvershoot(overshoot bool) {
 // The function takes the following parameters:
 //
 //   - reversed: whether to reverse the swipe direction.
-//
 func (self *SwipeTracker) SetReversed(reversed bool) {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _arg1 C.gboolean         // out
@@ -429,7 +462,6 @@ func (self *SwipeTracker) SetReversed(reversed bool) {
 // The function takes the following parameters:
 //
 //   - overshoot: whether to allow swiping past the last available snap point.
-//
 func (self *SwipeTracker) SetUpperOvershoot(overshoot bool) {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _arg1 C.gboolean         // out
@@ -452,7 +484,6 @@ func (self *SwipeTracker) SetUpperOvershoot(overshoot bool) {
 // The function takes the following parameters:
 //
 //   - delta: position delta.
-//
 func (self *SwipeTracker) ShiftPosition(delta float64) {
 	var _arg0 *C.AdwSwipeTracker // out
 	var _arg1 C.double           // out

@@ -27,7 +27,6 @@ func Init() {
 // The function returns the following values:
 //
 //   - ok: initialization status.
-//
 func IsInitialized() bool {
 	var _cret C.gboolean // in
 

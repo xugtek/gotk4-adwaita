@@ -46,27 +46,28 @@ func defaultButtonContentOverrides(v *ButtonContent) ButtonContentOverrides {
 // It's intended to be used as a direct child of gtk.Button, gtk.MenuButton or
 // splitbutton, when they need to have both an icon and a label, as follows:
 //
-//    <object class="GtkButton">
-//      <property name="child">
-//        <object class="AdwButtonContent">
-//          <property name="icon-name">document-open-symbolic</property>
-//          <property name="label" translatable="yes">_Open</property>
-//          <property name="use-underline">True</property>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="GtkButton">
+//	  <property name="child">
+//	    <object class="AdwButtonContent">
+//	      <property name="icon-name">document-open-symbolic</property>
+//	      <property name="label" translatable="yes">_Open</property>
+//	      <property name="use-underline">True</property>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // AdwButtonContent handles style classes and connecting the mnemonic to the
 // button automatically.
 //
 // CSS nodes
 //
-//    buttoncontent
-//    ├── image
-//    ╰── label
+//	buttoncontent
+//	╰── box
+//	    ├── image
+//	    ╰── label
 //
-// AdwButtonContent's CSS node is called buttoncontent. It contains the subnodes
-// image and label.
+// AdwButtonContent's CSS node is called buttoncontent. It contains a box
+// subnode that serves as a container for the image and label nodes.
 //
 // When inside a GtkButton or AdwSplitButton, the button will receive the
 // .image-text-button style class. When inside a GtkMenuButton, the internal
@@ -129,7 +130,6 @@ func marshalButtonContent(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - buttonContent: new created AdwButtonContent.
-//
 func NewButtonContent() *ButtonContent {
 	var _cret *C.GtkWidget // in
 
@@ -148,7 +148,6 @@ func NewButtonContent() *ButtonContent {
 // The function returns the following values:
 //
 //   - ok: whether the button can shrink.
-//
 func (self *ButtonContent) CanShrink() bool {
 	var _arg0 *C.AdwButtonContent // out
 	var _cret C.gboolean          // in
@@ -172,7 +171,6 @@ func (self *ButtonContent) CanShrink() bool {
 // The function returns the following values:
 //
 //   - utf8: icon name.
-//
 func (self *ButtonContent) IconName() string {
 	var _arg0 *C.AdwButtonContent // out
 	var _cret *C.char             // in
@@ -194,7 +192,6 @@ func (self *ButtonContent) IconName() string {
 // The function returns the following values:
 //
 //   - utf8: label.
-//
 func (self *ButtonContent) Label() string {
 	var _arg0 *C.AdwButtonContent // out
 	var _cret *C.char             // in
@@ -216,7 +213,6 @@ func (self *ButtonContent) Label() string {
 // The function returns the following values:
 //
 //   - ok: whether an underline in the text indicates a mnemonic.
-//
 func (self *ButtonContent) UseUnderline() bool {
 	var _arg0 *C.AdwButtonContent // out
 	var _cret C.gboolean          // in
@@ -245,7 +241,6 @@ func (self *ButtonContent) UseUnderline() bool {
 // The function takes the following parameters:
 //
 //   - canShrink: whether the button can shrink.
-//
 func (self *ButtonContent) SetCanShrink(canShrink bool) {
 	var _arg0 *C.AdwButtonContent // out
 	var _arg1 C.gboolean          // out
@@ -267,7 +262,6 @@ func (self *ButtonContent) SetCanShrink(canShrink bool) {
 // The function takes the following parameters:
 //
 //   - iconName: new icon name.
-//
 func (self *ButtonContent) SetIconName(iconName string) {
 	var _arg0 *C.AdwButtonContent // out
 	var _arg1 *C.char             // out
@@ -286,7 +280,6 @@ func (self *ButtonContent) SetIconName(iconName string) {
 // The function takes the following parameters:
 //
 //   - label: new label.
-//
 func (self *ButtonContent) SetLabel(label string) {
 	var _arg0 *C.AdwButtonContent // out
 	var _arg1 *C.char             // out
@@ -309,7 +302,6 @@ func (self *ButtonContent) SetLabel(label string) {
 // The function takes the following parameters:
 //
 //   - useUnderline: whether an underline in the text indicates a mnemonic.
-//
 func (self *ButtonContent) SetUseUnderline(useUnderline bool) {
 	var _arg0 *C.AdwButtonContent // out
 	var _arg1 C.gboolean          // out

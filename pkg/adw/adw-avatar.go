@@ -116,7 +116,6 @@ func marshalAvatar(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - avatar: newly created AdwAvatar.
-//
 func NewAvatar(size int, text string, showInitials bool) *Avatar {
 	var _arg1 C.int        // out
 	var _arg2 *C.char      // out
@@ -155,7 +154,6 @@ func NewAvatar(size int, text string, showInitials bool) *Avatar {
 // The function returns the following values:
 //
 //   - texture: texture.
-//
 func (self *Avatar) DrawToTexture(scaleFactor int) gdk.Texturer {
 	var _arg0 *C.AdwAvatar  // out
 	var _arg1 C.int         // out
@@ -196,7 +194,6 @@ func (self *Avatar) DrawToTexture(scaleFactor int) gdk.Texturer {
 // The function returns the following values:
 //
 //   - paintable (optional): custom image.
-//
 func (self *Avatar) CustomImage() *gdk.Paintable {
 	var _arg0 *C.AdwAvatar    // out
 	var _cret *C.GdkPaintable // in
@@ -225,7 +222,6 @@ func (self *Avatar) CustomImage() *gdk.Paintable {
 // The function returns the following values:
 //
 //   - utf8 (optional): icon name.
-//
 func (self *Avatar) IconName() string {
 	var _arg0 *C.AdwAvatar // out
 	var _cret *C.char      // in
@@ -250,7 +246,6 @@ func (self *Avatar) IconName() string {
 // The function returns the following values:
 //
 //   - ok: whether initials are used instead of an icon as fallback.
-//
 func (self *Avatar) ShowInitials() bool {
 	var _arg0 *C.AdwAvatar // out
 	var _cret C.gboolean   // in
@@ -274,7 +269,6 @@ func (self *Avatar) ShowInitials() bool {
 // The function returns the following values:
 //
 //   - gint: size of the avatar.
-//
 func (self *Avatar) Size() int {
 	var _arg0 *C.AdwAvatar // out
 	var _cret C.int        // in
@@ -296,7 +290,6 @@ func (self *Avatar) Size() int {
 // The function returns the following values:
 //
 //   - utf8 (optional): text used to generate the fallback initials and color.
-//
 func (self *Avatar) Text() string {
 	var _arg0 *C.AdwAvatar // out
 	var _cret *C.char      // in
@@ -322,7 +315,6 @@ func (self *Avatar) Text() string {
 // The function takes the following parameters:
 //
 //   - customImage (optional): custom image.
-//
 func (self *Avatar) SetCustomImage(customImage gdk.Paintabler) {
 	var _arg0 *C.AdwAvatar    // out
 	var _arg1 *C.GdkPaintable // out
@@ -344,7 +336,6 @@ func (self *Avatar) SetCustomImage(customImage gdk.Paintabler) {
 // The function takes the following parameters:
 //
 //   - iconName (optional): icon name.
-//
 func (self *Avatar) SetIconName(iconName string) {
 	var _arg0 *C.AdwAvatar // out
 	var _arg1 *C.char      // out
@@ -368,7 +359,6 @@ func (self *Avatar) SetIconName(iconName string) {
 // The function takes the following parameters:
 //
 //   - showInitials: whether to use initials instead of an icon as fallback.
-//
 func (self *Avatar) SetShowInitials(showInitials bool) {
 	var _arg0 *C.AdwAvatar // out
 	var _arg1 C.gboolean   // out
@@ -388,7 +378,6 @@ func (self *Avatar) SetShowInitials(showInitials bool) {
 // The function takes the following parameters:
 //
 //   - size of the avatar.
-//
 func (self *Avatar) SetSize(size int) {
 	var _arg0 *C.AdwAvatar // out
 	var _arg1 C.int        // out
@@ -408,7 +397,6 @@ func (self *Avatar) SetSize(size int) {
 // The function takes the following parameters:
 //
 //   - text (optional) used to get the initials and color.
-//
 func (self *Avatar) SetText(text string) {
 	var _arg0 *C.AdwAvatar // out
 	var _arg1 *C.char      // out

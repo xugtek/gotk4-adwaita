@@ -92,7 +92,6 @@ func marshalSpringAnimation(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - springAnimation: newly created animation.
-//
 func NewSpringAnimation(widget gtk.Widgetter, from, to float64, springParams *SpringParams, target AnimationTargetter) *SpringAnimation {
 	var _arg1 *C.GtkWidget          // out
 	var _arg2 C.double              // out
@@ -135,7 +134,6 @@ func NewSpringAnimation(widget gtk.Widgetter, from, to float64, springParams *Sp
 // The function returns the following values:
 //
 //   - gdouble: value at time.
-//
 func (self *SpringAnimation) CalculateValue(time uint) float64 {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _arg1 C.guint               // out
@@ -168,7 +166,6 @@ func (self *SpringAnimation) CalculateValue(time uint) float64 {
 // The function returns the following values:
 //
 //   - gdouble: velocity at time.
-//
 func (self *SpringAnimation) CalculateVelocity(time uint) float64 {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _arg1 C.guint               // out
@@ -193,7 +190,6 @@ func (self *SpringAnimation) CalculateVelocity(time uint) float64 {
 // The function returns the following values:
 //
 //   - ok: whether self is clamped.
-//
 func (self *SpringAnimation) Clamp() bool {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _cret C.gboolean            // in
@@ -217,7 +213,6 @@ func (self *SpringAnimation) Clamp() bool {
 // The function returns the following values:
 //
 //   - gdouble: epsilon value.
-//
 func (self *SpringAnimation) Epsilon() float64 {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _cret C.double              // in
@@ -241,7 +236,6 @@ func (self *SpringAnimation) Epsilon() float64 {
 // The function returns the following values:
 //
 //   - guint: estimated duration.
-//
 func (self *SpringAnimation) EstimatedDuration() uint {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _cret C.guint               // in
@@ -263,7 +257,6 @@ func (self *SpringAnimation) EstimatedDuration() uint {
 // The function returns the following values:
 //
 //   - gdouble: initial velocity.
-//
 func (self *SpringAnimation) InitialVelocity() float64 {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _cret C.double              // in
@@ -285,7 +278,6 @@ func (self *SpringAnimation) InitialVelocity() float64 {
 // The function returns the following values:
 //
 //   - springParams: spring parameters.
-//
 func (self *SpringAnimation) SpringParams() *SpringParams {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _cret *C.AdwSpringParams    // in
@@ -314,7 +306,6 @@ func (self *SpringAnimation) SpringParams() *SpringParams {
 // The function returns the following values:
 //
 //   - gdouble: value to animate from.
-//
 func (self *SpringAnimation) ValueFrom() float64 {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _cret C.double              // in
@@ -336,7 +327,6 @@ func (self *SpringAnimation) ValueFrom() float64 {
 // The function returns the following values:
 //
 //   - gdouble: value to animate to.
-//
 func (self *SpringAnimation) ValueTo() float64 {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _cret C.double              // in
@@ -358,7 +348,6 @@ func (self *SpringAnimation) ValueTo() float64 {
 // The function returns the following values:
 //
 //   - gdouble: current velocity.
-//
 func (self *SpringAnimation) Velocity() float64 {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _cret C.double              // in
@@ -386,7 +375,6 @@ func (self *SpringAnimation) Velocity() float64 {
 // The function takes the following parameters:
 //
 //   - clamp: new value.
-//
 func (self *SpringAnimation) SetClamp(clamp bool) {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _arg1 C.gboolean            // out
@@ -417,7 +405,6 @@ func (self *SpringAnimation) SetClamp(clamp bool) {
 // The function takes the following parameters:
 //
 //   - epsilon: new value.
-//
 func (self *SpringAnimation) SetEpsilon(epsilon float64) {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _arg1 C.double              // out
@@ -437,7 +424,6 @@ func (self *SpringAnimation) SetEpsilon(epsilon float64) {
 // The function takes the following parameters:
 //
 //   - velocity: initial velocity.
-//
 func (self *SpringAnimation) SetInitialVelocity(velocity float64) {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _arg1 C.double              // out
@@ -455,7 +441,6 @@ func (self *SpringAnimation) SetInitialVelocity(velocity float64) {
 // The function takes the following parameters:
 //
 //   - springParams: new spring parameters.
-//
 func (self *SpringAnimation) SetSpringParams(springParams *SpringParams) {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _arg1 *C.AdwSpringParams    // out
@@ -475,7 +460,6 @@ func (self *SpringAnimation) SetSpringParams(springParams *SpringParams) {
 // The function takes the following parameters:
 //
 //   - value to animate from.
-//
 func (self *SpringAnimation) SetValueFrom(value float64) {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _arg1 C.double              // out
@@ -495,7 +479,6 @@ func (self *SpringAnimation) SetValueFrom(value float64) {
 // The function takes the following parameters:
 //
 //   - value to animate to.
-//
 func (self *SpringAnimation) SetValueTo(value float64) {
 	var _arg0 *C.AdwSpringAnimation // out
 	var _arg1 C.double              // out

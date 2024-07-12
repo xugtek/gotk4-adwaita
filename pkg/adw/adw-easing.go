@@ -197,7 +197,6 @@ func (e Easing) String() string {
 // The function returns the following values:
 //
 //   - gdouble: easing for value.
-//
 func EasingEase(self Easing, value float64) float64 {
 	var _arg1 C.AdwEasing // out
 	var _arg2 C.double    // out

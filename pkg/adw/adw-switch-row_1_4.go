@@ -51,10 +51,10 @@ func defaultSwitchRowOverrides(v *SwitchRow) SwitchRowOverrides {
 //
 // Example of an AdwSwitchRow UI definition:
 //
-//    <object class="AdwSwitchRow">
-//      <property name="title" translatable="yes">Switch Row</property>
-//      <signal name="notify::active" handler="switch_row_notify_active_cb"/>
-//    </object>
+//	<object class="AdwSwitchRow">
+//	  <property name="title" translatable="yes">Switch Row</property>
+//	  <signal name="notify::active" handler="switch_row_notify_active_cb"/>
+//	</object>
 //
 // The switchrow:active property should be connected to in order to monitor
 // changes to the active state.
@@ -137,7 +137,6 @@ func marshalSwitchRow(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - switchRow: newly created AdwSwitchRow.
-//
 func NewSwitchRow() *SwitchRow {
 	var _cret *C.GtkWidget // in
 
@@ -155,7 +154,6 @@ func NewSwitchRow() *SwitchRow {
 // The function returns the following values:
 //
 //   - ok: whether self is active or not.
-//
 func (self *SwitchRow) Active() bool {
 	var _arg0 *C.AdwSwitchRow // out
 	var _cret C.gboolean      // in
@@ -179,7 +177,6 @@ func (self *SwitchRow) Active() bool {
 // The function takes the following parameters:
 //
 //   - isActive: whether self should be active.
-//
 func (self *SwitchRow) SetActive(isActive bool) {
 	var _arg0 *C.AdwSwitchRow // out
 	var _arg1 C.gboolean      // out

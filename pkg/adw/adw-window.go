@@ -8,6 +8,7 @@ import (
 
 	"github.com/diamondburned/gotk4/pkg/core/gextras"
 	coreglib "github.com/diamondburned/gotk4/pkg/core/glib"
+	"github.com/diamondburned/gotk4/pkg/gio/v2"
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
 )
 
@@ -44,21 +45,26 @@ func defaultWindowOverrides(v *Window) WindowOverrides {
 // Instead, toolbarview can be used together with headerbar or gtk.HeaderBar as
 // follows:
 //
-//    <object class="AdwWindow">
-//      <property name="content">
-//        <object class="AdwToolbarView">
-//          <child type="top">
-//            <object class="AdwHeaderBar"/>
-//          </child>
-//          <property name="content">
-//            <!-- ... -->
-//          </property>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwWindow">
+//	  <property name="content">
+//	    <object class="AdwToolbarView">
+//	      <child type="top">
+//	        <object class="AdwHeaderBar"/>
+//	      </child>
+//	      <property name="content">
+//	        <!-- ... -->
+//	      </property>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // Using gtk.Window:titlebar or gtk.Window:child is not supported and will
 // result in a crash. Use window:content instead.
+//
+// # Dialogs
+//
+// AdwWindow can contain dialog. Use dialog.Present with the window or a widget
+// within a window to show a dialog.
 //
 // # Breakpoints
 //
@@ -67,32 +73,32 @@ func defaultWindowOverrides(v *Window) WindowOverrides {
 //
 // Example:
 //
-//    <object class="AdwWindow">
-//      <property name="width-request">360</property>
-//      <property name="height-request">200</property>
-//      <property name="content">
-//        <object class="AdwToolbarView">
-//          <child type="top">
-//            <object class="AdwHeaderBar"/>
-//          </child>
-//          <property name="content">
-//            <!-- ... -->
-//          </property>
-//          <child type="bottom">
-//            <object class="GtkActionBar" id="bottom_bar">
-//              <property name="revealed">True</property>
-//              <property name="visible">False</property>
-//            </object>
-//          </child>
-//        </object>
-//      </property>
-//      <child>
-//        <object class="AdwBreakpoint">
-//          <condition>max-width: 500px</condition>
-//          <setter object="bottom_bar" property="visible">True</setter>
-//        </object>
-//      </child>
-//    </object>
+//	<object class="AdwWindow">
+//	  <property name="width-request">360</property>
+//	  <property name="height-request">200</property>
+//	  <property name="content">
+//	    <object class="AdwToolbarView">
+//	      <child type="top">
+//	        <object class="AdwHeaderBar"/>
+//	      </child>
+//	      <property name="content">
+//	        <!-- ... -->
+//	      </property>
+//	      <child type="bottom">
+//	        <object class="GtkActionBar" id="bottom_bar">
+//	          <property name="revealed">True</property>
+//	          <property name="visible">False</property>
+//	        </object>
+//	      </child>
+//	    </object>
+//	  </property>
+//	  <child>
+//	    <object class="AdwBreakpoint">
+//	      <condition>max-width: 500px</condition>
+//	      <setter object="bottom_bar" property="visible">True</setter>
+//	    </object>
+//	  </child>
+//	</object>
 //
 // Like AdwBreakpointBin, if breakpoints are used, AdwWindow doesn't have a
 // minimum size, and gtk.Widget:width-request and gtk.Widget:height-request
@@ -177,7 +183,6 @@ func marshalWindow(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - window: newly created AdwWindow.
-//
 func NewWindow() *Window {
 	var _cret *C.GtkWidget // in
 
@@ -195,7 +200,6 @@ func NewWindow() *Window {
 // The function takes the following parameters:
 //
 //   - breakpoint to add.
-//
 func (self *Window) AddBreakpoint(breakpoint *Breakpoint) {
 	var _arg0 *C.AdwWindow     // out
 	var _arg1 *C.AdwBreakpoint // out
@@ -216,7 +220,6 @@ func (self *Window) AddBreakpoint(breakpoint *Breakpoint) {
 // The function returns the following values:
 //
 //   - widget (optional): content widget of self.
-//
 func (self *Window) Content() gtk.Widgetter {
 	var _arg0 *C.AdwWindow // out
 	var _cret *C.GtkWidget // in
@@ -253,7 +256,6 @@ func (self *Window) Content() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - breakpoint (optional): current breakpoint.
-//
 func (self *Window) CurrentBreakpoint() *Breakpoint {
 	var _arg0 *C.AdwWindow     // out
 	var _cret *C.AdwBreakpoint // in
@@ -272,6 +274,57 @@ func (self *Window) CurrentBreakpoint() *Breakpoint {
 	return _breakpoint
 }
 
+// Dialogs returns a gio.ListModel that contains the open dialogs of self.
+//
+// This can be used to keep an up-to-date view.
+//
+// The function returns the following values:
+//
+//   - listModel: list model for the dialogs of self.
+func (self *Window) Dialogs() *gio.ListModel {
+	var _arg0 *C.AdwWindow  // out
+	var _cret *C.GListModel // in
+
+	_arg0 = (*C.AdwWindow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+
+	_cret = C.adw_window_get_dialogs(_arg0)
+	runtime.KeepAlive(self)
+
+	var _listModel *gio.ListModel // out
+
+	{
+		obj := coreglib.AssumeOwnership(unsafe.Pointer(_cret))
+		_listModel = &gio.ListModel{
+			Object: obj,
+		}
+	}
+
+	return _listModel
+}
+
+// VisibleDialog returns the currently visible dialog in self, if there's one.
+//
+// The function returns the following values:
+//
+//   - dialog (optional): visible dialog.
+func (self *Window) VisibleDialog() *Dialog {
+	var _arg0 *C.AdwWindow // out
+	var _cret *C.AdwDialog // in
+
+	_arg0 = (*C.AdwWindow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+
+	_cret = C.adw_window_get_visible_dialog(_arg0)
+	runtime.KeepAlive(self)
+
+	var _dialog *Dialog // out
+
+	if _cret != nil {
+		_dialog = wrapDialog(coreglib.Take(unsafe.Pointer(_cret)))
+	}
+
+	return _dialog
+}
+
 // SetContent sets the content widget of self.
 //
 // This method should always be used instead of gtk.Window.SetChild().
@@ -279,7 +332,6 @@ func (self *Window) CurrentBreakpoint() *Breakpoint {
 // The function takes the following parameters:
 //
 //   - content (optional) widget.
-//
 func (self *Window) SetContent(content gtk.Widgetter) {
 	var _arg0 *C.AdwWindow // out
 	var _arg1 *C.GtkWidget // out

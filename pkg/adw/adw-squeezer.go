@@ -158,7 +158,6 @@ func marshalSqueezer(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - squeezer: newly created AdwSqueezer.
-//
 func NewSqueezer() *Squeezer {
 	var _cret *C.GtkWidget // in
 
@@ -183,7 +182,6 @@ func NewSqueezer() *Squeezer {
 // The function returns the following values:
 //
 //   - squeezerPage: squeezerpage for child.
-//
 func (self *Squeezer) Add(child gtk.Widgetter) *SqueezerPage {
 	var _arg0 *C.AdwSqueezer     // out
 	var _arg1 *C.GtkWidget       // out
@@ -212,7 +210,6 @@ func (self *Squeezer) Add(child gtk.Widgetter) *SqueezerPage {
 // The function returns the following values:
 //
 //   - ok: whether self allows squeezing beyond the last child.
-//
 func (self *Squeezer) AllowNone() bool {
 	var _arg0 *C.AdwSqueezer // out
 	var _cret C.gboolean     // in
@@ -240,7 +237,6 @@ func (self *Squeezer) AllowNone() bool {
 // The function returns the following values:
 //
 //   - ok: whether self is homogeneous.
-//
 func (self *Squeezer) Homogeneous() bool {
 	var _arg0 *C.AdwSqueezer // out
 	var _cret C.gboolean     // in
@@ -268,7 +264,6 @@ func (self *Squeezer) Homogeneous() bool {
 // The function returns the following values:
 //
 //   - ok: whether the size is interpolated.
-//
 func (self *Squeezer) InterpolateSize() bool {
 	var _arg0 *C.AdwSqueezer // out
 	var _cret C.gboolean     // in
@@ -299,7 +294,6 @@ func (self *Squeezer) InterpolateSize() bool {
 // The function returns the following values:
 //
 //   - squeezerPage: page object for child.
-//
 func (self *Squeezer) Page(child gtk.Widgetter) *SqueezerPage {
 	var _arg0 *C.AdwSqueezer     // out
 	var _arg1 *C.GtkWidget       // out
@@ -330,7 +324,6 @@ func (self *Squeezer) Page(child gtk.Widgetter) *SqueezerPage {
 // The function returns the following values:
 //
 //   - selectionModel: GtkSelectionModel for the squeezer's children.
-//
 func (self *Squeezer) Pages() *gtk.SelectionModel {
 	var _arg0 *C.AdwSqueezer       // out
 	var _cret *C.GtkSelectionModel // in
@@ -361,6 +354,7 @@ func (self *Squeezer) Pages() *gtk.SelectionModel {
 //
 // The function returns the following values:
 //
+//   - foldThresholdPolicy: fold threshold policy.
 func (self *Squeezer) SwitchThresholdPolicy() FoldThresholdPolicy {
 	var _arg0 *C.AdwSqueezer           // out
 	var _cret C.AdwFoldThresholdPolicy // in
@@ -385,7 +379,6 @@ func (self *Squeezer) SwitchThresholdPolicy() FoldThresholdPolicy {
 // The function returns the following values:
 //
 //   - guint: transition duration, in milliseconds.
-//
 func (self *Squeezer) TransitionDuration() uint {
 	var _arg0 *C.AdwSqueezer // out
 	var _cret C.guint        // in
@@ -414,7 +407,6 @@ func (self *Squeezer) TransitionDuration() uint {
 // The function returns the following values:
 //
 //   - ok: whether a transition is currently running.
-//
 func (self *Squeezer) TransitionRunning() bool {
 	var _arg0 *C.AdwSqueezer // out
 	var _cret C.gboolean     // in
@@ -442,7 +434,6 @@ func (self *Squeezer) TransitionRunning() bool {
 // The function returns the following values:
 //
 //   - squeezerTransitionType: current transition type of self.
-//
 func (self *Squeezer) TransitionType() SqueezerTransitionType {
 	var _arg0 *C.AdwSqueezer              // out
 	var _cret C.AdwSqueezerTransitionType // in
@@ -467,7 +458,6 @@ func (self *Squeezer) TransitionType() SqueezerTransitionType {
 // The function returns the following values:
 //
 //   - widget (optional): visible child.
-//
 func (self *Squeezer) VisibleChild() gtk.Widgetter {
 	var _arg0 *C.AdwSqueezer // out
 	var _cret *C.GtkWidget   // in
@@ -507,7 +497,6 @@ func (self *Squeezer) VisibleChild() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - gfloat: alignment value.
-//
 func (self *Squeezer) XAlign() float32 {
 	var _arg0 *C.AdwSqueezer // out
 	var _cret C.float        // in
@@ -532,7 +521,6 @@ func (self *Squeezer) XAlign() float32 {
 // The function returns the following values:
 //
 //   - gfloat: alignment value.
-//
 func (self *Squeezer) YAlign() float32 {
 	var _arg0 *C.AdwSqueezer // out
 	var _cret C.float        // in
@@ -557,7 +545,6 @@ func (self *Squeezer) YAlign() float32 {
 // The function takes the following parameters:
 //
 //   - child to remove.
-//
 func (self *Squeezer) Remove(child gtk.Widgetter) {
 	var _arg0 *C.AdwSqueezer // out
 	var _arg1 *C.GtkWidget   // out
@@ -583,7 +570,6 @@ func (self *Squeezer) Remove(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - allowNone: whether self allows squeezing beyond the last child.
-//
 func (self *Squeezer) SetAllowNone(allowNone bool) {
 	var _arg0 *C.AdwSqueezer // out
 	var _arg1 C.gboolean     // out
@@ -611,7 +597,6 @@ func (self *Squeezer) SetAllowNone(allowNone bool) {
 // The function takes the following parameters:
 //
 //   - homogeneous: whether self is homogeneous.
-//
 func (self *Squeezer) SetHomogeneous(homogeneous bool) {
 	var _arg0 *C.AdwSqueezer // out
 	var _arg1 C.gboolean     // out
@@ -640,7 +625,6 @@ func (self *Squeezer) SetHomogeneous(homogeneous bool) {
 // The function takes the following parameters:
 //
 //   - interpolateSize: whether to interpolate the size.
-//
 func (self *Squeezer) SetInterpolateSize(interpolateSize bool) {
 	var _arg0 *C.AdwSqueezer // out
 	var _arg1 C.gboolean     // out
@@ -672,7 +656,6 @@ func (self *Squeezer) SetInterpolateSize(interpolateSize bool) {
 // The function takes the following parameters:
 //
 //   - policy to use.
-//
 func (self *Squeezer) SetSwitchThresholdPolicy(policy FoldThresholdPolicy) {
 	var _arg0 *C.AdwSqueezer           // out
 	var _arg1 C.AdwFoldThresholdPolicy // out
@@ -693,7 +676,6 @@ func (self *Squeezer) SetSwitchThresholdPolicy(policy FoldThresholdPolicy) {
 // The function takes the following parameters:
 //
 //   - duration: new duration, in milliseconds.
-//
 func (self *Squeezer) SetTransitionDuration(duration uint) {
 	var _arg0 *C.AdwSqueezer // out
 	var _arg1 C.guint        // out
@@ -715,7 +697,6 @@ func (self *Squeezer) SetTransitionDuration(duration uint) {
 // The function takes the following parameters:
 //
 //   - transition: new transition type.
-//
 func (self *Squeezer) SetTransitionType(transition SqueezerTransitionType) {
 	var _arg0 *C.AdwSqueezer              // out
 	var _arg1 C.AdwSqueezerTransitionType // out
@@ -742,7 +723,6 @@ func (self *Squeezer) SetTransitionType(transition SqueezerTransitionType) {
 // The function takes the following parameters:
 //
 //   - xalign: new alignment value.
-//
 func (self *Squeezer) SetXAlign(xalign float32) {
 	var _arg0 *C.AdwSqueezer // out
 	var _arg1 C.float        // out
@@ -769,7 +749,6 @@ func (self *Squeezer) SetXAlign(xalign float32) {
 // The function takes the following parameters:
 //
 //   - yalign: new alignment value.
-//
 func (self *Squeezer) SetYAlign(yalign float32) {
 	var _arg0 *C.AdwSqueezer // out
 	var _arg1 C.float        // out
@@ -837,7 +816,6 @@ func marshalSqueezerPage(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - widget: child to which self belongs.
-//
 func (self *SqueezerPage) Child() gtk.Widgetter {
 	var _arg0 *C.AdwSqueezerPage // out
 	var _cret *C.GtkWidget       // in
@@ -878,7 +856,6 @@ func (self *SqueezerPage) Child() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - ok: whether self is enabled.
-//
 func (self *SqueezerPage) Enabled() bool {
 	var _arg0 *C.AdwSqueezerPage // out
 	var _cret C.gboolean         // in
@@ -914,7 +891,6 @@ func (self *SqueezerPage) Enabled() bool {
 // The function takes the following parameters:
 //
 //   - enabled: whether self is enabled.
-//
 func (self *SqueezerPage) SetEnabled(enabled bool) {
 	var _arg0 *C.AdwSqueezerPage // out
 	var _arg1 C.gboolean         // out

@@ -217,7 +217,6 @@ func (self *NavigationPage) ConnectShown(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - navigationPage: new created AdwNavigationPage.
-//
 func NewNavigationPage(child gtk.Widgetter, title string) *NavigationPage {
 	var _arg1 *C.GtkWidget         // out
 	var _arg2 *C.char              // out
@@ -249,7 +248,6 @@ func NewNavigationPage(child gtk.Widgetter, title string) *NavigationPage {
 // The function returns the following values:
 //
 //   - navigationPage: new created AdwNavigationPage.
-//
 func NewNavigationPageWithTag(child gtk.Widgetter, title, tag string) *NavigationPage {
 	var _arg1 *C.GtkWidget         // out
 	var _arg2 *C.char              // out
@@ -279,7 +277,6 @@ func NewNavigationPageWithTag(child gtk.Widgetter, title, tag string) *Navigatio
 // The function returns the following values:
 //
 //   - ok: whether the page can be popped from navigation stack.
-//
 func (self *NavigationPage) CanPop() bool {
 	var _arg0 *C.AdwNavigationPage // out
 	var _cret C.gboolean           // in
@@ -303,7 +300,6 @@ func (self *NavigationPage) CanPop() bool {
 // The function returns the following values:
 //
 //   - widget (optional): child widget of self.
-//
 func (self *NavigationPage) Child() gtk.Widgetter {
 	var _arg0 *C.AdwNavigationPage // out
 	var _cret *C.GtkWidget         // in
@@ -340,7 +336,6 @@ func (self *NavigationPage) Child() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - utf8 (optional): page tag.
-//
 func (self *NavigationPage) Tag() string {
 	var _arg0 *C.AdwNavigationPage // out
 	var _cret *C.char              // in
@@ -364,7 +359,6 @@ func (self *NavigationPage) Tag() string {
 // The function returns the following values:
 //
 //   - utf8: title of self.
-//
 func (self *NavigationPage) Title() string {
 	var _arg0 *C.AdwNavigationPage // out
 	var _cret *C.char              // in
@@ -395,7 +389,6 @@ func (self *NavigationPage) Title() string {
 // The function takes the following parameters:
 //
 //   - canPop: whether the page can be popped from navigation stack.
-//
 func (self *NavigationPage) SetCanPop(canPop bool) {
 	var _arg0 *C.AdwNavigationPage // out
 	var _arg1 C.gboolean           // out
@@ -415,7 +408,6 @@ func (self *NavigationPage) SetCanPop(canPop bool) {
 // The function takes the following parameters:
 //
 //   - child (optional) widget.
-//
 func (self *NavigationPage) SetChild(child gtk.Widgetter) {
 	var _arg0 *C.AdwNavigationPage // out
 	var _arg1 *C.GtkWidget         // out
@@ -443,7 +435,6 @@ func (self *NavigationPage) SetChild(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - tag (optional): page tag.
-//
 func (self *NavigationPage) SetTag(tag string) {
 	var _arg0 *C.AdwNavigationPage // out
 	var _arg1 *C.char              // out
@@ -467,7 +458,6 @@ func (self *NavigationPage) SetTag(tag string) {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *NavigationPage) SetTitle(title string) {
 	var _arg0 *C.AdwNavigationPage // out
 	var _arg1 *C.char              // out
@@ -586,8 +576,8 @@ func defaultNavigationViewOverrides(v *NavigationView) NavigationViewOverrides {
 // The button also has a context menu, allowing to pop multiple pages at once,
 // potentially across multiple navigation views.
 //
-// Set headerbar:show-back-button to FALSE to disable this behavior if it's
-// unwanted.
+// Set headerbar:show-back-button to FALSE to disable this behavior in rare
+// scenarios where it's unwanted.
 //
 // AdwHeaderBar will also display the title of the AdwNavigationPage it's placed
 // into, so most applications shouldn't need to customize it at all.
@@ -645,48 +635,48 @@ func defaultNavigationViewOverrides(v *NavigationView) NavigationViewOverrides {
 //
 // Example of an AdwNavigationView UI definition:
 //
-//    <object class="AdwNavigationView">
-//      <child>
-//        <object class="AdwNavigationPage">
-//          <property name="title" translatable="yes">Page 1</property>
-//          <property name="child">
-//            <object class="AdwToolbarView">
-//              <child type="top">
-//                <object class="AdwHeaderBar"/>
-//              </child>
-//              <property name="content">
-//                <object class="GtkButton">
-//                  <property name="label" translatable="yes">Open Page 2</property>
-//                  <property name="halign">center</property>
-//                  <property name="valign">center</property>
-//                  <property name="action-name">navigation.push</property>
-//                  <property name="action-target">'page-2'</property>
-//                  <style>
-//                    <class name="pill"/>
-//                   </style>
-//                </object>
-//              </property>
-//            </object>
-//          </property>
-//        </object>
-//      </child>
-//      <child>
-//        <object class="AdwNavigationPage">
-//          <property name="title" translatable="yes">Page 2</property>
-//          <property name="tag">page-2</property>
-//          <property name="child">
-//            <object class="AdwToolbarView">
-//              <child type="top">
-//                <object class="AdwHeaderBar"/>
-//              </child>
-//              <property name="content">
-//                <!-- ... -->
-//              </property>
-//            </object>
-//          </property>
-//        </object>
-//      </child>
-//    </object>
+//	<object class="AdwNavigationView">
+//	  <child>
+//	    <object class="AdwNavigationPage">
+//	      <property name="title" translatable="yes">Page 1</property>
+//	      <property name="child">
+//	        <object class="AdwToolbarView">
+//	          <child type="top">
+//	            <object class="AdwHeaderBar"/>
+//	          </child>
+//	          <property name="content">
+//	            <object class="GtkButton">
+//	              <property name="label" translatable="yes">Open Page 2</property>
+//	              <property name="halign">center</property>
+//	              <property name="valign">center</property>
+//	              <property name="action-name">navigation.push</property>
+//	              <property name="action-target">'page-2'</property>
+//	              <style>
+//	                <class name="pill"/>
+//	               </style>
+//	            </object>
+//	          </property>
+//	        </object>
+//	      </property>
+//	    </object>
+//	  </child>
+//	  <child>
+//	    <object class="AdwNavigationPage">
+//	      <property name="title" translatable="yes">Page 2</property>
+//	      <property name="tag">page-2</property>
+//	      <property name="child">
+//	        <object class="AdwToolbarView">
+//	          <child type="top">
+//	            <object class="AdwHeaderBar"/>
+//	          </child>
+//	          <property name="content">
+//	            <!-- ... -->
+//	          </property>
+//	        </object>
+//	      </property>
+//	    </object>
+//	  </child>
+//	</object>
 //
 // <picture> <source srcset="navigation-view-example-dark.png"
 // media="(prefers-color-scheme: dark)"> <img src="navigation-view-example.png"
@@ -816,7 +806,6 @@ func (self *NavigationView) ConnectReplaced(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - navigationView: new created AdwNavigationView.
-//
 func NewNavigationView() *NavigationView {
 	var _cret *C.GtkWidget // in
 
@@ -842,7 +831,6 @@ func NewNavigationView() *NavigationView {
 // The function takes the following parameters:
 //
 //   - page to add.
-//
 func (self *NavigationView) Add(page *NavigationPage) {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 *C.AdwNavigationPage // out
@@ -866,7 +854,6 @@ func (self *NavigationView) Add(page *NavigationPage) {
 // The function returns the following values:
 //
 //   - navigationPage (optional): page with the given tag.
-//
 func (self *NavigationView) FindPage(tag string) *NavigationPage {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 *C.char              // out
@@ -894,7 +881,6 @@ func (self *NavigationView) FindPage(tag string) *NavigationPage {
 // The function returns the following values:
 //
 //   - ok: whether to animate page transitions.
-//
 func (self *NavigationView) AnimateTransitions() bool {
 	var _arg0 *C.AdwNavigationView // out
 	var _cret C.gboolean           // in
@@ -923,7 +909,6 @@ func (self *NavigationView) AnimateTransitions() bool {
 // The function returns the following values:
 //
 //   - listModel: list model for the navigation stack.
-//
 func (self *NavigationView) NavigationStack() *gio.ListModel {
 	var _arg0 *C.AdwNavigationView // out
 	var _cret *C.GListModel        // in
@@ -950,7 +935,6 @@ func (self *NavigationView) NavigationStack() *gio.ListModel {
 // The function returns the following values:
 //
 //   - ok: whether to pop the current page.
-//
 func (self *NavigationView) PopOnEscape() bool {
 	var _arg0 *C.AdwNavigationView // out
 	var _cret C.gboolean           // in
@@ -983,7 +967,6 @@ func (self *NavigationView) PopOnEscape() bool {
 // The function returns the following values:
 //
 //   - navigationPage (optional) previous page.
-//
 func (self *NavigationView) PreviousPage(page *NavigationPage) *NavigationPage {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 *C.AdwNavigationPage // out
@@ -1010,7 +993,6 @@ func (self *NavigationView) PreviousPage(page *NavigationPage) *NavigationPage {
 // The function returns the following values:
 //
 //   - navigationPage (optional): currently visible page.
-//
 func (self *NavigationView) VisiblePage() *NavigationPage {
 	var _arg0 *C.AdwNavigationView // out
 	var _cret *C.AdwNavigationPage // in
@@ -1042,7 +1024,6 @@ func (self *NavigationView) VisiblePage() *NavigationPage {
 // The function returns the following values:
 //
 //   - ok: TRUE if a page has been popped.
-//
 func (self *NavigationView) Pop() bool {
 	var _arg0 *C.AdwNavigationView // out
 	var _cret C.gboolean           // in
@@ -1079,7 +1060,6 @@ func (self *NavigationView) Pop() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if any pages have been popped.
-//
 func (self *NavigationView) PopToPage(page *NavigationPage) bool {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 *C.AdwNavigationPage // out
@@ -1120,7 +1100,6 @@ func (self *NavigationView) PopToPage(page *NavigationPage) bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if any pages have been popped.
-//
 func (self *NavigationView) PopToTag(tag string) bool {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 *C.char              // out
@@ -1148,14 +1127,13 @@ func (self *NavigationView) PopToTag(tag string) bool {
 // If navigationview.Add hasn't been called, the page is automatically removed
 // once it's popped.
 //
-// navigationview::popped will be emitted for page.
+// navigationview::pushed will be emitted for page.
 //
 // See navigationview.PushByTag.
 //
 // The function takes the following parameters:
 //
 //   - page to push.
-//
 func (self *NavigationView) Push(page *NavigationPage) {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 *C.AdwNavigationPage // out
@@ -1173,14 +1151,13 @@ func (self *NavigationView) Push(page *NavigationPage) {
 // If navigationview.Add hasn't been called, the page is automatically removed
 // once it's popped.
 //
-// navigationview::popped will be emitted for pushed page.
+// navigationview::pushed will be emitted for the page.
 //
 // See navigationview.Push and navigationpage:tag.
 //
 // The function takes the following parameters:
 //
 //   - tag: page tag.
-//
 func (self *NavigationView) PushByTag(tag string) {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 *C.char              // out
@@ -1204,7 +1181,6 @@ func (self *NavigationView) PushByTag(tag string) {
 // The function takes the following parameters:
 //
 //   - page to remove.
-//
 func (self *NavigationView) Remove(page *NavigationPage) {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 *C.AdwNavigationPage // out
@@ -1236,7 +1212,6 @@ func (self *NavigationView) Remove(page *NavigationPage) {
 // The function takes the following parameters:
 //
 //   - pages: new navigation stack.
-//
 func (self *NavigationView) Replace(pages []*NavigationPage) {
 	var _arg0 *C.AdwNavigationView  // out
 	var _arg1 **C.AdwNavigationPage // out
@@ -1278,7 +1253,6 @@ func (self *NavigationView) Replace(pages []*NavigationPage) {
 // The function takes the following parameters:
 //
 //   - tags of the pages in the navigation stack.
-//
 func (self *NavigationView) ReplaceWithTags(tags []string) {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 **C.char             // out
@@ -1308,7 +1282,6 @@ func (self *NavigationView) ReplaceWithTags(tags []string) {
 // The function takes the following parameters:
 //
 //   - animateTransitions: whether to animate page transitions.
-//
 func (self *NavigationView) SetAnimateTransitions(animateTransitions bool) {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 C.gboolean           // out
@@ -1331,7 +1304,6 @@ func (self *NavigationView) SetAnimateTransitions(animateTransitions bool) {
 // The function takes the following parameters:
 //
 //   - popOnEscape: whether to pop the current page when pressing Escape.
-//
 func (self *NavigationView) SetPopOnEscape(popOnEscape bool) {
 	var _arg0 *C.AdwNavigationView // out
 	var _arg1 C.gboolean           // out

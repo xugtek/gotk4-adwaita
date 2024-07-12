@@ -121,7 +121,6 @@ func marshalApplication(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - application: newly created AdwApplication.
-//
 func NewApplication(applicationId string, flags gio.ApplicationFlags) *Application {
 	var _arg1 *C.char             // out
 	var _arg2 C.GApplicationFlags // out
@@ -152,7 +151,6 @@ func NewApplication(applicationId string, flags gio.ApplicationFlags) *Applicati
 // The function returns the following values:
 //
 //   - styleManager: style manager.
-//
 func (self *Application) StyleManager() *StyleManager {
 	var _arg0 *C.AdwApplication  // out
 	var _cret *C.AdwStyleManager // in

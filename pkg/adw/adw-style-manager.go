@@ -128,7 +128,6 @@ func marshalStyleManager(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - colorScheme: color scheme.
-//
 func (self *StyleManager) ColorScheme() ColorScheme {
 	var _arg0 *C.AdwStyleManager // out
 	var _cret C.AdwColorScheme   // in
@@ -153,7 +152,6 @@ func (self *StyleManager) ColorScheme() ColorScheme {
 // The function returns the following values:
 //
 //   - ok: whether the application is using dark appearance.
-//
 func (self *StyleManager) Dark() bool {
 	var _arg0 *C.AdwStyleManager // out
 	var _cret C.gboolean         // in
@@ -180,7 +178,6 @@ func (self *StyleManager) Dark() bool {
 // The function returns the following values:
 //
 //   - display (optional): display.
-//
 func (self *StyleManager) Display() *gdk.Display {
 	var _arg0 *C.AdwStyleManager // out
 	var _cret *C.GdkDisplay      // in
@@ -211,7 +208,6 @@ func (self *StyleManager) Display() *gdk.Display {
 // The function returns the following values:
 //
 //   - ok: whether the application is using high contrast appearance.
-//
 func (self *StyleManager) HighContrast() bool {
 	var _arg0 *C.AdwStyleManager // out
 	var _cret C.gboolean         // in
@@ -239,7 +235,6 @@ func (self *StyleManager) HighContrast() bool {
 // The function returns the following values:
 //
 //   - ok: whether the system supports color schemes.
-//
 func (self *StyleManager) SystemSupportsColorSchemes() bool {
 	var _arg0 *C.AdwStyleManager // out
 	var _cret C.gboolean         // in
@@ -291,7 +286,6 @@ func (self *StyleManager) SystemSupportsColorSchemes() bool {
 // The function takes the following parameters:
 //
 //   - colorScheme: color scheme.
-//
 func (self *StyleManager) SetColorScheme(colorScheme ColorScheme) {
 	var _arg0 *C.AdwStyleManager // out
 	var _arg1 C.AdwColorScheme   // out
@@ -314,7 +308,6 @@ func (self *StyleManager) SetColorScheme(colorScheme ColorScheme) {
 // The function returns the following values:
 //
 //   - styleManager: default style manager.
-//
 func StyleManagerGetDefault() *StyleManager {
 	var _cret *C.AdwStyleManager // in
 
@@ -341,7 +334,6 @@ func StyleManagerGetDefault() *StyleManager {
 // The function returns the following values:
 //
 //   - styleManager: style manager for display.
-//
 func StyleManagerGetForDisplay(display *gdk.Display) *StyleManager {
 	var _arg1 *C.GdkDisplay      // out
 	var _cret *C.AdwStyleManager // in

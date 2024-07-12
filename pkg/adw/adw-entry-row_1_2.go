@@ -178,7 +178,6 @@ func (self *EntryRow) ConnectEntryActivated(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - entryRow: newly created AdwEntryRow.
-//
 func NewEntryRow() *EntryRow {
 	var _cret *C.GtkWidget // in
 
@@ -196,7 +195,6 @@ func NewEntryRow() *EntryRow {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *EntryRow) AddPrefix(widget gtk.Widgetter) {
 	var _arg0 *C.AdwEntryRow // out
 	var _arg1 *C.GtkWidget   // out
@@ -214,7 +212,6 @@ func (self *EntryRow) AddPrefix(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *EntryRow) AddSuffix(widget gtk.Widgetter) {
 	var _arg0 *C.AdwEntryRow // out
 	var _arg1 *C.GtkWidget   // out
@@ -233,7 +230,6 @@ func (self *EntryRow) AddSuffix(widget gtk.Widgetter) {
 // The function returns the following values:
 //
 //   - ok: whether to activate the default widget.
-//
 func (self *EntryRow) ActivatesDefault() bool {
 	var _arg0 *C.AdwEntryRow // out
 	var _cret C.gboolean     // in
@@ -257,7 +253,6 @@ func (self *EntryRow) ActivatesDefault() bool {
 // The function returns the following values:
 //
 //   - attrList (optional): list of attributes.
-//
 func (self *EntryRow) Attributes() *pango.AttrList {
 	var _arg0 *C.AdwEntryRow   // out
 	var _cret *C.PangoAttrList // in
@@ -287,7 +282,6 @@ func (self *EntryRow) Attributes() *pango.AttrList {
 // The function returns the following values:
 //
 //   - ok: whether or not emoji completion is enabled.
-//
 func (self *EntryRow) EnableEmojiCompletion() bool {
 	var _arg0 *C.AdwEntryRow // out
 	var _cret C.gboolean     // in
@@ -311,7 +305,6 @@ func (self *EntryRow) EnableEmojiCompletion() bool {
 // The function returns the following values:
 //
 //   - inputHints: input hints.
-//
 func (self *EntryRow) InputHints() gtk.InputHints {
 	var _arg0 *C.AdwEntryRow  // out
 	var _cret C.GtkInputHints // in
@@ -333,7 +326,6 @@ func (self *EntryRow) InputHints() gtk.InputHints {
 // The function returns the following values:
 //
 //   - inputPurpose: input purpose.
-//
 func (self *EntryRow) InputPurpose() gtk.InputPurpose {
 	var _arg0 *C.AdwEntryRow    // out
 	var _cret C.GtkInputPurpose // in
@@ -355,7 +347,6 @@ func (self *EntryRow) InputPurpose() gtk.InputPurpose {
 // The function returns the following values:
 //
 //   - ok: whether to show the apply button.
-//
 func (self *EntryRow) ShowApplyButton() bool {
 	var _arg0 *C.AdwEntryRow // out
 	var _cret C.gboolean     // in
@@ -374,6 +365,27 @@ func (self *EntryRow) ShowApplyButton() bool {
 	return _ok
 }
 
+// TextLength retrieves the current length of the text in self.
+//
+// The function returns the following values:
+//
+//   - guint: current number of characters in self, or 0 if there are none.
+func (self *EntryRow) TextLength() uint {
+	var _arg0 *C.AdwEntryRow // out
+	var _cret C.guint        // in
+
+	_arg0 = (*C.AdwEntryRow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+
+	_cret = C.adw_entry_row_get_text_length(_arg0)
+	runtime.KeepAlive(self)
+
+	var _guint uint // out
+
+	_guint = uint(_cret)
+
+	return _guint
+}
+
 // GrabFocusWithoutSelecting causes self to have keyboard focus without
 // selecting the text.
 //
@@ -382,7 +394,6 @@ func (self *EntryRow) ShowApplyButton() bool {
 // The function returns the following values:
 //
 //   - ok: whether the focus is now inside self.
-//
 func (self *EntryRow) GrabFocusWithoutSelecting() bool {
 	var _arg0 *C.AdwEntryRow // out
 	var _cret C.gboolean     // in
@@ -406,7 +417,6 @@ func (self *EntryRow) GrabFocusWithoutSelecting() bool {
 // The function takes the following parameters:
 //
 //   - widget: child to be removed.
-//
 func (self *EntryRow) Remove(widget gtk.Widgetter) {
 	var _arg0 *C.AdwEntryRow // out
 	var _arg1 *C.GtkWidget   // out
@@ -425,7 +435,6 @@ func (self *EntryRow) Remove(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - activates: whether to activate the default widget.
-//
 func (self *EntryRow) SetActivatesDefault(activates bool) {
 	var _arg0 *C.AdwEntryRow // out
 	var _arg1 C.gboolean     // out
@@ -449,7 +458,6 @@ func (self *EntryRow) SetActivatesDefault(activates bool) {
 // The function takes the following parameters:
 //
 //   - attributes (optional): list of attributes.
-//
 func (self *EntryRow) SetAttributes(attributes *pango.AttrList) {
 	var _arg0 *C.AdwEntryRow   // out
 	var _arg1 *C.PangoAttrList // out
@@ -471,7 +479,6 @@ func (self *EntryRow) SetAttributes(attributes *pango.AttrList) {
 // The function takes the following parameters:
 //
 //   - enableEmojiCompletion: whether emoji completion should be enabled or not.
-//
 func (self *EntryRow) SetEnableEmojiCompletion(enableEmojiCompletion bool) {
 	var _arg0 *C.AdwEntryRow // out
 	var _arg1 C.gboolean     // out
@@ -495,7 +502,6 @@ func (self *EntryRow) SetEnableEmojiCompletion(enableEmojiCompletion bool) {
 // The function takes the following parameters:
 //
 //   - hints: hints.
-//
 func (self *EntryRow) SetInputHints(hints gtk.InputHints) {
 	var _arg0 *C.AdwEntryRow  // out
 	var _arg1 C.GtkInputHints // out
@@ -515,7 +521,6 @@ func (self *EntryRow) SetInputHints(hints gtk.InputHints) {
 // The function takes the following parameters:
 //
 //   - purpose: purpose.
-//
 func (self *EntryRow) SetInputPurpose(purpose gtk.InputPurpose) {
 	var _arg0 *C.AdwEntryRow    // out
 	var _arg1 C.GtkInputPurpose // out
@@ -541,7 +546,6 @@ func (self *EntryRow) SetInputPurpose(purpose gtk.InputPurpose) {
 // The function takes the following parameters:
 //
 //   - showApplyButton: whether to show the apply button.
-//
 func (self *EntryRow) SetShowApplyButton(showApplyButton bool) {
 	var _arg0 *C.AdwEntryRow // out
 	var _arg1 C.gboolean     // out

@@ -106,7 +106,6 @@ func marshalWindowTitle(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - windowTitle: newly created AdwWindowTitle.
-//
 func NewWindowTitle(title, subtitle string) *WindowTitle {
 	var _arg1 *C.char      // out
 	var _arg2 *C.char      // out
@@ -133,7 +132,6 @@ func NewWindowTitle(title, subtitle string) *WindowTitle {
 // The function returns the following values:
 //
 //   - utf8: subtitle.
-//
 func (self *WindowTitle) Subtitle() string {
 	var _arg0 *C.AdwWindowTitle // out
 	var _cret *C.char           // in
@@ -155,7 +153,6 @@ func (self *WindowTitle) Subtitle() string {
 // The function returns the following values:
 //
 //   - utf8: title.
-//
 func (self *WindowTitle) Title() string {
 	var _arg0 *C.AdwWindowTitle // out
 	var _cret *C.char           // in
@@ -179,7 +176,6 @@ func (self *WindowTitle) Title() string {
 // The function takes the following parameters:
 //
 //   - subtitle: subtitle.
-//
 func (self *WindowTitle) SetSubtitle(subtitle string) {
 	var _arg0 *C.AdwWindowTitle // out
 	var _arg1 *C.char           // out
@@ -201,7 +197,6 @@ func (self *WindowTitle) SetSubtitle(subtitle string) {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *WindowTitle) SetTitle(title string) {
 	var _arg0 *C.AdwWindowTitle // out
 	var _arg1 *C.char           // out

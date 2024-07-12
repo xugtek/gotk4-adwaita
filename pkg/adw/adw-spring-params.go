@@ -133,7 +133,6 @@ func NewSpringParamsFull(damping float64, mass float64, stiffness float64) *Spri
 // The function returns the following values:
 //
 //   - gdouble: damping.
-//
 func (self *SpringParams) Damping() float64 {
 	var _arg0 *C.AdwSpringParams // out
 	var _cret C.double           // in
@@ -155,7 +154,6 @@ func (self *SpringParams) Damping() float64 {
 // The function returns the following values:
 //
 //   - gdouble: damping ratio.
-//
 func (self *SpringParams) DampingRatio() float64 {
 	var _arg0 *C.AdwSpringParams // out
 	var _cret C.double           // in
@@ -177,7 +175,6 @@ func (self *SpringParams) DampingRatio() float64 {
 // The function returns the following values:
 //
 //   - gdouble: mass.
-//
 func (self *SpringParams) Mass() float64 {
 	var _arg0 *C.AdwSpringParams // out
 	var _cret C.double           // in
@@ -199,7 +196,6 @@ func (self *SpringParams) Mass() float64 {
 // The function returns the following values:
 //
 //   - gdouble: stiffness.
-//
 func (self *SpringParams) Stiffness() float64 {
 	var _arg0 *C.AdwSpringParams // out
 	var _cret C.double           // in

@@ -73,7 +73,7 @@ func defaultToastOverrides(v *Toast) ToastOverrides {
 //
 // Toasts are meant to be passed into toastoverlay.AddToast as follows:
 //
-//    adw_toast_overlay_add_toast (overlay, adw_toast_new (_("Simple Toast")));
+//	adw_toast_overlay_add_toast (overlay, adw_toast_new (_("Simple Toast")));
 //
 // <picture> <source srcset="toast-simple-dark.png"
 // media="(prefers-color-scheme: dark)"> <img src="toast-simple.png"
@@ -96,12 +96,12 @@ func defaultToastOverrides(v *Toast) ToastOverrides {
 //
 // Toasts can have one button on them, with a label and an attached gio.Action.
 //
-//    AdwToast *toast = adw_toast_new (_("Toast with Action"));
+//	AdwToast *toast = adw_toast_new (_("Toast with Action"));
 //
-//    adw_toast_set_button_label (toast, _("_Example"));
-//    adw_toast_set_action_name (toast, "win.example");
+//	adw_toast_set_button_label (toast, _("_Example"));
+//	adw_toast_set_action_name (toast, "win.example");
 //
-//    adw_toast_overlay_add_toast (overlay, toast);
+//	adw_toast_overlay_add_toast (overlay, toast);
 //
 // <picture> <source srcset="toast-action-dark.png"
 // media="(prefers-color-scheme: dark)"> <img src="toast-action.png"
@@ -115,65 +115,65 @@ func defaultToastOverrides(v *Toast) ToastOverrides {
 // A common use case for this is using toasts as undo prompts that stack with
 // each other, allowing to batch undo the last deleted items:
 //
-//    static void
-//    toast_undo_cb (GtkWidget  *sender,
-//                   const char *action,
-//                   GVariant   *param)
-//    {
-//      // Undo the deletion
-//    }
+//	static void
+//	toast_undo_cb (GtkWidget  *sender,
+//	               const char *action,
+//	               GVariant   *param)
+//	{
+//	  // Undo the deletion
+//	}
 //
-//    static void
-//    dismissed_cb (MyWindow *self)
-//    {
-//      self->undo_toast = NULL;
+//	static void
+//	dismissed_cb (MyWindow *self)
+//	{
+//	  self->undo_toast = NULL;
 //
-//      // Permanently delete the items
-//    }
+//	  // Permanently delete the items
+//	}
 //
-//    static void
-//    delete_item (MyWindow *self,
-//                 MyItem   *item)
-//    {
-//      g_autofree char *title = NULL;
-//      int n_items;
+//	static void
+//	delete_item (MyWindow *self,
+//	             MyItem   *item)
+//	{
+//	  g_autofree char *title = NULL;
+//	  int n_items;
 //
-//      // Mark the item as waiting for deletion
-//      n_items = ... // The number of waiting items
+//	  // Mark the item as waiting for deletion
+//	  n_items = ... // The number of waiting items
 //
-//      if (!self->undo_toast) {
-//        self->undo_toast = adw_toast_new_format (_("‘s’ deleted"), ...);
+//	  if (!self->undo_toast) {
+//	    self->undo_toast = adw_toast_new_format (_("‘s’ deleted"), ...);
 //
-//        adw_toast_set_priority (self->undo_toast, ADW_TOAST_PRIORITY_HIGH);
-//        adw_toast_set_button_label (self->undo_toast, _("_Undo"));
-//        adw_toast_set_action_name (self->undo_toast, "toast.undo");
+//	    adw_toast_set_priority (self->undo_toast, ADW_TOAST_PRIORITY_HIGH);
+//	    adw_toast_set_button_label (self->undo_toast, _("_Undo"));
+//	    adw_toast_set_action_name (self->undo_toast, "toast.undo");
 //
-//        g_signal_connect_swapped (self->undo_toast, "dismissed",
-//                                  G_CALLBACK (dismissed_cb), self);
+//	    g_signal_connect_swapped (self->undo_toast, "dismissed",
+//	                              G_CALLBACK (dismissed_cb), self);
 //
-//        adw_toast_overlay_add_toast (self->toast_overlay, self->undo_toast);
+//	    adw_toast_overlay_add_toast (self->toast_overlay, self->undo_toast);
 //
-//        return;
-//      }
+//	    return;
+//	  }
 //
-//      title =
-//        g_strdup_printf (ngettext ("<span font_features='tnum=1'>d</span> item deleted",
-//                                   "<span font_features='tnum=1'>d</span> items deleted",
-//                                   n_items), n_items);
+//	  title =
+//	    g_strdup_printf (ngettext ("<span font_features='tnum=1'>d</span> item deleted",
+//	                               "<span font_features='tnum=1'>d</span> items deleted",
+//	                               n_items), n_items);
 //
-//      adw_toast_set_title (self->undo_toast, title);
+//	  adw_toast_set_title (self->undo_toast, title);
 //
-//      // Bump the toast timeout
-//      adw_toast_overlay_add_toast (self->toast_overlay, g_object_ref (self->undo_toast));
-//    }
+//	  // Bump the toast timeout
+//	  adw_toast_overlay_add_toast (self->toast_overlay, g_object_ref (self->undo_toast));
+//	}
 //
-//    static void
-//    my_window_class_init (MyWindowClass *klass)
-//    {
-//      GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+//	static void
+//	my_window_class_init (MyWindowClass *klass)
+//	{
+//	  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 //
-//      gtk_widget_class_install_action (widget_class, "toast.undo", NULL, toast_undo_cb);
-//    }
+//	  gtk_widget_class_install_action (widget_class, "toast.undo", NULL, toast_undo_cb);
+//	}
 //
 // <picture> <source srcset="toast-undo-dark.png" media="(prefers-color-scheme:
 // dark)"> <img src="toast-undo.png" alt="toast-undo"> </picture>.
@@ -237,7 +237,6 @@ func (self *Toast) ConnectDismissed(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - toast: new created AdwToast.
-//
 func NewToast(title string) *Toast {
 	var _arg1 *C.char     // out
 	var _cret *C.AdwToast // in
@@ -273,7 +272,6 @@ func (self *Toast) Dismiss() {
 // The function returns the following values:
 //
 //   - utf8 (optional): action name.
-//
 func (self *Toast) ActionName() string {
 	var _arg0 *C.AdwToast // out
 	var _cret *C.char     // in
@@ -297,7 +295,6 @@ func (self *Toast) ActionName() string {
 // The function returns the following values:
 //
 //   - variant (optional): action target.
-//
 func (self *Toast) ActionTargetValue() *glib.Variant {
 	var _arg0 *C.AdwToast // out
 	var _cret *C.GVariant // in
@@ -328,7 +325,6 @@ func (self *Toast) ActionTargetValue() *glib.Variant {
 // The function returns the following values:
 //
 //   - utf8 (optional): button label.
-//
 func (self *Toast) ButtonLabel() string {
 	var _arg0 *C.AdwToast // out
 	var _cret *C.char     // in
@@ -352,7 +348,6 @@ func (self *Toast) ButtonLabel() string {
 // The function returns the following values:
 //
 //   - widget (optional): custom title widget.
-//
 func (self *Toast) CustomTitle() gtk.Widgetter {
 	var _arg0 *C.AdwToast  // out
 	var _cret *C.GtkWidget // in
@@ -389,7 +384,6 @@ func (self *Toast) CustomTitle() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - toastPriority: priority.
-//
 func (self *Toast) Priority() ToastPriority {
 	var _arg0 *C.AdwToast        // out
 	var _cret C.AdwToastPriority // in
@@ -411,7 +405,6 @@ func (self *Toast) Priority() ToastPriority {
 // The function returns the following values:
 //
 //   - guint: timeout.
-//
 func (self *Toast) Timeout() uint {
 	var _arg0 *C.AdwToast // out
 	var _cret C.guint     // in
@@ -436,7 +429,6 @@ func (self *Toast) Timeout() uint {
 // The function returns the following values:
 //
 //   - utf8 (optional): title.
-//
 func (self *Toast) Title() string {
 	var _arg0 *C.AdwToast // out
 	var _cret *C.char     // in
@@ -460,7 +452,6 @@ func (self *Toast) Title() string {
 // The function returns the following values:
 //
 //   - ok: whether the toast uses markup.
-//
 func (self *Toast) UseMarkup() bool {
 	var _arg0 *C.AdwToast // out
 	var _cret C.gboolean  // in
@@ -488,7 +479,6 @@ func (self *Toast) UseMarkup() bool {
 // The function takes the following parameters:
 //
 //   - actionName (optional): action name.
-//
 func (self *Toast) SetActionName(actionName string) {
 	var _arg0 *C.AdwToast // out
 	var _arg1 *C.char     // out
@@ -512,7 +502,6 @@ func (self *Toast) SetActionName(actionName string) {
 // The function takes the following parameters:
 //
 //   - actionTarget (optional): action target.
-//
 func (self *Toast) SetActionTargetValue(actionTarget *glib.Variant) {
 	var _arg0 *C.AdwToast // out
 	var _arg1 *C.GVariant // out
@@ -538,7 +527,6 @@ func (self *Toast) SetActionTargetValue(actionTarget *glib.Variant) {
 // The function takes the following parameters:
 //
 //   - buttonLabel (optional): button label.
-//
 func (self *Toast) SetButtonLabel(buttonLabel string) {
 	var _arg0 *C.AdwToast // out
 	var _arg1 *C.char     // out
@@ -564,7 +552,6 @@ func (self *Toast) SetButtonLabel(buttonLabel string) {
 // The function takes the following parameters:
 //
 //   - widget (optional): custom title widget.
-//
 func (self *Toast) SetCustomTitle(widget gtk.Widgetter) {
 	var _arg0 *C.AdwToast  // out
 	var _arg1 *C.GtkWidget // out
@@ -587,7 +574,6 @@ func (self *Toast) SetCustomTitle(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - detailedActionName (optional): detailed action name.
-//
 func (self *Toast) SetDetailedActionName(detailedActionName string) {
 	var _arg0 *C.AdwToast // out
 	var _arg1 *C.char     // out
@@ -616,7 +602,6 @@ func (self *Toast) SetDetailedActionName(detailedActionName string) {
 // The function takes the following parameters:
 //
 //   - priority: priority.
-//
 func (self *Toast) SetPriority(priority ToastPriority) {
 	var _arg0 *C.AdwToast        // out
 	var _arg1 C.AdwToastPriority // out
@@ -640,7 +625,6 @@ func (self *Toast) SetPriority(priority ToastPriority) {
 // The function takes the following parameters:
 //
 //   - timeout: timeout.
-//
 func (self *Toast) SetTimeout(timeout uint) {
 	var _arg0 *C.AdwToast // out
 	var _arg1 C.guint     // out
@@ -664,7 +648,6 @@ func (self *Toast) SetTimeout(timeout uint) {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *Toast) SetTitle(title string) {
 	var _arg0 *C.AdwToast // out
 	var _arg1 *C.char     // out
@@ -685,7 +668,6 @@ func (self *Toast) SetTitle(title string) {
 // The function takes the following parameters:
 //
 //   - useMarkup: whether to use markup.
-//
 func (self *Toast) SetUseMarkup(useMarkup bool) {
 	var _arg0 *C.AdwToast // out
 	var _arg1 C.gboolean  // out

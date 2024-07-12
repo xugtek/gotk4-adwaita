@@ -3,7 +3,6 @@
 package adw
 
 import (
-	"fmt"
 	"runtime"
 	"unsafe"
 
@@ -25,51 +24,13 @@ import "C"
 
 // GType values.
 var (
-	GTypeResponseAppearance = coreglib.Type(C.adw_response_appearance_get_type())
-	GTypeMessageDialog      = coreglib.Type(C.adw_message_dialog_get_type())
+	GTypeMessageDialog = coreglib.Type(C.adw_message_dialog_get_type())
 )
 
 func init() {
 	coreglib.RegisterGValueMarshalers([]coreglib.TypeMarshaler{
-		coreglib.TypeMarshaler{T: GTypeResponseAppearance, F: marshalResponseAppearance},
 		coreglib.TypeMarshaler{T: GTypeMessageDialog, F: marshalMessageDialog},
 	})
-}
-
-// ResponseAppearance describes the possible styles of messagedialog response
-// buttons.
-//
-// See messagedialog.SetResponseAppearance.
-type ResponseAppearance C.gint
-
-const (
-	// ResponseDefault: default appearance.
-	ResponseDefault ResponseAppearance = iota
-	// ResponseSuggested: used to denote important responses such as the
-	// affirmative action.
-	ResponseSuggested
-	// ResponseDestructive: used to draw attention to the potentially damaging
-	// consequences of using the response. This appearance acts as a warning to
-	// the user.
-	ResponseDestructive
-)
-
-func marshalResponseAppearance(p uintptr) (interface{}, error) {
-	return ResponseAppearance(coreglib.ValueFromNative(unsafe.Pointer(p)).Enum()), nil
-}
-
-// String returns the name in string for ResponseAppearance.
-func (r ResponseAppearance) String() string {
-	switch r {
-	case ResponseDefault:
-		return "Default"
-	case ResponseSuggested:
-		return "Suggested"
-	case ResponseDestructive:
-		return "Destructive"
-	default:
-		return fmt.Sprintf("ResponseAppearance(%d)", r)
-	}
 }
 
 // MessageDialogOverrides contains methods that are overridable.
@@ -82,7 +43,6 @@ type MessageDialogOverrides struct {
 	// The function takes the following parameters:
 	//
 	//   - response ID.
-	//
 	Response func(response string)
 }
 
@@ -119,27 +79,27 @@ func defaultMessageDialogOverrides(v *MessageDialog) MessageDialogOverrides {
 //
 // An example of using a message dialog:
 //
-//    GtkWidget *dialog;
+//	GtkWidget *dialog;
 //
-//    dialog = adw_message_dialog_new (parent, _("Replace File?"), NULL);
+//	dialog = adw_message_dialog_new (parent, _("Replace File?"), NULL);
 //
-//    adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
-//                                    _("A file named “s” already exists. Do you want to replace it?"),
-//                                    filename);
+//	adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
+//	                                _("A file named “s” already exists. Do you want to replace it?"),
+//	                                filename);
 //
-//    adw_message_dialog_add_responses (ADW_MESSAGE_DIALOG (dialog),
-//                                      "cancel",  _("_Cancel"),
-//                                      "replace", _("_Replace"),
-//                                      NULL);
+//	adw_message_dialog_add_responses (ADW_MESSAGE_DIALOG (dialog),
+//	                                  "cancel",  _("_Cancel"),
+//	                                  "replace", _("_Replace"),
+//	                                  NULL);
 //
-//    adw_message_dialog_set_response_appearance (ADW_MESSAGE_DIALOG (dialog), "replace", ADW_RESPONSE_DESTRUCTIVE);
+//	adw_message_dialog_set_response_appearance (ADW_MESSAGE_DIALOG (dialog), "replace", ADW_RESPONSE_DESTRUCTIVE);
 //
-//    adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG (dialog), "cancel");
-//    adw_message_dialog_set_close_response (ADW_MESSAGE_DIALOG (dialog), "cancel");
+//	adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG (dialog), "cancel");
+//	adw_message_dialog_set_close_response (ADW_MESSAGE_DIALOG (dialog), "cancel");
 //
-//    g_signal_connect (dialog, "response", G_CALLBACK (response_cb), self);
+//	g_signal_connect (dialog, "response", G_CALLBACK (response_cb), self);
 //
-//    gtk_window_present (GTK_WINDOW (dialog));
+//	gtk_window_present (GTK_WINDOW (dialog));
 //
 // # Async API
 //
@@ -147,39 +107,39 @@ func defaultMessageDialogOverrides(v *MessageDialog) MessageDialogOverrides {
 // This API follows the GIO async pattern, and the result can be obtained by
 // calling messagedialog.ChooseFinish, for example:
 //
-//    static void
-//    dialog_cb (AdwMessageDialog *dialog,
-//               GAsyncResult     *result,
-//               MyWindow         *self)
-//    {
-//      const char *response = adw_message_dialog_choose_finish (dialog, result);
+//	static void
+//	dialog_cb (AdwMessageDialog *dialog,
+//	           GAsyncResult     *result,
+//	           MyWindow         *self)
+//	{
+//	  const char *response = adw_message_dialog_choose_finish (dialog, result);
 //
-//      // ...
-//    }
+//	  // ...
+//	}
 //
-//    static void
-//    show_dialog (MyWindow *self)
-//    {
-//      GtkWidget *dialog;
+//	static void
+//	show_dialog (MyWindow *self)
+//	{
+//	  GtkWidget *dialog;
 //
-//      dialog = adw_message_dialog_new (GTK_WINDOW (self), _("Replace File?"), NULL);
+//	  dialog = adw_message_dialog_new (GTK_WINDOW (self), _("Replace File?"), NULL);
 //
-//      adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
-//                                      _("A file named “s” already exists. Do you want to replace it?"),
-//                                      filename);
+//	  adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
+//	                                  _("A file named “s” already exists. Do you want to replace it?"),
+//	                                  filename);
 //
-//      adw_message_dialog_add_responses (ADW_MESSAGE_DIALOG (dialog),
-//                                        "cancel",  _("_Cancel"),
-//                                        "replace", _("_Replace"),
-//                                        NULL);
+//	  adw_message_dialog_add_responses (ADW_MESSAGE_DIALOG (dialog),
+//	                                    "cancel",  _("_Cancel"),
+//	                                    "replace", _("_Replace"),
+//	                                    NULL);
 //
-//      adw_message_dialog_set_response_appearance (ADW_MESSAGE_DIALOG (dialog), "replace", ADW_RESPONSE_DESTRUCTIVE);
+//	  adw_message_dialog_set_response_appearance (ADW_MESSAGE_DIALOG (dialog), "replace", ADW_RESPONSE_DESTRUCTIVE);
 //
-//      adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG (dialog), "cancel");
-//      adw_message_dialog_set_close_response (ADW_MESSAGE_DIALOG (dialog), "cancel");
+//	  adw_message_dialog_set_default_response (ADW_MESSAGE_DIALOG (dialog), "cancel");
+//	  adw_message_dialog_set_close_response (ADW_MESSAGE_DIALOG (dialog), "cancel");
 //
-//      adw_message_dialog_choose (ADW_MESSAGE_DIALOG (dialog), NULL, (GAsyncReadyCallback) dialog_cb, self);
-//    }
+//	  adw_message_dialog_choose (ADW_MESSAGE_DIALOG (dialog), NULL, (GAsyncReadyCallback) dialog_cb, self);
+//	}
 //
 // # AdwMessageDialog as GtkBuildable
 //
@@ -199,18 +159,18 @@ func defaultMessageDialogOverrides(v *MessageDialog) MessageDialogOverrides {
 //
 // Example of an AdwMessageDialog UI definition:
 //
-//    <object class="AdwMessageDialog" id="dialog">
-//      <property name="heading" translatable="yes">Save Changes?</property>
-//      <property name="body" translatable="yes">Open documents contain unsaved changes. Changes which are not saved will be permanently lost.</property>
-//      <property name="default-response">save</property>
-//      <property name="close-response">cancel</property>
-//      <signal name="response" handler="response_cb"/>
-//      <responses>
-//        <response id="cancel" translatable="yes">_Cancel</response>
-//        <response id="discard" translatable="yes" appearance="destructive">_Discard</response>
-//        <response id="save" translatable="yes" appearance="suggested" enabled="false">_Save</response>
-//      </responses>
-//    </object>
+//	<object class="AdwMessageDialog" id="dialog">
+//	  <property name="heading" translatable="yes">Save Changes?</property>
+//	  <property name="body" translatable="yes">Open documents contain unsaved changes. Changes which are not saved will be permanently lost.</property>
+//	  <property name="default-response">save</property>
+//	  <property name="close-response">cancel</property>
+//	  <signal name="response" handler="response_cb"/>
+//	  <responses>
+//	    <response id="cancel" translatable="yes">_Cancel</response>
+//	    <response id="discard" translatable="yes" appearance="destructive">_Discard</response>
+//	    <response id="save" translatable="yes" appearance="suggested" enabled="false">_Save</response>
+//	  </responses>
+//	</object>
 //
 // # Accessibility
 //
@@ -313,12 +273,12 @@ func (self *MessageDialog) ConnectResponse(f func(response string)) coreglib.Sig
 // to be formatted or use markup. In that case, set them to NULL and call
 // messagedialog.FormatBody or similar methods afterwards:
 //
-//    GtkWidget *dialog;
+//	GtkWidget *dialog;
 //
-//    dialog = adw_message_dialog_new (parent, _("Replace File?"), NULL);
-//    adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
-//                                    _("A file named “s” already exists.  Do you want to replace it?"),
-//                                    filename);.
+//	dialog = adw_message_dialog_new (parent, _("Replace File?"), NULL);
+//	adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
+//	                                _("A file named “s” already exists.  Do you want to replace it?"),
+//	                                filename);.
 //
 // The function takes the following parameters:
 //
@@ -329,7 +289,6 @@ func (self *MessageDialog) ConnectResponse(f func(response string)) coreglib.Sig
 // The function returns the following values:
 //
 //   - messageDialog: newly created AdwMessageDialog.
-//
 func NewMessageDialog(parent *gtk.Window, heading, body string) *MessageDialog {
 	var _arg1 *C.GtkWindow // out
 	var _arg2 *C.char      // out
@@ -380,7 +339,6 @@ func NewMessageDialog(parent *gtk.Window, heading, body string) *MessageDialog {
 //
 //   - id: response ID.
 //   - label: response label.
-//
 func (self *MessageDialog) AddResponse(id, label string) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -409,7 +367,6 @@ func (self *MessageDialog) AddResponse(id, label string) {
 //
 //   - utf8: ID of the response that was selected, or
 //     messagedialog:close-response if the call was cancelled.
-//
 func (self *MessageDialog) ChooseFinish(result gio.AsyncResulter) string {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.GAsyncResult     // out
@@ -434,7 +391,6 @@ func (self *MessageDialog) ChooseFinish(result gio.AsyncResulter) string {
 // The function returns the following values:
 //
 //   - utf8: body of self.
-//
 func (self *MessageDialog) Body() string {
 	var _arg0 *C.AdwMessageDialog // out
 	var _cret *C.char             // in
@@ -456,7 +412,6 @@ func (self *MessageDialog) Body() string {
 // The function returns the following values:
 //
 //   - ok: whether self uses markup for body text.
-//
 func (self *MessageDialog) BodyUseMarkup() bool {
 	var _arg0 *C.AdwMessageDialog // out
 	var _cret C.gboolean          // in
@@ -480,7 +435,6 @@ func (self *MessageDialog) BodyUseMarkup() bool {
 // The function returns the following values:
 //
 //   - utf8: close response ID.
-//
 func (self *MessageDialog) CloseResponse() string {
 	var _arg0 *C.AdwMessageDialog // out
 	var _cret *C.char             // in
@@ -502,7 +456,6 @@ func (self *MessageDialog) CloseResponse() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): default response ID.
-//
 func (self *MessageDialog) DefaultResponse() string {
 	var _arg0 *C.AdwMessageDialog // out
 	var _cret *C.char             // in
@@ -526,7 +479,6 @@ func (self *MessageDialog) DefaultResponse() string {
 // The function returns the following values:
 //
 //   - widget (optional): child widget of self.
-//
 func (self *MessageDialog) ExtraChild() gtk.Widgetter {
 	var _arg0 *C.AdwMessageDialog // out
 	var _cret *C.GtkWidget        // in
@@ -563,7 +515,6 @@ func (self *MessageDialog) ExtraChild() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - utf8 (optional): heading of self.
-//
 func (self *MessageDialog) Heading() string {
 	var _arg0 *C.AdwMessageDialog // out
 	var _cret *C.char             // in
@@ -587,7 +538,6 @@ func (self *MessageDialog) Heading() string {
 // The function returns the following values:
 //
 //   - ok: whether self uses markup for heading.
-//
 func (self *MessageDialog) HeadingUseMarkup() bool {
 	var _arg0 *C.AdwMessageDialog // out
 	var _cret C.gboolean          // in
@@ -617,7 +567,6 @@ func (self *MessageDialog) HeadingUseMarkup() bool {
 // The function returns the following values:
 //
 //   - responseAppearance: appearance of response.
-//
 func (self *MessageDialog) ResponseAppearance(response string) ResponseAppearance {
 	var _arg0 *C.AdwMessageDialog     // out
 	var _arg1 *C.char                 // out
@@ -649,7 +598,6 @@ func (self *MessageDialog) ResponseAppearance(response string) ResponseAppearanc
 // The function returns the following values:
 //
 //   - ok: whether response is enabled.
-//
 func (self *MessageDialog) ResponseEnabled(response string) bool {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -683,7 +631,6 @@ func (self *MessageDialog) ResponseEnabled(response string) bool {
 // The function returns the following values:
 //
 //   - utf8: label of response.
-//
 func (self *MessageDialog) ResponseLabel(response string) string {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -713,7 +660,6 @@ func (self *MessageDialog) ResponseLabel(response string) string {
 // The function returns the following values:
 //
 //   - ok: whether self has a response with the ID response.
-//
 func (self *MessageDialog) HasResponse(response string) bool {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -736,6 +682,24 @@ func (self *MessageDialog) HasResponse(response string) bool {
 	return _ok
 }
 
+// RemoveResponse removes a response from self.
+//
+// The function takes the following parameters:
+//
+//   - id: response ID.
+func (self *MessageDialog) RemoveResponse(id string) {
+	var _arg0 *C.AdwMessageDialog // out
+	var _arg1 *C.char             // out
+
+	_arg0 = (*C.AdwMessageDialog)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+	_arg1 = (*C.char)(unsafe.Pointer(C.CString(id)))
+	defer C.free(unsafe.Pointer(_arg1))
+
+	C.adw_message_dialog_remove_response(_arg0, _arg1)
+	runtime.KeepAlive(self)
+	runtime.KeepAlive(id)
+}
+
 // Response emits the messagedialog::response signal with the given response ID.
 //
 // Used to indicate that the user has responded to the dialog in some way.
@@ -743,7 +707,6 @@ func (self *MessageDialog) HasResponse(response string) bool {
 // The function takes the following parameters:
 //
 //   - response ID.
-//
 func (self *MessageDialog) Response(response string) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -762,7 +725,6 @@ func (self *MessageDialog) Response(response string) {
 // The function takes the following parameters:
 //
 //   - body of self.
-//
 func (self *MessageDialog) SetBody(body string) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -783,7 +745,6 @@ func (self *MessageDialog) SetBody(body string) {
 // The function takes the following parameters:
 //
 //   - useMarkup: whether to use markup for body text.
-//
 func (self *MessageDialog) SetBodyUseMarkup(useMarkup bool) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 C.gboolean          // out
@@ -810,7 +771,6 @@ func (self *MessageDialog) SetBodyUseMarkup(useMarkup bool) {
 // The function takes the following parameters:
 //
 //   - response: close response ID.
-//
 func (self *MessageDialog) SetCloseResponse(response string) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -834,7 +794,6 @@ func (self *MessageDialog) SetCloseResponse(response string) {
 // The function takes the following parameters:
 //
 //   - response (optional): default response ID.
-//
 func (self *MessageDialog) SetDefaultResponse(response string) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -857,7 +816,6 @@ func (self *MessageDialog) SetDefaultResponse(response string) {
 // The function takes the following parameters:
 //
 //   - child (optional) widget.
-//
 func (self *MessageDialog) SetExtraChild(child gtk.Widgetter) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.GtkWidget        // out
@@ -877,7 +835,6 @@ func (self *MessageDialog) SetExtraChild(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - heading (optional) of self.
-//
 func (self *MessageDialog) SetHeading(heading string) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -900,7 +857,6 @@ func (self *MessageDialog) SetHeading(heading string) {
 // The function takes the following parameters:
 //
 //   - useMarkup: whether to use markup for heading.
-//
 func (self *MessageDialog) SetHeadingUseMarkup(useMarkup bool) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 C.gboolean          // out
@@ -937,7 +893,6 @@ func (self *MessageDialog) SetHeadingUseMarkup(useMarkup bool) {
 //
 //   - response ID.
 //   - appearance for response.
-//
 func (self *MessageDialog) SetResponseAppearance(response string, appearance ResponseAppearance) {
 	var _arg0 *C.AdwMessageDialog     // out
 	var _arg1 *C.char                 // out
@@ -969,7 +924,6 @@ func (self *MessageDialog) SetResponseAppearance(response string, appearance Res
 //
 //   - response ID.
 //   - enabled: whether to enable response.
-//
 func (self *MessageDialog) SetResponseEnabled(response string, enabled bool) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -997,7 +951,6 @@ func (self *MessageDialog) SetResponseEnabled(response string, enabled bool) {
 //
 //   - response ID.
 //   - label of response.
-//
 func (self *MessageDialog) SetResponseLabel(response, label string) {
 	var _arg0 *C.AdwMessageDialog // out
 	var _arg1 *C.char             // out
@@ -1022,7 +975,6 @@ func (self *MessageDialog) SetResponseLabel(response, label string) {
 // The function takes the following parameters:
 //
 //   - response ID.
-//
 func (self *MessageDialog) response(response string) {
 	gclass := (*C.AdwMessageDialogClass)(coreglib.PeekParentClass(self))
 	fnarg := gclass.response

@@ -37,7 +37,7 @@ func defaultPreferencesRowOverrides(v *PreferencesRow) PreferencesRowOverrides {
 
 // PreferencesRow: gtk.ListBoxRow used to present preferences.
 //
-// The AdwPreferencesRow widget has a title that preferenceswindow will use to
+// The AdwPreferencesRow widget has a title that preferencesdialog will use to
 // let the user look for a preference. It doesn't present the title in any way
 // and lets you present the preference as you please.
 //
@@ -119,7 +119,6 @@ func marshalPreferencesRow(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - preferencesRow: newly created AdwPreferencesRow.
-//
 func NewPreferencesRow() *PreferencesRow {
 	var _cret *C.GtkWidget // in
 
@@ -137,7 +136,6 @@ func NewPreferencesRow() *PreferencesRow {
 // The function returns the following values:
 //
 //   - utf8: title.
-//
 func (self *PreferencesRow) Title() string {
 	var _arg0 *C.AdwPreferencesRow // out
 	var _cret *C.char              // in
@@ -159,7 +157,6 @@ func (self *PreferencesRow) Title() string {
 // The function returns the following values:
 //
 //   - ok: whether the user can copy the title from the label.
-//
 func (self *PreferencesRow) TitleSelectable() bool {
 	var _arg0 *C.AdwPreferencesRow // out
 	var _cret C.gboolean           // in
@@ -183,7 +180,6 @@ func (self *PreferencesRow) TitleSelectable() bool {
 // The function returns the following values:
 //
 //   - ok: whether to use markup.
-//
 func (self *PreferencesRow) UseMarkup() bool {
 	var _arg0 *C.AdwPreferencesRow // out
 	var _cret C.gboolean           // in
@@ -208,7 +204,6 @@ func (self *PreferencesRow) UseMarkup() bool {
 // The function returns the following values:
 //
 //   - ok: whether an embedded underline in the title indicates a mnemonic.
-//
 func (self *PreferencesRow) UseUnderline() bool {
 	var _arg0 *C.AdwPreferencesRow // out
 	var _cret C.gboolean           // in
@@ -235,7 +230,6 @@ func (self *PreferencesRow) UseUnderline() bool {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *PreferencesRow) SetTitle(title string) {
 	var _arg0 *C.AdwPreferencesRow // out
 	var _arg1 *C.char              // out
@@ -256,7 +250,6 @@ func (self *PreferencesRow) SetTitle(title string) {
 // The function takes the following parameters:
 //
 //   - titleSelectable: TRUE if the user can copy the title from the label.
-//
 func (self *PreferencesRow) SetTitleSelectable(titleSelectable bool) {
 	var _arg0 *C.AdwPreferencesRow // out
 	var _arg1 C.gboolean           // out
@@ -280,7 +273,6 @@ func (self *PreferencesRow) SetTitleSelectable(titleSelectable bool) {
 // The function takes the following parameters:
 //
 //   - useMarkup: whether to use markup.
-//
 func (self *PreferencesRow) SetUseMarkup(useMarkup bool) {
 	var _arg0 *C.AdwPreferencesRow // out
 	var _arg1 C.gboolean           // out
@@ -301,7 +293,6 @@ func (self *PreferencesRow) SetUseMarkup(useMarkup bool) {
 // The function takes the following parameters:
 //
 //   - useUnderline: TRUE if underlines in the text indicate mnemonics.
-//
 func (self *PreferencesRow) SetUseUnderline(useUnderline bool) {
 	var _arg0 *C.AdwPreferencesRow // out
 	var _arg1 C.gboolean           // out

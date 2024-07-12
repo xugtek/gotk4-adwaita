@@ -72,28 +72,28 @@ func defaultOverlaySplitViewOverrides(v *OverlaySplitView) OverlaySplitViewOverr
 // AdwOverlaySplitView is typically used together with an breakpoint setting the
 // collapsed property to TRUE on small widths, as follows:
 //
-//    <object class="AdwWindow">
-//      <property name="width-request">360</property>
-//      <property name="height-request">200</property>
-//      <property name="default-width">800</property>
-//      <property name="default-height">800</property>
-//      <child>
-//        <object class="AdwBreakpoint">
-//          <condition>max-width: 400sp</condition>
-//          <setter object="split_view" property="collapsed">True</setter>
-//        </object>
-//      </child>
-//      <property name="content">
-//        <object class="AdwOverlaySplitView" id="split_view">
-//          <property name="sidebar">
-//            <!-- ... -->
-//          </property>
-//          <property name="content">
-//            <!-- ... -->
-//          </property>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwWindow">
+//	  <property name="width-request">360</property>
+//	  <property name="height-request">200</property>
+//	  <property name="default-width">800</property>
+//	  <property name="default-height">800</property>
+//	  <child>
+//	    <object class="AdwBreakpoint">
+//	      <condition>max-width: 400sp</condition>
+//	      <setter object="split_view" property="collapsed">True</setter>
+//	    </object>
+//	  </child>
+//	  <property name="content">
+//	    <object class="AdwOverlaySplitView" id="split_view">
+//	      <property name="sidebar">
+//	        <!-- ... -->
+//	      </property>
+//	      <property name="content">
+//	        <!-- ... -->
+//	      </property>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // AdwOverlaySplitView is often used for implementing the utility pane
 // (https://developer.gnome.org/hig/patterns/containers/utility-panes.html)
@@ -142,20 +142,20 @@ func defaultOverlaySplitViewOverrides(v *OverlaySplitView) OverlaySplitViewOverr
 // When not collapsed, they have the .sidebar-view and .content-view style
 // classes respectively.
 //
-//    overlay-split-view
-//    ├── widget.sidebar-pane
-//    │   ╰── [sidebar child]
-//    ╰── widget.content-pane
-//        ╰── [content child]
+//	overlay-split-view
+//	├── widget.sidebar-pane
+//	│   ╰── [sidebar child]
+//	╰── widget.content-pane
+//	    ╰── [content child]
 //
 // When collapsed, the one containing the sidebar child has the .background
 // style class and the other one has no style classes.
 //
-//    overlay-split-view
-//    ├── widget.background
-//    │   ╰── [sidebar child]
-//    ╰── widget
-//        ╰── [content child]
+//	overlay-split-view
+//	├── widget.background
+//	│   ╰── [sidebar child]
+//	╰── widget
+//	    ╰── [content child]
 //
 // # Accessibility
 //
@@ -236,7 +236,6 @@ func marshalOverlaySplitView(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - overlaySplitView: newly created AdwOverlaySplitView.
-//
 func NewOverlaySplitView() *OverlaySplitView {
 	var _cret *C.GtkWidget // in
 
@@ -254,7 +253,6 @@ func NewOverlaySplitView() *OverlaySplitView {
 // The function returns the following values:
 //
 //   - ok: whether self is collapsed.
-//
 func (self *OverlaySplitView) Collapsed() bool {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.gboolean             // in
@@ -278,7 +276,6 @@ func (self *OverlaySplitView) Collapsed() bool {
 // The function returns the following values:
 //
 //   - widget (optional): content widget for self.
-//
 func (self *OverlaySplitView) Content() gtk.Widgetter {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret *C.GtkWidget           // in
@@ -315,7 +312,6 @@ func (self *OverlaySplitView) Content() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - ok: TRUE if self can be closed with a swipe gesture.
-//
 func (self *OverlaySplitView) EnableHideGesture() bool {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.gboolean             // in
@@ -339,7 +335,6 @@ func (self *OverlaySplitView) EnableHideGesture() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if self can be opened with a swipe gesture.
-//
 func (self *OverlaySplitView) EnableShowGesture() bool {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.gboolean             // in
@@ -363,7 +358,6 @@ func (self *OverlaySplitView) EnableShowGesture() bool {
 // The function returns the following values:
 //
 //   - gdouble: maximum width.
-//
 func (self *OverlaySplitView) MaxSidebarWidth() float64 {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.double               // in
@@ -385,7 +379,6 @@ func (self *OverlaySplitView) MaxSidebarWidth() float64 {
 // The function returns the following values:
 //
 //   - gdouble: minimum width.
-//
 func (self *OverlaySplitView) MinSidebarWidth() float64 {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.double               // in
@@ -407,7 +400,6 @@ func (self *OverlaySplitView) MinSidebarWidth() float64 {
 // The function returns the following values:
 //
 //   - ok: whether if the sidebar widget is pinned.
-//
 func (self *OverlaySplitView) PINSidebar() bool {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.gboolean             // in
@@ -431,7 +423,6 @@ func (self *OverlaySplitView) PINSidebar() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if the sidebar widget is shown.
-//
 func (self *OverlaySplitView) ShowSidebar() bool {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.gboolean             // in
@@ -455,7 +446,6 @@ func (self *OverlaySplitView) ShowSidebar() bool {
 // The function returns the following values:
 //
 //   - widget (optional): sidebar widget for self.
-//
 func (self *OverlaySplitView) Sidebar() gtk.Widgetter {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret *C.GtkWidget           // in
@@ -492,7 +482,6 @@ func (self *OverlaySplitView) Sidebar() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - packType: sidebar position for self.
-//
 func (self *OverlaySplitView) SidebarPosition() gtk.PackType {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.GtkPackType          // in
@@ -514,7 +503,6 @@ func (self *OverlaySplitView) SidebarPosition() gtk.PackType {
 // The function returns the following values:
 //
 //   - gdouble: preferred width fraction.
-//
 func (self *OverlaySplitView) SidebarWidthFraction() float64 {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.double               // in
@@ -536,7 +524,6 @@ func (self *OverlaySplitView) SidebarWidthFraction() float64 {
 // The function returns the following values:
 //
 //   - lengthUnit: length unit.
-//
 func (self *OverlaySplitView) SidebarWidthUnit() LengthUnit {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _cret C.AdwLengthUnit        // in
@@ -561,7 +548,6 @@ func (self *OverlaySplitView) SidebarWidthUnit() LengthUnit {
 // The function takes the following parameters:
 //
 //   - collapsed: whether self is collapsed.
-//
 func (self *OverlaySplitView) SetCollapsed(collapsed bool) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.gboolean             // out
@@ -581,7 +567,6 @@ func (self *OverlaySplitView) SetCollapsed(collapsed bool) {
 // The function takes the following parameters:
 //
 //   - content (optional) widget.
-//
 func (self *OverlaySplitView) SetContent(content gtk.Widgetter) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 *C.GtkWidget           // out
@@ -603,7 +588,6 @@ func (self *OverlaySplitView) SetContent(content gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - enableHideGesture: whether self can be closed with a swipe gesture.
-//
 func (self *OverlaySplitView) SetEnableHideGesture(enableHideGesture bool) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.gboolean             // out
@@ -626,7 +610,6 @@ func (self *OverlaySplitView) SetEnableHideGesture(enableHideGesture bool) {
 // The function takes the following parameters:
 //
 //   - enableShowGesture: whether self can be opened with a swipe gesture.
-//
 func (self *OverlaySplitView) SetEnableShowGesture(enableShowGesture bool) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.gboolean             // out
@@ -651,7 +634,6 @@ func (self *OverlaySplitView) SetEnableShowGesture(enableShowGesture bool) {
 // The function takes the following parameters:
 //
 //   - width: maximum width.
-//
 func (self *OverlaySplitView) SetMaxSidebarWidth(width float64) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.double               // out
@@ -674,7 +656,6 @@ func (self *OverlaySplitView) SetMaxSidebarWidth(width float64) {
 // The function takes the following parameters:
 //
 //   - width: minimum width.
-//
 func (self *OverlaySplitView) SetMinSidebarWidth(width float64) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.double               // out
@@ -696,7 +677,6 @@ func (self *OverlaySplitView) SetMinSidebarWidth(width float64) {
 // The function takes the following parameters:
 //
 //   - pinSidebar: whether to pin the sidebar widget.
-//
 func (self *OverlaySplitView) SetPINSidebar(pinSidebar bool) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.gboolean             // out
@@ -716,7 +696,6 @@ func (self *OverlaySplitView) SetPINSidebar(pinSidebar bool) {
 // The function takes the following parameters:
 //
 //   - showSidebar: whether to show the sidebar widget.
-//
 func (self *OverlaySplitView) SetShowSidebar(showSidebar bool) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.gboolean             // out
@@ -736,7 +715,6 @@ func (self *OverlaySplitView) SetShowSidebar(showSidebar bool) {
 // The function takes the following parameters:
 //
 //   - sidebar (optional) widget.
-//
 func (self *OverlaySplitView) SetSidebar(sidebar gtk.Widgetter) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 *C.GtkWidget           // out
@@ -759,7 +737,6 @@ func (self *OverlaySplitView) SetSidebar(sidebar gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - position: new position.
-//
 func (self *OverlaySplitView) SetSidebarPosition(position gtk.PackType) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.GtkPackType          // out
@@ -784,7 +761,6 @@ func (self *OverlaySplitView) SetSidebarPosition(position gtk.PackType) {
 // The function takes the following parameters:
 //
 //   - fraction: preferred width fraction.
-//
 func (self *OverlaySplitView) SetSidebarWidthFraction(fraction float64) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.double               // out
@@ -806,7 +782,6 @@ func (self *OverlaySplitView) SetSidebarWidthFraction(fraction float64) {
 // The function takes the following parameters:
 //
 //   - unit: length unit.
-//
 func (self *OverlaySplitView) SetSidebarWidthUnit(unit LengthUnit) {
 	var _arg0 *C.AdwOverlaySplitView // out
 	var _arg1 C.AdwLengthUnit        // out

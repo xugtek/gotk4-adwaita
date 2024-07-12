@@ -106,7 +106,6 @@ func marshalCallbackAnimationTarget(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - callbackAnimationTarget: newly created callback target.
-//
 func NewCallbackAnimationTarget(callback AnimationTargetFunc) *CallbackAnimationTarget {
 	var _arg1 C.AdwAnimationTargetFunc // out
 	var _arg2 C.gpointer

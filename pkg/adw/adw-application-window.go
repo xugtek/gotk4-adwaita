@@ -49,18 +49,18 @@ func defaultApplicationWindowOverrides(v *ApplicationWindow) ApplicationWindowOv
 //
 // Example of an AdwApplicationWindow UI definition:
 //
-//    <object class="AdwApplicationWindow">
-//      <property name="content">
-//        <object class="AdwToolbarView">
-//          <child type="top">
-//            <object class="AdwHeaderBar"/>
-//          </child>
-//          <property name="content">
-//            <!-- ... -->
-//          </property>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwApplicationWindow">
+//	  <property name="content">
+//	    <object class="AdwToolbarView">
+//	      <child type="top">
+//	        <object class="AdwHeaderBar"/>
+//	      </child>
+//	      <property name="content">
+//	        <!-- ... -->
+//	      </property>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // Using gtk.Application:menubar is not supported and may result in visual
 // glitches.
@@ -157,7 +157,6 @@ func marshalApplicationWindow(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - applicationWindow: newly created AdwApplicationWindow.
-//
 func NewApplicationWindow(app *gtk.Application) *ApplicationWindow {
 	var _arg1 *C.GtkApplication // out
 	var _cret *C.GtkWidget      // in
@@ -179,7 +178,6 @@ func NewApplicationWindow(app *gtk.Application) *ApplicationWindow {
 // The function takes the following parameters:
 //
 //   - breakpoint to add.
-//
 func (self *ApplicationWindow) AddBreakpoint(breakpoint *Breakpoint) {
 	var _arg0 *C.AdwApplicationWindow // out
 	var _arg1 *C.AdwBreakpoint        // out
@@ -200,7 +198,6 @@ func (self *ApplicationWindow) AddBreakpoint(breakpoint *Breakpoint) {
 // The function returns the following values:
 //
 //   - widget (optional): content widget of self.
-//
 func (self *ApplicationWindow) Content() gtk.Widgetter {
 	var _arg0 *C.AdwApplicationWindow // out
 	var _cret *C.GtkWidget            // in
@@ -237,7 +234,6 @@ func (self *ApplicationWindow) Content() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - breakpoint (optional): current breakpoint.
-//
 func (self *ApplicationWindow) CurrentBreakpoint() *Breakpoint {
 	var _arg0 *C.AdwApplicationWindow // out
 	var _cret *C.AdwBreakpoint        // in
@@ -256,6 +252,57 @@ func (self *ApplicationWindow) CurrentBreakpoint() *Breakpoint {
 	return _breakpoint
 }
 
+// Dialogs returns a gio.ListModel that contains the open dialogs of self.
+//
+// This can be used to keep an up-to-date view.
+//
+// The function returns the following values:
+//
+//   - listModel: list model for the dialogs of self.
+func (self *ApplicationWindow) Dialogs() *gio.ListModel {
+	var _arg0 *C.AdwApplicationWindow // out
+	var _cret *C.GListModel           // in
+
+	_arg0 = (*C.AdwApplicationWindow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+
+	_cret = C.adw_application_window_get_dialogs(_arg0)
+	runtime.KeepAlive(self)
+
+	var _listModel *gio.ListModel // out
+
+	{
+		obj := coreglib.AssumeOwnership(unsafe.Pointer(_cret))
+		_listModel = &gio.ListModel{
+			Object: obj,
+		}
+	}
+
+	return _listModel
+}
+
+// VisibleDialog returns the currently visible dialog in self, if there's one.
+//
+// The function returns the following values:
+//
+//   - dialog (optional): visible dialog.
+func (self *ApplicationWindow) VisibleDialog() *Dialog {
+	var _arg0 *C.AdwApplicationWindow // out
+	var _cret *C.AdwDialog            // in
+
+	_arg0 = (*C.AdwApplicationWindow)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+
+	_cret = C.adw_application_window_get_visible_dialog(_arg0)
+	runtime.KeepAlive(self)
+
+	var _dialog *Dialog // out
+
+	if _cret != nil {
+		_dialog = wrapDialog(coreglib.Take(unsafe.Pointer(_cret)))
+	}
+
+	return _dialog
+}
+
 // SetContent sets the content widget of self.
 //
 // This method should always be used instead of gtk.Window.SetChild().
@@ -263,7 +310,6 @@ func (self *ApplicationWindow) CurrentBreakpoint() *Breakpoint {
 // The function takes the following parameters:
 //
 //   - content (optional) widget.
-//
 func (self *ApplicationWindow) SetContent(content gtk.Widgetter) {
 	var _arg0 *C.AdwApplicationWindow // out
 	var _arg1 *C.GtkWidget            // out

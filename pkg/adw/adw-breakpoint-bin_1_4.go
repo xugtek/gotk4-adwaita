@@ -41,9 +41,9 @@ func defaultBreakpointBinOverrides(v *BreakpointBin) BreakpointBinOverrides {
 // media="(prefers-color-scheme: dark)"> <img src="breakpoint-bin.png"
 // alt="breakpoint-bin"> </picture>
 //
-// AdwBreakpointBin provides a way to use breakpoints without window or
-// applicationwindow. It can be useful for limiting breakpoints to a single page
-// and similar purposes. Most applications shouldn't need it.
+// AdwBreakpointBin provides a way to use breakpoints without window,
+// applicationwindow or dialog. It can be useful for limiting breakpoints to a
+// single page and similar purposes. Most applications shouldn't need it.
 //
 // AdwBreakpointBin is similar to bin. It has one child, set via the
 // breakpointbin:child property.
@@ -92,22 +92,22 @@ func defaultBreakpointBinOverrides(v *BreakpointBin) BreakpointBinOverrides {
 //
 // Example
 //
-//    GtkWidget *bin, *child;
-//    AdwBreakpoint *breakpoint;
+//	GtkWidget *bin, *child;
+//	AdwBreakpoint *breakpoint;
 //
-//    bin = adw_breakpoint_bin_new ();
-//    gtk_widget_set_size_request (bin, 150, 150);
+//	bin = adw_breakpoint_bin_new ();
+//	gtk_widget_set_size_request (bin, 150, 150);
 //
-//    child = gtk_label_new ("Wide");
-//    gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
-//    gtk_widget_add_css_class (child, "title-1");
-//    adw_breakpoint_bin_set_child (ADW_BREAKPOINT_BIN (bin), child);
+//	child = gtk_label_new ("Wide");
+//	gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+//	gtk_widget_add_css_class (child, "title-1");
+//	adw_breakpoint_bin_set_child (ADW_BREAKPOINT_BIN (bin), child);
 //
-//    breakpoint = adw_breakpoint_new (adw_breakpoint_condition_parse ("max-width: 200px"));
-//    adw_breakpoint_add_setters (breakpoint,
-//                                G_OBJECT (child), "label", "Narrow",
-//                                NULL);
-//    adw_breakpoint_bin_add_breakpoint (ADW_BREAKPOINT_BIN (bin), breakpoint);
+//	breakpoint = adw_breakpoint_new (adw_breakpoint_condition_parse ("max-width: 200px"));
+//	adw_breakpoint_add_setters (breakpoint,
+//	                            G_OBJECT (child), "label", "Narrow",
+//	                            NULL);
+//	adw_breakpoint_bin_add_breakpoint (ADW_BREAKPOINT_BIN (bin), breakpoint);
 //
 // The bin has a single label inside it, displaying "Wide". When the bin's width
 // is smaller than or equal to 200px, it changes to "Narrow".
@@ -118,25 +118,25 @@ func defaultBreakpointBinOverrides(v *BreakpointBin) BreakpointBinOverrides {
 //
 // Example of an AdwBreakpointBin UI definition:
 //
-//    <object class="AdwBreakpointBin">
-//      <property name="width-request">150</property>
-//      <property name="height-request">150</property>
-//      <property name="child">
-//        <object class="GtkLabel" id="child">
-//          <property name="label">Wide</property>
-//          <property name="ellipsize">end</property>
-//          <style>
-//            <class name="title-1"/>
-//          </style>
-//        </object>
-//      </property>
-//      <child>
-//        <object class="AdwBreakpoint">
-//          <condition>max-width: 200px</condition>
-//          <setter object="child" property="label">Narrow</setter>
-//        </object>
-//      </child>
-//    </object>
+//	<object class="AdwBreakpointBin">
+//	  <property name="width-request">150</property>
+//	  <property name="height-request">150</property>
+//	  <property name="child">
+//	    <object class="GtkLabel" id="child">
+//	      <property name="label">Wide</property>
+//	      <property name="ellipsize">end</property>
+//	      <style>
+//	        <class name="title-1"/>
+//	      </style>
+//	    </object>
+//	  </property>
+//	  <child>
+//	    <object class="AdwBreakpoint">
+//	      <condition>max-width: 200px</condition>
+//	      <setter object="child" property="label">Narrow</setter>
+//	    </object>
+//	  </child>
+//	</object>
 //
 // See breakpoint documentation for details.
 type BreakpointBin struct {
@@ -193,7 +193,6 @@ func marshalBreakpointBin(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - breakpointBin: newly created AdwBreakpointBin.
-//
 func NewBreakpointBin() *BreakpointBin {
 	var _cret *C.GtkWidget // in
 
@@ -211,7 +210,6 @@ func NewBreakpointBin() *BreakpointBin {
 // The function takes the following parameters:
 //
 //   - breakpoint to add.
-//
 func (self *BreakpointBin) AddBreakpoint(breakpoint *Breakpoint) {
 	var _arg0 *C.AdwBreakpointBin // out
 	var _arg1 *C.AdwBreakpoint    // out
@@ -230,7 +228,6 @@ func (self *BreakpointBin) AddBreakpoint(breakpoint *Breakpoint) {
 // The function returns the following values:
 //
 //   - widget (optional): child widget of self.
-//
 func (self *BreakpointBin) Child() gtk.Widgetter {
 	var _arg0 *C.AdwBreakpointBin // out
 	var _cret *C.GtkWidget        // in
@@ -267,7 +264,6 @@ func (self *BreakpointBin) Child() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - breakpoint (optional): current breakpoint.
-//
 func (self *BreakpointBin) CurrentBreakpoint() *Breakpoint {
 	var _arg0 *C.AdwBreakpointBin // out
 	var _cret *C.AdwBreakpoint    // in
@@ -286,12 +282,28 @@ func (self *BreakpointBin) CurrentBreakpoint() *Breakpoint {
 	return _breakpoint
 }
 
+// RemoveBreakpoint removes breakpoint from self.
+//
+// The function takes the following parameters:
+//
+//   - breakpoint to remove.
+func (self *BreakpointBin) RemoveBreakpoint(breakpoint *Breakpoint) {
+	var _arg0 *C.AdwBreakpointBin // out
+	var _arg1 *C.AdwBreakpoint    // out
+
+	_arg0 = (*C.AdwBreakpointBin)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+	_arg1 = (*C.AdwBreakpoint)(unsafe.Pointer(coreglib.InternObject(breakpoint).Native()))
+
+	C.adw_breakpoint_bin_remove_breakpoint(_arg0, _arg1)
+	runtime.KeepAlive(self)
+	runtime.KeepAlive(breakpoint)
+}
+
 // SetChild sets the child widget of self.
 //
 // The function takes the following parameters:
 //
 //   - child (optional) widget.
-//
 func (self *BreakpointBin) SetChild(child gtk.Widgetter) {
 	var _arg0 *C.AdwBreakpointBin // out
 	var _arg1 *C.GtkWidget        // out

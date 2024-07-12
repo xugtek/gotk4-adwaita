@@ -47,18 +47,18 @@ func defaultComboRowOverrides(v *ComboRow) ComboRowOverrides {
 //
 // Example of an AdwComboRow UI definition:
 //
-//    <object class="AdwComboRow">
-//      <property name="title" translatable="yes">Combo Row</property>
-//      <property name="model">
-//        <object class="GtkStringList">
-//          <items>
-//            <item translatable="yes">Foo</item>
-//            <item translatable="yes">Bar</item>
-//            <item translatable="yes">Baz</item>
-//          </items>
-//        </object>
-//      </property>
-//    </object>
+//	<object class="AdwComboRow">
+//	  <property name="title" translatable="yes">Combo Row</property>
+//	  <property name="model">
+//	    <object class="GtkStringList">
+//	      <items>
+//	        <item translatable="yes">Foo</item>
+//	        <item translatable="yes">Bar</item>
+//	        <item translatable="yes">Baz</item>
+//	      </items>
+//	    </object>
+//	  </property>
+//	</object>
 //
 // The comborow:selected and comborow:selected-item properties can be used to
 // keep track of the selected item and react to their changes.
@@ -157,7 +157,6 @@ func marshalComboRow(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - comboRow: newly created AdwComboRow.
-//
 func NewComboRow() *ComboRow {
 	var _cret *C.GtkWidget // in
 
@@ -180,7 +179,6 @@ func NewComboRow() *ComboRow {
 // The function returns the following values:
 //
 //   - ok: whether the popup includes a search entry.
-//
 func (self *ComboRow) EnableSearch() bool {
 	var _arg0 *C.AdwComboRow // out
 	var _cret C.gboolean     // in
@@ -204,7 +202,6 @@ func (self *ComboRow) EnableSearch() bool {
 // The function returns the following values:
 //
 //   - expression (optional) used to obtain strings from items.
-//
 func (self *ComboRow) Expression() gtk.Expressioner {
 	var _arg0 *C.AdwComboRow   // out
 	var _cret *C.GtkExpression // in
@@ -241,7 +238,6 @@ func (self *ComboRow) Expression() gtk.Expressioner {
 // The function returns the following values:
 //
 //   - listItemFactory (optional): factory in use.
-//
 func (self *ComboRow) Factory() *gtk.ListItemFactory {
 	var _arg0 *C.AdwComboRow        // out
 	var _cret *C.GtkListItemFactory // in
@@ -270,7 +266,6 @@ func (self *ComboRow) Factory() *gtk.ListItemFactory {
 // The function returns the following values:
 //
 //   - listItemFactory (optional): factory in use.
-//
 func (self *ComboRow) ListFactory() *gtk.ListItemFactory {
 	var _arg0 *C.AdwComboRow        // out
 	var _cret *C.GtkListItemFactory // in
@@ -299,7 +294,6 @@ func (self *ComboRow) ListFactory() *gtk.ListItemFactory {
 // The function returns the following values:
 //
 //   - listModel (optional): model in use.
-//
 func (self *ComboRow) Model() *gio.ListModel {
 	var _arg0 *C.AdwComboRow // out
 	var _cret *C.GListModel  // in
@@ -329,7 +323,6 @@ func (self *ComboRow) Model() *gio.ListModel {
 //
 //   - guint: position of the selected item, or gtk.INVALIDLISTPOSITION if no
 //     item is selected.
-//
 func (self *ComboRow) Selected() uint {
 	var _arg0 *C.AdwComboRow // out
 	var _cret C.guint        // in
@@ -351,7 +344,6 @@ func (self *ComboRow) Selected() uint {
 // The function returns the following values:
 //
 //   - object (optional): selected item.
-//
 func (self *ComboRow) SelectedItem() *coreglib.Object {
 	var _arg0 *C.AdwComboRow // out
 	var _cret C.gpointer     // in
@@ -373,7 +365,6 @@ func (self *ComboRow) SelectedItem() *coreglib.Object {
 // The function returns the following values:
 //
 //   - ok: whether to use the current value as the subtitle.
-//
 func (self *ComboRow) UseSubtitle() bool {
 	var _arg0 *C.AdwComboRow // out
 	var _cret C.gboolean     // in
@@ -402,7 +393,6 @@ func (self *ComboRow) UseSubtitle() bool {
 // The function takes the following parameters:
 //
 //   - enableSearch: whether to enable search.
-//
 func (self *ComboRow) SetEnableSearch(enableSearch bool) {
 	var _arg0 *C.AdwComboRow // out
 	var _arg1 C.gboolean     // out
@@ -427,7 +417,6 @@ func (self *ComboRow) SetEnableSearch(enableSearch bool) {
 // The function takes the following parameters:
 //
 //   - expression (optional): expression.
-//
 func (self *ComboRow) SetExpression(expression gtk.Expressioner) {
 	var _arg0 *C.AdwComboRow   // out
 	var _arg1 *C.GtkExpression // out
@@ -450,7 +439,6 @@ func (self *ComboRow) SetExpression(expression gtk.Expressioner) {
 // The function takes the following parameters:
 //
 //   - factory (optional) to use.
-//
 func (self *ComboRow) SetFactory(factory *gtk.ListItemFactory) {
 	var _arg0 *C.AdwComboRow        // out
 	var _arg1 *C.GtkListItemFactory // out
@@ -472,7 +460,6 @@ func (self *ComboRow) SetFactory(factory *gtk.ListItemFactory) {
 // The function takes the following parameters:
 //
 //   - factory (optional) to use.
-//
 func (self *ComboRow) SetListFactory(factory *gtk.ListItemFactory) {
 	var _arg0 *C.AdwComboRow        // out
 	var _arg1 *C.GtkListItemFactory // out
@@ -492,7 +479,6 @@ func (self *ComboRow) SetListFactory(factory *gtk.ListItemFactory) {
 // The function takes the following parameters:
 //
 //   - model (optional) to use.
-//
 func (self *ComboRow) SetModel(model gio.ListModeller) {
 	var _arg0 *C.AdwComboRow // out
 	var _arg1 *C.GListModel  // out
@@ -512,7 +498,6 @@ func (self *ComboRow) SetModel(model gio.ListModeller) {
 // The function takes the following parameters:
 //
 //   - position of the item to select, or gtk.INVALIDLISTPOSITION.
-//
 func (self *ComboRow) SetSelected(position uint) {
 	var _arg0 *C.AdwComboRow // out
 	var _arg1 C.guint        // out
@@ -538,7 +523,6 @@ func (self *ComboRow) SetSelected(position uint) {
 // The function takes the following parameters:
 //
 //   - useSubtitle: whether to use the current value as the subtitle.
-//
 func (self *ComboRow) SetUseSubtitle(useSubtitle bool) {
 	var _arg0 *C.AdwComboRow // out
 	var _arg1 C.gboolean     // out

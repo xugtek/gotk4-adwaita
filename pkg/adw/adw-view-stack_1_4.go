@@ -90,7 +90,6 @@ func marshalViewStackPages(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - viewStackPage (optional): stack page.
-//
 func (self *ViewStackPages) SelectedPage() *ViewStackPage {
 	var _arg0 *C.AdwViewStackPages // out
 	var _cret *C.AdwViewStackPage  // in
@@ -116,7 +115,6 @@ func (self *ViewStackPages) SelectedPage() *ViewStackPage {
 // The function takes the following parameters:
 //
 //   - page: stack page within the associated stack.
-//
 func (self *ViewStackPages) SetSelectedPage(page *ViewStackPage) {
 	var _arg0 *C.AdwViewStackPages // out
 	var _arg1 *C.AdwViewStackPage  // out

@@ -130,7 +130,6 @@ func marshalPreferencesWindow(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - preferencesWindow: newly created AdwPreferencesWindow.
-//
 func NewPreferencesWindow() *PreferencesWindow {
 	var _cret *C.GtkWidget // in
 
@@ -148,7 +147,6 @@ func NewPreferencesWindow() *PreferencesWindow {
 // The function takes the following parameters:
 //
 //   - page to add.
-//
 func (self *PreferencesWindow) Add(page *PreferencesPage) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 *C.AdwPreferencesPage   // out
@@ -168,7 +166,6 @@ func (self *PreferencesWindow) Add(page *PreferencesPage) {
 // The function takes the following parameters:
 //
 //   - toast: toast.
-//
 func (self *PreferencesWindow) AddToast(toast *Toast) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 *C.AdwToast             // out
@@ -204,7 +201,6 @@ func (self *PreferencesWindow) CloseSubpage() {
 // The function returns the following values:
 //
 //   - ok: whether gestures and shortcuts are enabled.
-//
 func (self *PreferencesWindow) CanNavigateBack() bool {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _cret C.gboolean              // in
@@ -228,7 +224,6 @@ func (self *PreferencesWindow) CanNavigateBack() bool {
 // The function returns the following values:
 //
 //   - ok: whether search is enabled for self.
-//
 func (self *PreferencesWindow) SearchEnabled() bool {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _cret C.gboolean              // in
@@ -252,7 +247,6 @@ func (self *PreferencesWindow) SearchEnabled() bool {
 // The function returns the following values:
 //
 //   - preferencesPage (optional): visible page.
-//
 func (self *PreferencesWindow) VisiblePage() *PreferencesPage {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _cret *C.AdwPreferencesPage   // in
@@ -276,7 +270,6 @@ func (self *PreferencesWindow) VisiblePage() *PreferencesPage {
 // The function returns the following values:
 //
 //   - utf8 (optional): name of the visible page.
-//
 func (self *PreferencesWindow) VisiblePageName() string {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _cret *C.char                 // in
@@ -300,7 +293,6 @@ func (self *PreferencesWindow) VisiblePageName() string {
 // The function returns the following values:
 //
 //   - ok: TRUE if a page has been popped.
-//
 func (self *PreferencesWindow) PopSubpage() bool {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _cret C.gboolean              // in
@@ -329,7 +321,6 @@ func (self *PreferencesWindow) PopSubpage() bool {
 // The function takes the following parameters:
 //
 //   - subpage: subpage.
-//
 func (self *PreferencesWindow) PresentSubpage(subpage gtk.Widgetter) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 *C.GtkWidget            // out
@@ -349,7 +340,6 @@ func (self *PreferencesWindow) PresentSubpage(subpage gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - page: subpage.
-//
 func (self *PreferencesWindow) PushSubpage(page *NavigationPage) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 *C.AdwNavigationPage    // out
@@ -367,7 +357,6 @@ func (self *PreferencesWindow) PushSubpage(page *NavigationPage) {
 // The function takes the following parameters:
 //
 //   - page to remove.
-//
 func (self *PreferencesWindow) Remove(page *PreferencesPage) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 *C.AdwPreferencesPage   // out
@@ -403,7 +392,6 @@ func (self *PreferencesWindow) Remove(page *PreferencesPage) {
 // The function takes the following parameters:
 //
 //   - canNavigateBack: new value.
-//
 func (self *PreferencesWindow) SetCanNavigateBack(canNavigateBack bool) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 C.gboolean              // out
@@ -423,7 +411,6 @@ func (self *PreferencesWindow) SetCanNavigateBack(canNavigateBack bool) {
 // The function takes the following parameters:
 //
 //   - searchEnabled: whether search is enabled.
-//
 func (self *PreferencesWindow) SetSearchEnabled(searchEnabled bool) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 C.gboolean              // out
@@ -443,7 +430,6 @@ func (self *PreferencesWindow) SetSearchEnabled(searchEnabled bool) {
 // The function takes the following parameters:
 //
 //   - page of self.
-//
 func (self *PreferencesWindow) SetVisiblePage(page *PreferencesPage) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 *C.AdwPreferencesPage   // out
@@ -458,12 +444,11 @@ func (self *PreferencesWindow) SetVisiblePage(page *PreferencesPage) {
 
 // SetVisiblePageName makes the page with the given name visible.
 //
-// See viewstack:visible-child.
+// See preferenceswindow:visible-page.
 //
 // The function takes the following parameters:
 //
 //   - name of the page to make visible.
-//
 func (self *PreferencesWindow) SetVisiblePageName(name string) {
 	var _arg0 *C.AdwPreferencesWindow // out
 	var _arg1 *C.char                 // out

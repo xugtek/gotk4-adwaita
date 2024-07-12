@@ -26,7 +26,6 @@ import "C"
 // The function returns the following values:
 //
 //   - ok: whether animations are enabled for widget.
-//
 func GetEnableAnimations(widget gtk.Widgetter) bool {
 	var _arg1 *C.GtkWidget // out
 	var _cret C.gboolean   // in
@@ -56,7 +55,6 @@ func GetEnableAnimations(widget gtk.Widgetter) bool {
 // The function returns the following values:
 //
 //   - gdouble: computed value.
-//
 func Lerp(a, b, t float64) float64 {
 	var _arg1 C.double // out
 	var _arg2 C.double // out

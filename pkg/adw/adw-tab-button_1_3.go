@@ -49,10 +49,10 @@ func defaultTabButtonOverrides(v *TabButton) TabButtonOverrides {
 // bar, typically opening an taboverview on click, e.g. via the overview.open
 // action name:
 //
-//    <object class="AdwTabButton">
-//      <property name="view">view</property>
-//      <property name="action-name">overview.open</property>
-//    </object>
+//	<object class="AdwTabButton">
+//	  <property name="view">view</property>
+//	  <property name="action-name">overview.open</property>
+//	</object>
 //
 // # CSS nodes
 //
@@ -151,7 +151,6 @@ func (self *TabButton) ConnectClicked(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - tabButton: newly created AdwTabButton.
-//
 func NewTabButton() *TabButton {
 	var _cret *C.GtkWidget // in
 
@@ -169,7 +168,6 @@ func NewTabButton() *TabButton {
 // The function returns the following values:
 //
 //   - tabView (optional): tab view.
-//
 func (self *TabButton) View() *TabView {
 	var _arg0 *C.AdwTabButton // out
 	var _cret *C.AdwTabView   // in
@@ -193,7 +191,6 @@ func (self *TabButton) View() *TabView {
 // The function takes the following parameters:
 //
 //   - view (optional): tab view.
-//
 func (self *TabButton) SetView(view *TabView) {
 	var _arg0 *C.AdwTabButton // out
 	var _arg1 *C.AdwTabView   // out

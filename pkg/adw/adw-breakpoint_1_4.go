@@ -118,7 +118,7 @@ func defaultBreakpointOverrides(v *Breakpoint) BreakpointOverrides {
 	return BreakpointOverrides{}
 }
 
-// Breakpoint describes a breakpoint for window.
+// Breakpoint describes a breakpoint for window or dialog.
 //
 // Breakpoints are used to create adaptive UI, allowing to change the layout
 // depending on available size.
@@ -133,7 +133,8 @@ func defaultBreakpointOverrides(v *Breakpoint) BreakpointOverrides {
 // For more complicated scenarios, breakpoint::apply and breakpoint::unapply can
 // be used instead.
 //
-// Breakpoints can be used within window, applicationwindow or breakpointbin.
+// Breakpoints can be used within window, applicationwindow, dialog or
+// breakpointbin.
 //
 // AdwBreakpoint as GtkBuildable:
 //
@@ -154,12 +155,12 @@ func defaultBreakpointOverrides(v *Breakpoint) BreakpointOverrides {
 //
 // Example of an AdwBreakpoint UI definition:
 //
-//    <object class="AdwBreakpoint">
-//      <condition>max-width: 400px</condition>
-//      <setter object="button" property="visible">True</setter>
-//      <setter object="box" property="orientation">vertical</setter>
-//      <setter object="page" property="title" translatable="yes">Example</setter>
-//    </object>.
+//	<object class="AdwBreakpoint">
+//	  <condition>max-width: 400px</condition>
+//	  <setter object="button" property="visible">True</setter>
+//	  <setter object="box" property="orientation">vertical</setter>
+//	  <setter object="page" property="title" translatable="yes">Example</setter>
+//	</object>.
 type Breakpoint struct {
 	_ [0]func() // equal guard
 	*coreglib.Object
@@ -223,7 +224,6 @@ func (self *Breakpoint) ConnectUnapply(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - breakpoint: newly created AdwBreakpoint.
-//
 func NewBreakpoint(condition *BreakpointCondition) *Breakpoint {
 	var _arg1 *C.AdwBreakpointCondition // out
 	var _cret *C.AdwBreakpoint          // in
@@ -246,7 +246,7 @@ func NewBreakpoint(condition *BreakpointCondition) *Breakpoint {
 // The setter will automatically set property on object to value when applying
 // the breakpoint, and set it back to its original value upon unapplying it.
 //
-// Note that setting properties to their original values does not work for
+// ::: note Setting properties to their original values does not work for
 // properties that have irreversible side effects. For example, changing
 // gtk.Button:label while gtk.Button:icon-name is set will reset the icon.
 // However, resetting the label will not set icon-name to its original value.
@@ -254,31 +254,30 @@ func NewBreakpoint(condition *BreakpointCondition) *Breakpoint {
 // Use the breakpoint::apply and breakpoint::unapply signals for those
 // properties instead, as follows:
 //
-//    static void
-//    breakpoint_apply_cb (MyWidget *self)
-//    {
-//      gtk_button_set_icon_name (self->button, "go-previous-symbolic");
-//    }
+//	static void
+//	breakpoint_apply_cb (MyWidget *self)
+//	{
+//	  gtk_button_set_icon_name (self->button, "go-previous-symbolic");
+//	}
 //
-//    static void
-//    breakpoint_apply_cb (MyWidget *self)
-//    {
-//      gtk_button_set_label (self->button, _("_Back"));
-//    }
+//	static void
+//	breakpoint_apply_cb (MyWidget *self)
+//	{
+//	  gtk_button_set_label (self->button, _("_Back"));
+//	}
 //
-//    // ...
+//	// ...
 //
-//    g_signal_connect_swapped (breakpoint, "apply",
-//                              G_CALLBACK (breakpoint_apply_cb), self);
-//    g_signal_connect_swapped (breakpoint, "unapply",
-//                              G_CALLBACK (breakpoint_unapply_cb), self);.
+//	g_signal_connect_swapped (breakpoint, "apply",
+//	                          G_CALLBACK (breakpoint_apply_cb), self);
+//	g_signal_connect_swapped (breakpoint, "unapply",
+//	                          G_CALLBACK (breakpoint_unapply_cb), self);.
 //
 // The function takes the following parameters:
 //
 //   - object: target object.
 //   - property: target property.
-//   - value to set.
-//
+//   - value (optional) to set.
 func (self *Breakpoint) AddSetterDirect(object *coreglib.Object, property string, value *coreglib.Value) {
 	var _arg0 *C.AdwBreakpoint // out
 	var _arg1 *C.GObject       // out
@@ -289,7 +288,9 @@ func (self *Breakpoint) AddSetterDirect(object *coreglib.Object, property string
 	_arg1 = (*C.GObject)(unsafe.Pointer(object.Native()))
 	_arg2 = (*C.char)(unsafe.Pointer(C.CString(property)))
 	defer C.free(unsafe.Pointer(_arg2))
-	_arg3 = (*C.GValue)(unsafe.Pointer(value.Native()))
+	if value != nil {
+		_arg3 = (*C.GValue)(unsafe.Pointer(value.Native()))
+	}
 
 	C.adw_breakpoint_add_setter(_arg0, _arg1, _arg2, _arg3)
 	runtime.KeepAlive(self)
@@ -311,7 +312,6 @@ func (self *Breakpoint) AddSetterDirect(object *coreglib.Object, property string
 //   - objects: setter target object.
 //   - names: setter target properties.
 //   - values: setter values.
-//
 func (self *Breakpoint) AddSetters(objects []*coreglib.Object, names []string, values []*coreglib.Value) {
 	var _arg0 *C.AdwBreakpoint // out
 	var _arg2 **C.GObject      // out
@@ -361,7 +361,6 @@ func (self *Breakpoint) AddSetters(objects []*coreglib.Object, names []string, v
 // The function returns the following values:
 //
 //   - breakpointCondition (optional): condition.
-//
 func (self *Breakpoint) Condition() *BreakpointCondition {
 	var _arg0 *C.AdwBreakpoint          // out
 	var _cret *C.AdwBreakpointCondition // in
@@ -385,7 +384,6 @@ func (self *Breakpoint) Condition() *BreakpointCondition {
 // The function takes the following parameters:
 //
 //   - condition (optional): new condition.
-//
 func (self *Breakpoint) SetCondition(condition *BreakpointCondition) {
 	var _arg0 *C.AdwBreakpoint          // out
 	var _arg1 *C.AdwBreakpointCondition // out
@@ -536,7 +534,6 @@ func NewBreakpointConditionRatio(typ BreakpointConditionRatioType, width int, he
 // The function returns the following values:
 //
 //   - breakpointCondition: copy of self.
-//
 func (self *BreakpointCondition) Copy() *BreakpointCondition {
 	var _arg0 *C.AdwBreakpointCondition // out
 	var _cret *C.AdwBreakpointCondition // in
@@ -566,7 +563,6 @@ func (self *BreakpointCondition) Copy() *BreakpointCondition {
 // The function returns the following values:
 //
 //   - utf8: newly allocated text string.
-//
 func (self *BreakpointCondition) String() string {
 	var _arg0 *C.AdwBreakpointCondition // out
 	var _cret *C.char                   // in
@@ -654,7 +650,6 @@ func (self *BreakpointCondition) String() string {
 // The function returns the following values:
 //
 //   - breakpointCondition: parsed condition.
-//
 func BreakpointConditionParse(str string) *BreakpointCondition {
 	var _arg1 *C.char                   // out
 	var _cret *C.AdwBreakpointCondition // in

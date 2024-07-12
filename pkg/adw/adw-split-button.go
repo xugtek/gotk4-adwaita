@@ -52,13 +52,13 @@ func defaultSplitButtonOverrides(v *SplitButton) SplitButtonOverrides {
 //
 // CSS nodes
 //
-//    splitbutton[.image-button][.text-button]
-//    ├── button
-//    │   ╰── <content>
-//    ├── separator
-//    ╰── menubutton
-//        ╰── button.toggle
-//            ╰── arrow
+//	splitbutton[.image-button][.text-button]
+//	├── button
+//	│   ╰── <content>
+//	├── separator
+//	╰── menubutton
+//	    ╰── button.toggle
+//	        ╰── arrow
 //
 // AdwSplitButton's CSS node is called splitbutton. It contains the css nodes:
 // button, separator, menubutton. See gtk.MenuButton documentation for the
@@ -161,7 +161,6 @@ func (self *SplitButton) ConnectClicked(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - splitButton: newly created AdwSplitButton.
-//
 func NewSplitButton() *SplitButton {
 	var _cret *C.GtkWidget // in
 
@@ -180,7 +179,6 @@ func NewSplitButton() *SplitButton {
 // The function returns the following values:
 //
 //   - ok: whether the button can shrink.
-//
 func (self *SplitButton) CanShrink() bool {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret C.gboolean        // in
@@ -204,7 +202,6 @@ func (self *SplitButton) CanShrink() bool {
 // The function returns the following values:
 //
 //   - widget (optional): child widget.
-//
 func (self *SplitButton) Child() gtk.Widgetter {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret *C.GtkWidget      // in
@@ -241,7 +238,6 @@ func (self *SplitButton) Child() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - arrowType: direction.
-//
 func (self *SplitButton) Direction() gtk.ArrowType {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret C.GtkArrowType    // in
@@ -263,7 +259,6 @@ func (self *SplitButton) Direction() gtk.ArrowType {
 // The function returns the following values:
 //
 //   - utf8: dropdown tooltip of self.
-//
 func (self *SplitButton) DropdownTooltip() string {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret *C.char           // in
@@ -285,7 +280,6 @@ func (self *SplitButton) DropdownTooltip() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): icon name.
-//
 func (self *SplitButton) IconName() string {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret *C.char           // in
@@ -309,7 +303,6 @@ func (self *SplitButton) IconName() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): label for self.
-//
 func (self *SplitButton) Label() string {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret *C.char           // in
@@ -333,7 +326,6 @@ func (self *SplitButton) Label() string {
 // The function returns the following values:
 //
 //   - menuModel (optional): menu model.
-//
 func (self *SplitButton) MenuModel() gio.MenuModeller {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret *C.GMenuModel     // in
@@ -370,7 +362,6 @@ func (self *SplitButton) MenuModel() gio.MenuModeller {
 // The function returns the following values:
 //
 //   - popover (optional): popover.
-//
 func (self *SplitButton) Popover() *gtk.Popover {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret *C.GtkPopover     // in
@@ -434,7 +425,6 @@ func (self *SplitButton) Popover() *gtk.Popover {
 // The function returns the following values:
 //
 //   - ok: whether an underline in the text indicates a mnemonic.
-//
 func (self *SplitButton) UseUnderline() bool {
 	var _arg0 *C.AdwSplitButton // out
 	var _cret C.gboolean        // in
@@ -483,7 +473,6 @@ func (self *SplitButton) Popup() {
 // The function takes the following parameters:
 //
 //   - canShrink: whether the button can shrink.
-//
 func (self *SplitButton) SetCanShrink(canShrink bool) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 C.gboolean        // out
@@ -506,7 +495,6 @@ func (self *SplitButton) SetCanShrink(canShrink bool) {
 // The function takes the following parameters:
 //
 //   - child (optional): new child widget.
-//
 func (self *SplitButton) SetChild(child gtk.Widgetter) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 *C.GtkWidget      // out
@@ -533,7 +521,6 @@ func (self *SplitButton) SetChild(child gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - direction: direction.
-//
 func (self *SplitButton) SetDirection(direction gtk.ArrowType) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 C.GtkArrowType    // out
@@ -553,7 +540,6 @@ func (self *SplitButton) SetDirection(direction gtk.ArrowType) {
 // The function takes the following parameters:
 //
 //   - tooltip: dropdown tooltip of self.
-//
 func (self *SplitButton) SetDropdownTooltip(tooltip string) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 *C.char           // out
@@ -576,7 +562,6 @@ func (self *SplitButton) SetDropdownTooltip(tooltip string) {
 // The function takes the following parameters:
 //
 //   - iconName: icon name to set.
-//
 func (self *SplitButton) SetIconName(iconName string) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 *C.char           // out
@@ -598,7 +583,6 @@ func (self *SplitButton) SetIconName(iconName string) {
 // The function takes the following parameters:
 //
 //   - label to set.
-//
 func (self *SplitButton) SetLabel(label string) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 *C.char           // out
@@ -626,7 +610,6 @@ func (self *SplitButton) SetLabel(label string) {
 // The function takes the following parameters:
 //
 //   - menuModel (optional): menu model.
-//
 func (self *SplitButton) SetMenuModel(menuModel gio.MenuModeller) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 *C.GMenuModel     // out
@@ -652,7 +635,6 @@ func (self *SplitButton) SetMenuModel(menuModel gio.MenuModeller) {
 // The function takes the following parameters:
 //
 //   - popover (optional): popover.
-//
 func (self *SplitButton) SetPopover(popover *gtk.Popover) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 *C.GtkPopover     // out
@@ -674,7 +656,6 @@ func (self *SplitButton) SetPopover(popover *gtk.Popover) {
 // The function takes the following parameters:
 //
 //   - useUnderline: whether an underline in the text indicates a mnemonic.
-//
 func (self *SplitButton) SetUseUnderline(useUnderline bool) {
 	var _arg0 *C.AdwSplitButton // out
 	var _arg1 C.gboolean        // out

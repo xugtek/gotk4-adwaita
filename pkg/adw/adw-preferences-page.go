@@ -35,7 +35,7 @@ func defaultPreferencesPageOverrides(v *PreferencesPage) PreferencesPageOverride
 	return PreferencesPageOverrides{}
 }
 
-// PreferencesPage: page from preferenceswindow.
+// PreferencesPage: page from preferencesdialog.
 //
 // <picture> <source srcset="preferences-page-dark.png"
 // media="(prefers-color-scheme: dark)"> <img src="preferences-page.png"
@@ -105,7 +105,6 @@ func marshalPreferencesPage(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - preferencesPage: newly created AdwPreferencesPage.
-//
 func NewPreferencesPage() *PreferencesPage {
 	var _cret *C.GtkWidget // in
 
@@ -123,7 +122,6 @@ func NewPreferencesPage() *PreferencesPage {
 // The function takes the following parameters:
 //
 //   - group to add.
-//
 func (self *PreferencesPage) Add(group *PreferencesGroup) {
 	var _arg0 *C.AdwPreferencesPage  // out
 	var _arg1 *C.AdwPreferencesGroup // out
@@ -141,7 +139,6 @@ func (self *PreferencesPage) Add(group *PreferencesGroup) {
 // The function returns the following values:
 //
 //   - utf8: description of self.
-//
 func (self *PreferencesPage) Description() string {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _cret *C.char               // in
@@ -163,7 +160,6 @@ func (self *PreferencesPage) Description() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): icon name for self.
-//
 func (self *PreferencesPage) IconName() string {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _cret *C.char               // in
@@ -187,7 +183,6 @@ func (self *PreferencesPage) IconName() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): name of self.
-//
 func (self *PreferencesPage) Name() string {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _cret *C.char               // in
@@ -211,7 +206,6 @@ func (self *PreferencesPage) Name() string {
 // The function returns the following values:
 //
 //   - utf8: title of self.
-//
 func (self *PreferencesPage) Title() string {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _cret *C.char               // in
@@ -234,7 +228,6 @@ func (self *PreferencesPage) Title() string {
 // The function returns the following values:
 //
 //   - ok: whether an embedded underline in the title indicates a mnemonic.
-//
 func (self *PreferencesPage) UseUnderline() bool {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _cret C.gboolean            // in
@@ -258,7 +251,6 @@ func (self *PreferencesPage) UseUnderline() bool {
 // The function takes the following parameters:
 //
 //   - group to remove.
-//
 func (self *PreferencesPage) Remove(group *PreferencesGroup) {
 	var _arg0 *C.AdwPreferencesPage  // out
 	var _arg1 *C.AdwPreferencesGroup // out
@@ -288,7 +280,6 @@ func (self *PreferencesPage) ScrollToTop() {
 // The function takes the following parameters:
 //
 //   - description: description.
-//
 func (self *PreferencesPage) SetDescription(description string) {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _arg1 *C.char               // out
@@ -307,7 +298,6 @@ func (self *PreferencesPage) SetDescription(description string) {
 // The function takes the following parameters:
 //
 //   - iconName (optional): icon name.
-//
 func (self *PreferencesPage) SetIconName(iconName string) {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _arg1 *C.char               // out
@@ -328,7 +318,6 @@ func (self *PreferencesPage) SetIconName(iconName string) {
 // The function takes the following parameters:
 //
 //   - name (optional): name.
-//
 func (self *PreferencesPage) SetName(name string) {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _arg1 *C.char               // out
@@ -349,7 +338,6 @@ func (self *PreferencesPage) SetName(name string) {
 // The function takes the following parameters:
 //
 //   - title: title.
-//
 func (self *PreferencesPage) SetTitle(title string) {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _arg1 *C.char               // out
@@ -369,7 +357,6 @@ func (self *PreferencesPage) SetTitle(title string) {
 // The function takes the following parameters:
 //
 //   - useUnderline: TRUE if underlines in the text indicate mnemonics.
-//
 func (self *PreferencesPage) SetUseUnderline(useUnderline bool) {
 	var _arg0 *C.AdwPreferencesPage // out
 	var _arg1 C.gboolean            // out

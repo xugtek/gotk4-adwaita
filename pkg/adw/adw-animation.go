@@ -92,24 +92,24 @@ func (a AnimationState) String() string {
 // it's safe to create an animation, start it and immediately unref it:
 // A fire-and-forget animation:
 //
-//    static void
-//    animation_cb (double    value,
-//                  MyObject *self)
-//    {
-//      // Do something with value
-//    }
+//	static void
+//	animation_cb (double    value,
+//	              MyObject *self)
+//	{
+//	  // Do something with value
+//	}
 //
-//    static void
-//    my_object_animate (MyObject *self)
-//    {
-//      AdwAnimationTarget *target =
-//        adw_callback_animation_target_new ((AdwAnimationTargetFunc) animation_cb,
-//                                           self, NULL);
-//      g_autoptr (AdwAnimation) animation =
-//        adw_timed_animation_new (widget, 0, 1, 250, target);
+//	static void
+//	my_object_animate (MyObject *self)
+//	{
+//	  AdwAnimationTarget *target =
+//	    adw_callback_animation_target_new ((AdwAnimationTargetFunc) animation_cb,
+//	                                       self, NULL);
+//	  g_autoptr (AdwAnimation) animation =
+//	    adw_timed_animation_new (widget, 0, 1, 250, target);
 //
-//      adw_animation_play (animation);
-//    }
+//	  adw_animation_play (animation);
+//	}
 //
 // If there's a chance the previous animation for the same target hasn't yet
 // finished, the previous animation should be stopped first, or the existing
@@ -165,7 +165,6 @@ func (self *Animation) ConnectDone(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - ok: whether to follow the global setting.
-//
 func (self *Animation) FollowEnableAnimationsSetting() bool {
 	var _arg0 *C.AdwAnimation // out
 	var _cret C.gboolean      // in
@@ -192,7 +191,6 @@ func (self *Animation) FollowEnableAnimationsSetting() bool {
 // The function returns the following values:
 //
 //   - animationState: animation value.
-//
 func (self *Animation) State() AnimationState {
 	var _arg0 *C.AdwAnimation     // out
 	var _cret C.AdwAnimationState // in
@@ -214,7 +212,6 @@ func (self *Animation) State() AnimationState {
 // The function returns the following values:
 //
 //   - animationTarget: animation target.
-//
 func (self *Animation) Target() AnimationTargetter {
 	var _arg0 *C.AdwAnimation       // out
 	var _cret *C.AdwAnimationTarget // in
@@ -252,7 +249,6 @@ func (self *Animation) Target() AnimationTargetter {
 // The function returns the following values:
 //
 //   - gdouble: current value.
-//
 func (self *Animation) Value() float64 {
 	var _arg0 *C.AdwAnimation // out
 	var _cret C.double        // in
@@ -281,7 +277,6 @@ func (self *Animation) Value() float64 {
 // The function returns the following values:
 //
 //   - widget: animation widget.
-//
 func (self *Animation) Widget() gtk.Widgetter {
 	var _arg0 *C.AdwAnimation // out
 	var _cret *C.GtkWidget    // in
@@ -393,7 +388,6 @@ func (self *Animation) Resume() {
 // The function takes the following parameters:
 //
 //   - setting: whether to follow the global setting.
-//
 func (self *Animation) SetFollowEnableAnimationsSetting(setting bool) {
 	var _arg0 *C.AdwAnimation // out
 	var _arg1 C.gboolean      // out
@@ -413,7 +407,6 @@ func (self *Animation) SetFollowEnableAnimationsSetting(setting bool) {
 // The function takes the following parameters:
 //
 //   - target: animation target.
-//
 func (self *Animation) SetTarget(target AnimationTargetter) {
 	var _arg0 *C.AdwAnimation       // out
 	var _arg1 *C.AdwAnimationTarget // out

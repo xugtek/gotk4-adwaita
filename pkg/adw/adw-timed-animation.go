@@ -75,7 +75,6 @@ func marshalTimedAnimation(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - timedAnimation: newly created animation.
-//
 func NewTimedAnimation(widget gtk.Widgetter, from, to float64, duration uint, target AnimationTargetter) *TimedAnimation {
 	var _arg1 *C.GtkWidget          // out
 	var _arg2 C.double              // out
@@ -110,7 +109,6 @@ func NewTimedAnimation(widget gtk.Widgetter, from, to float64, duration uint, ta
 // The function returns the following values:
 //
 //   - ok: whether self alternates.
-//
 func (self *TimedAnimation) Alternate() bool {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _cret C.gboolean           // in
@@ -134,7 +132,6 @@ func (self *TimedAnimation) Alternate() bool {
 // The function returns the following values:
 //
 //   - guint: duration of self, in milliseconds.
-//
 func (self *TimedAnimation) Duration() uint {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _cret C.guint              // in
@@ -156,7 +153,6 @@ func (self *TimedAnimation) Duration() uint {
 // The function returns the following values:
 //
 //   - easing function self uses.
-//
 func (self *TimedAnimation) Easing() Easing {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _cret C.AdwEasing          // in
@@ -178,7 +174,6 @@ func (self *TimedAnimation) Easing() Easing {
 // The function returns the following values:
 //
 //   - guint: number of times self will play.
-//
 func (self *TimedAnimation) RepeatCount() uint {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _cret C.guint              // in
@@ -200,7 +195,6 @@ func (self *TimedAnimation) RepeatCount() uint {
 // The function returns the following values:
 //
 //   - ok: whether self plays backwards.
-//
 func (self *TimedAnimation) Reverse() bool {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _cret C.gboolean           // in
@@ -224,7 +218,6 @@ func (self *TimedAnimation) Reverse() bool {
 // The function returns the following values:
 //
 //   - gdouble: value to animate from.
-//
 func (self *TimedAnimation) ValueFrom() float64 {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _cret C.double             // in
@@ -246,7 +239,6 @@ func (self *TimedAnimation) ValueFrom() float64 {
 // The function returns the following values:
 //
 //   - gdouble: value to animate to.
-//
 func (self *TimedAnimation) ValueTo() float64 {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _cret C.double             // in
@@ -268,7 +260,6 @@ func (self *TimedAnimation) ValueTo() float64 {
 // The function takes the following parameters:
 //
 //   - alternate: whether self alternates.
-//
 func (self *TimedAnimation) SetAlternate(alternate bool) {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _arg1 C.gboolean           // out
@@ -290,7 +281,6 @@ func (self *TimedAnimation) SetAlternate(alternate bool) {
 // The function takes the following parameters:
 //
 //   - duration to use, in milliseconds.
-//
 func (self *TimedAnimation) SetDuration(duration uint) {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _arg1 C.guint              // out
@@ -310,7 +300,6 @@ func (self *TimedAnimation) SetDuration(duration uint) {
 // The function takes the following parameters:
 //
 //   - easing function to use.
-//
 func (self *TimedAnimation) SetEasing(easing Easing) {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _arg1 C.AdwEasing          // out
@@ -330,7 +319,6 @@ func (self *TimedAnimation) SetEasing(easing Easing) {
 // The function takes the following parameters:
 //
 //   - repeatCount: number of times self will play.
-//
 func (self *TimedAnimation) SetRepeatCount(repeatCount uint) {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _arg1 C.guint              // out
@@ -348,7 +336,6 @@ func (self *TimedAnimation) SetRepeatCount(repeatCount uint) {
 // The function takes the following parameters:
 //
 //   - reverse: whether self plays backwards.
-//
 func (self *TimedAnimation) SetReverse(reverse bool) {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _arg1 C.gboolean           // out
@@ -373,7 +360,6 @@ func (self *TimedAnimation) SetReverse(reverse bool) {
 // The function takes the following parameters:
 //
 //   - value to animate from.
-//
 func (self *TimedAnimation) SetValueFrom(value float64) {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _arg1 C.double             // out
@@ -396,7 +382,6 @@ func (self *TimedAnimation) SetValueFrom(value float64) {
 // The function takes the following parameters:
 //
 //   - value to animate to.
-//
 func (self *TimedAnimation) SetValueTo(value float64) {
 	var _arg0 *C.AdwTimedAnimation // out
 	var _arg1 C.double             // out

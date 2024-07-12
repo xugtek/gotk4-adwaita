@@ -247,7 +247,6 @@ func marshalFlap(p uintptr) (interface{}, error) {
 // The function returns the following values:
 //
 //   - flap: newly created AdwFlap.
-//
 func NewFlap() *Flap {
 	var _cret *C.GtkWidget // in
 
@@ -268,7 +267,6 @@ func NewFlap() *Flap {
 // The function returns the following values:
 //
 //   - widget (optional): content widget for self.
-//
 func (self *Flap) Content() gtk.Widgetter {
 	var _arg0 *C.AdwFlap   // out
 	var _cret *C.GtkWidget // in
@@ -308,7 +306,6 @@ func (self *Flap) Content() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - widget (optional): flap widget for self.
-//
 func (self *Flap) Flap() gtk.Widgetter {
 	var _arg0 *C.AdwFlap   // out
 	var _cret *C.GtkWidget // in
@@ -348,7 +345,6 @@ func (self *Flap) Flap() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - packType: flap position for self.
-//
 func (self *Flap) FlapPosition() gtk.PackType {
 	var _arg0 *C.AdwFlap    // out
 	var _cret C.GtkPackType // in
@@ -374,7 +370,6 @@ func (self *Flap) FlapPosition() gtk.PackType {
 // The function returns the following values:
 //
 //   - guint: fold transition duration.
-//
 func (self *Flap) FoldDuration() uint {
 	var _arg0 *C.AdwFlap // out
 	var _cret C.guint    // in
@@ -399,7 +394,6 @@ func (self *Flap) FoldDuration() uint {
 // The function returns the following values:
 //
 //   - flapFoldPolicy: fold policy for self.
-//
 func (self *Flap) FoldPolicy() FlapFoldPolicy {
 	var _arg0 *C.AdwFlap          // out
 	var _cret C.AdwFlapFoldPolicy // in
@@ -423,6 +417,7 @@ func (self *Flap) FoldPolicy() FlapFoldPolicy {
 //
 // The function returns the following values:
 //
+//   - foldThresholdPolicy: fold threshold policy.
 func (self *Flap) FoldThresholdPolicy() FoldThresholdPolicy {
 	var _arg0 *C.AdwFlap               // out
 	var _cret C.AdwFoldThresholdPolicy // in
@@ -449,7 +444,6 @@ func (self *Flap) FoldThresholdPolicy() FoldThresholdPolicy {
 // The function returns the following values:
 //
 //   - ok: TRUE if self is currently folded.
-//
 func (self *Flap) Folded() bool {
 	var _arg0 *C.AdwFlap // out
 	var _cret C.gboolean // in
@@ -476,7 +470,6 @@ func (self *Flap) Folded() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if self is locked.
-//
 func (self *Flap) Locked() bool {
 	var _arg0 *C.AdwFlap // out
 	var _cret C.gboolean // in
@@ -503,7 +496,6 @@ func (self *Flap) Locked() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if self is modal.
-//
 func (self *Flap) Modal() bool {
 	var _arg0 *C.AdwFlap // out
 	var _cret C.gboolean // in
@@ -530,7 +522,6 @@ func (self *Flap) Modal() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if the flap widget is revealed.
-//
 func (self *Flap) RevealFlap() bool {
 	var _arg0 *C.AdwFlap // out
 	var _cret C.gboolean // in
@@ -557,7 +548,6 @@ func (self *Flap) RevealFlap() bool {
 // The function returns the following values:
 //
 //   - springParams: reveal animation parameters.
-//
 func (self *Flap) RevealParams() *SpringParams {
 	var _arg0 *C.AdwFlap         // out
 	var _cret *C.AdwSpringParams // in
@@ -592,7 +582,6 @@ func (self *Flap) RevealParams() *SpringParams {
 // The function returns the following values:
 //
 //   - gdouble: current reveal progress for self.
-//
 func (self *Flap) RevealProgress() float64 {
 	var _arg0 *C.AdwFlap // out
 	var _cret C.double   // in
@@ -617,7 +606,6 @@ func (self *Flap) RevealProgress() float64 {
 // The function returns the following values:
 //
 //   - widget (optional): separator widget for self.
-//
 func (self *Flap) Separator() gtk.Widgetter {
 	var _arg0 *C.AdwFlap   // out
 	var _cret *C.GtkWidget // in
@@ -657,7 +645,6 @@ func (self *Flap) Separator() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - ok: TRUE if self can be closed with a swipe gesture.
-//
 func (self *Flap) SwipeToClose() bool {
 	var _arg0 *C.AdwFlap // out
 	var _cret C.gboolean // in
@@ -684,7 +671,6 @@ func (self *Flap) SwipeToClose() bool {
 // The function returns the following values:
 //
 //   - ok: TRUE if self can be opened with a swipe gesture.
-//
 func (self *Flap) SwipeToOpen() bool {
 	var _arg0 *C.AdwFlap // out
 	var _cret C.gboolean // in
@@ -712,7 +698,6 @@ func (self *Flap) SwipeToOpen() bool {
 // The function returns the following values:
 //
 //   - flapTransitionType: current transition type of self.
-//
 func (self *Flap) TransitionType() FlapTransitionType {
 	var _arg0 *C.AdwFlap              // out
 	var _cret C.AdwFlapTransitionType // in
@@ -739,7 +724,6 @@ func (self *Flap) TransitionType() FlapTransitionType {
 // The function takes the following parameters:
 //
 //   - content (optional) widget.
-//
 func (self *Flap) SetContent(content gtk.Widgetter) {
 	var _arg0 *C.AdwFlap   // out
 	var _arg1 *C.GtkWidget // out
@@ -764,7 +748,6 @@ func (self *Flap) SetContent(content gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - flap (optional) widget.
-//
 func (self *Flap) SetFlap(flap gtk.Widgetter) {
 	var _arg0 *C.AdwFlap   // out
 	var _arg1 *C.GtkWidget // out
@@ -790,7 +773,6 @@ func (self *Flap) SetFlap(flap gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - position: new value.
-//
 func (self *Flap) SetFlapPosition(position gtk.PackType) {
 	var _arg0 *C.AdwFlap    // out
 	var _arg1 C.GtkPackType // out
@@ -812,7 +794,6 @@ func (self *Flap) SetFlapPosition(position gtk.PackType) {
 // The function takes the following parameters:
 //
 //   - duration: new duration, in milliseconds.
-//
 func (self *Flap) SetFoldDuration(duration uint) {
 	var _arg0 *C.AdwFlap // out
 	var _arg1 C.guint    // out
@@ -833,7 +814,6 @@ func (self *Flap) SetFoldDuration(duration uint) {
 // The function takes the following parameters:
 //
 //   - policy: fold policy.
-//
 func (self *Flap) SetFoldPolicy(policy FlapFoldPolicy) {
 	var _arg0 *C.AdwFlap          // out
 	var _arg1 C.AdwFlapFoldPolicy // out
@@ -861,7 +841,6 @@ func (self *Flap) SetFoldPolicy(policy FlapFoldPolicy) {
 // The function takes the following parameters:
 //
 //   - policy to use.
-//
 func (self *Flap) SetFoldThresholdPolicy(policy FoldThresholdPolicy) {
 	var _arg0 *C.AdwFlap               // out
 	var _arg1 C.AdwFoldThresholdPolicy // out
@@ -886,7 +865,6 @@ func (self *Flap) SetFoldThresholdPolicy(policy FoldThresholdPolicy) {
 // The function takes the following parameters:
 //
 //   - locked: new value.
-//
 func (self *Flap) SetLocked(locked bool) {
 	var _arg0 *C.AdwFlap // out
 	var _arg1 C.gboolean // out
@@ -913,7 +891,6 @@ func (self *Flap) SetLocked(locked bool) {
 // The function takes the following parameters:
 //
 //   - modal: whether self is modal.
-//
 func (self *Flap) SetModal(modal bool) {
 	var _arg0 *C.AdwFlap // out
 	var _arg1 C.gboolean // out
@@ -936,7 +913,6 @@ func (self *Flap) SetModal(modal bool) {
 // The function takes the following parameters:
 //
 //   - revealFlap: whether to reveal the flap widget.
-//
 func (self *Flap) SetRevealFlap(revealFlap bool) {
 	var _arg0 *C.AdwFlap // out
 	var _arg1 C.gboolean // out
@@ -955,7 +931,7 @@ func (self *Flap) SetRevealFlap(revealFlap bool) {
 //
 // The default value is equivalent to:
 //
-//    adw_spring_params_new (1, 0.5, 500)
+//	adw_spring_params_new (1, 0.5, 500)
 //
 // Deprecated: See the migration guide
 // (migrating-to-breakpoints.html#replace-adwflap).
@@ -963,7 +939,6 @@ func (self *Flap) SetRevealFlap(revealFlap bool) {
 // The function takes the following parameters:
 //
 //   - params: new parameters.
-//
 func (self *Flap) SetRevealParams(params *SpringParams) {
 	var _arg0 *C.AdwFlap         // out
 	var _arg1 *C.AdwSpringParams // out
@@ -987,7 +962,6 @@ func (self *Flap) SetRevealParams(params *SpringParams) {
 // The function takes the following parameters:
 //
 //   - separator (optional) widget.
-//
 func (self *Flap) SetSeparator(separator gtk.Widgetter) {
 	var _arg0 *C.AdwFlap   // out
 	var _arg1 *C.GtkWidget // out
@@ -1012,7 +986,6 @@ func (self *Flap) SetSeparator(separator gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - swipeToClose: whether self can be closed with a swipe gesture.
-//
 func (self *Flap) SetSwipeToClose(swipeToClose bool) {
 	var _arg0 *C.AdwFlap // out
 	var _arg1 C.gboolean // out
@@ -1037,7 +1010,6 @@ func (self *Flap) SetSwipeToClose(swipeToClose bool) {
 // The function takes the following parameters:
 //
 //   - swipeToOpen: whether self can be opened with a swipe gesture.
-//
 func (self *Flap) SetSwipeToOpen(swipeToOpen bool) {
 	var _arg0 *C.AdwFlap // out
 	var _arg1 C.gboolean // out
@@ -1066,7 +1038,6 @@ func (self *Flap) SetSwipeToOpen(swipeToOpen bool) {
 // The function takes the following parameters:
 //
 //   - transitionType: new transition type.
-//
 func (self *Flap) SetTransitionType(transitionType FlapTransitionType) {
 	var _arg0 *C.AdwFlap              // out
 	var _arg1 C.AdwFlapTransitionType // out

@@ -76,6 +76,10 @@ func defaultActionRowOverrides(v *ActionRow) ActionRowOverrides {
 //
 // It contains subnodes label.title and label.subtitle representing respectively
 // the title label and subtitle label.
+//
+// AdwActionRow can use the .property (style-classes.html#property-rows) style
+// class to emphasize the row subtitle instead of the row title, which is useful
+// for displaying read-only properties.
 type ActionRow struct {
 	_ [0]func() // equal guard
 	PreferencesRow
@@ -164,7 +168,6 @@ func (self *ActionRow) ConnectActivated(f func()) coreglib.SignalHandle {
 // The function returns the following values:
 //
 //   - actionRow: newly created AdwActionRow.
-//
 func NewActionRow() *ActionRow {
 	var _cret *C.GtkWidget // in
 
@@ -192,7 +195,6 @@ func (self *ActionRow) Activate() {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *ActionRow) AddPrefix(widget gtk.Widgetter) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 *C.GtkWidget    // out
@@ -210,7 +212,6 @@ func (self *ActionRow) AddPrefix(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - widget: widget.
-//
 func (self *ActionRow) AddSuffix(widget gtk.Widgetter) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 *C.GtkWidget    // out
@@ -228,7 +229,6 @@ func (self *ActionRow) AddSuffix(widget gtk.Widgetter) {
 // The function returns the following values:
 //
 //   - widget (optional): activatable widget for self.
-//
 func (self *ActionRow) ActivatableWidget() gtk.Widgetter {
 	var _arg0 *C.AdwActionRow // out
 	var _cret *C.GtkWidget    // in
@@ -267,7 +267,6 @@ func (self *ActionRow) ActivatableWidget() gtk.Widgetter {
 // The function returns the following values:
 //
 //   - utf8 (optional): icon name for self.
-//
 func (self *ActionRow) IconName() string {
 	var _arg0 *C.AdwActionRow // out
 	var _cret *C.char         // in
@@ -291,7 +290,6 @@ func (self *ActionRow) IconName() string {
 // The function returns the following values:
 //
 //   - utf8 (optional): subtitle for self.
-//
 func (self *ActionRow) Subtitle() string {
 	var _arg0 *C.AdwActionRow // out
 	var _cret *C.char         // in
@@ -317,7 +315,6 @@ func (self *ActionRow) Subtitle() string {
 //
 //   - gint: number of lines at the end of which the subtitle label will be
 //     ellipsized.
-//
 func (self *ActionRow) SubtitleLines() int {
 	var _arg0 *C.AdwActionRow // out
 	var _cret C.int           // in
@@ -340,7 +337,6 @@ func (self *ActionRow) SubtitleLines() int {
 // The function returns the following values:
 //
 //   - ok: whether the user can copy the subtitle from the label.
-//
 func (self *ActionRow) SubtitleSelectable() bool {
 	var _arg0 *C.AdwActionRow // out
 	var _cret C.gboolean      // in
@@ -366,7 +362,6 @@ func (self *ActionRow) SubtitleSelectable() bool {
 //
 //   - gint: number of lines at the end of which the title label will be
 //     ellipsized.
-//
 func (self *ActionRow) TitleLines() int {
 	var _arg0 *C.AdwActionRow // out
 	var _cret C.int           // in
@@ -388,7 +383,6 @@ func (self *ActionRow) TitleLines() int {
 // The function takes the following parameters:
 //
 //   - widget: child to be removed.
-//
 func (self *ActionRow) Remove(widget gtk.Widgetter) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 *C.GtkWidget    // out
@@ -413,7 +407,6 @@ func (self *ActionRow) Remove(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - widget (optional): target widget.
-//
 func (self *ActionRow) SetActivatableWidget(widget gtk.Widgetter) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 *C.GtkWidget    // out
@@ -435,7 +428,6 @@ func (self *ActionRow) SetActivatableWidget(widget gtk.Widgetter) {
 // The function takes the following parameters:
 //
 //   - iconName (optional): icon name.
-//
 func (self *ActionRow) SetIconName(iconName string) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 *C.char         // out
@@ -459,7 +451,6 @@ func (self *ActionRow) SetIconName(iconName string) {
 // The function takes the following parameters:
 //
 //   - subtitle: subtitle.
-//
 func (self *ActionRow) SetSubtitle(subtitle string) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 *C.char         // out
@@ -482,7 +473,6 @@ func (self *ActionRow) SetSubtitle(subtitle string) {
 //
 //   - subtitleLines: number of lines at the end of which the subtitle label
 //     will be ellipsized.
-//
 func (self *ActionRow) SetSubtitleLines(subtitleLines int) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 C.int           // out
@@ -504,7 +494,6 @@ func (self *ActionRow) SetSubtitleLines(subtitleLines int) {
 //
 //   - subtitleSelectable: TRUE if the user can copy the subtitle from the
 //     label.
-//
 func (self *ActionRow) SetSubtitleSelectable(subtitleSelectable bool) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 C.gboolean      // out
@@ -528,7 +517,6 @@ func (self *ActionRow) SetSubtitleSelectable(subtitleSelectable bool) {
 //
 //   - titleLines: number of lines at the end of which the title label will be
 //     ellipsized.
-//
 func (self *ActionRow) SetTitleLines(titleLines int) {
 	var _arg0 *C.AdwActionRow // out
 	var _arg1 C.int           // out
