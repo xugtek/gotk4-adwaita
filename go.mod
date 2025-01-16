@@ -1,10 +1,9 @@
 module github.com/diamondburned/gotk4-adwaita
 
-go 1.22.0
+go 1.20
 
-toolchain go1.22.4
-
-require github.com/diamondburned/gotk4 v0.2.3-0.20240712132236-ab1a56e93c15
+require github.com/diamondburned/gotk4 v0.3.1
+replace github.com/diamondburned/gotk4/pkg => github.com/xugtek/gotk4/pkg v0.0.0
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
